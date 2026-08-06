@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Leah Buzek's growing body of work in public service, civic infrastructure, research, writing, and practical tools.">
-  <meta name="theme-color" content="#f6f0e8">
+  <meta name="theme-color" content="#061629">
   <meta property="og:title" content="Leah Buzek — for the love of our neighbors">
-  <meta property="og:description" content="A living archive of projects, research, writing, and tools built for public life.">
+  <meta property="og:description" content="A living body of work in systems design, civic infrastructure, research, writing, and public problem-solving.">
   <meta property="og:type" content="website">
   <title>Leah Buzek — for the love of our neighbors</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -16,146 +16,251 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header">
-    <a class="wordmark" href="#top" aria-label="Leah Buzek, home">
-      <span class="wordmark__name">Leah Buzek</span>
-      <span class="wordmark__mark" aria-hidden="true"></span>
-    </a>
+  <header class="site-header" data-header>
+    <a class="wordmark" href="#top" aria-label="Leah Buzek, home">Leah Buzek</a>
 
-    <nav class="site-nav" aria-label="Primary navigation">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+      <span class="sr-only">Open navigation</span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+
+    <nav class="site-nav" id="primary-nav" aria-label="Primary navigation">
+      <a href="#about">About</a>
       <a href="#work">Work</a>
       <a href="#writing">Writing</a>
-      <a href="#about">About</a>
+      <a href="#resources">Resources</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="#contact">Let's connect</a>
     </nav>
   </header>
 
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="hero__eyebrow">A living archive of work in public life</div>
-      <h1 id="hero-title">for the love<br>of our neighbors</h1>
-      <div class="hero__lower">
-        <p class="hero__intro">
-          This is not a résumé translated into a webpage. It is a growing record of the projects I build, the questions I keep returning to, and the tools I make when the existing ones are not enough.
-        </p>
-        <a class="text-link" href="#work">Enter the body of work <span aria-hidden="true">↘</span></a>
+      <div class="hero__stars" aria-hidden="true"></div>
+
+      <div class="hero__copy">
+        <p class="eyebrow">Public systems · civic infrastructure · practical care</p>
+        <h1 id="hero-title">for the <em>love</em><br>of our neighbors.</h1>
+        <div class="rule" aria-hidden="true"></div>
+        <p class="hero__lede">Building the infrastructure for care, advocacy, and civic power from the ground up.</p>
+        <a class="button button--peach" href="#work">Explore my work <span aria-hidden="true">→</span></a>
       </div>
-      <div class="hero__orbit hero__orbit--one" aria-hidden="true"></div>
-      <div class="hero__orbit hero__orbit--two" aria-hidden="true"></div>
-      <div class="hero__planet hero__planet--periwinkle" aria-hidden="true"></div>
-      <div class="hero__planet hero__planet--blush" aria-hidden="true"></div>
+
+      <div class="hero__art" aria-hidden="true">
+        <div class="arch">
+          <svg class="landscape" viewBox="0 0 700 850" role="img" aria-label="A stylized Appalachian landscape at sunrise with wildflowers">
+            <defs>
+              <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stop-color="#766774"/>
+                <stop offset="0.31" stop-color="#d78f78"/>
+                <stop offset="0.54" stop-color="#f4b481"/>
+                <stop offset="0.72" stop-color="#efc6a1"/>
+                <stop offset="1" stop-color="#263c50"/>
+              </linearGradient>
+              <linearGradient id="field" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stop-color="#2f4a55"/>
+                <stop offset="1" stop-color="#071829"/>
+              </linearGradient>
+              <radialGradient id="sunGlow">
+                <stop offset="0" stop-color="#fff7df" stop-opacity="1"/>
+                <stop offset="0.14" stop-color="#ffc88e" stop-opacity="0.9"/>
+                <stop offset="1" stop-color="#ffc88e" stop-opacity="0"/>
+              </radialGradient>
+              <filter id="softGlow">
+                <feGaussianBlur stdDeviation="8"/>
+              </filter>
+            </defs>
+
+            <rect width="700" height="850" fill="url(#sky)"/>
+            <circle cx="430" cy="440" r="125" fill="url(#sunGlow)" filter="url(#softGlow)"/>
+            <circle cx="430" cy="445" r="8" fill="#fff5d9"/>
+
+            <path d="M0 472 C90 425 170 447 238 414 C315 376 350 418 421 402 C509 382 578 414 700 364 L700 850 L0 850 Z" fill="#5b6470" opacity="0.56"/>
+            <path d="M0 530 C95 468 168 505 255 460 C341 416 410 482 493 438 C574 395 625 432 700 410 L700 850 L0 850 Z" fill="#334957" opacity="0.86"/>
+            <path d="M0 620 C90 548 184 579 276 520 C361 466 464 545 535 494 C596 451 643 482 700 466 L700 850 L0 850 Z" fill="#152d3e"/>
+            <path d="M0 667 C122 592 222 638 327 578 C442 512 518 609 700 531 L700 850 L0 850 Z" fill="url(#field)"/>
+
+            <g fill="none" stroke="#d98b5f" stroke-width="3" stroke-linecap="round">
+              <path d="M85 850 C95 758 91 703 111 635"/>
+              <path d="M110 703 C83 686 73 664 70 642"/>
+              <path d="M107 729 C139 708 148 684 151 660"/>
+              <path d="M204 850 C202 770 214 704 245 646"/>
+              <path d="M222 711 C190 691 179 669 180 642"/>
+              <path d="M233 688 C264 674 276 654 283 631"/>
+              <path d="M548 850 C541 765 558 704 593 642"/>
+              <path d="M566 702 C532 679 520 652 521 625"/>
+              <path d="M579 676 C612 657 625 632 627 606"/>
+              <path d="M645 850 C631 789 635 736 661 686"/>
+            </g>
+
+            <g fill="#f0a06f" stroke="#f6c7a5" stroke-width="1.5">
+              <circle cx="111" cy="635" r="16"/>
+              <circle cx="70" cy="642" r="10"/>
+              <circle cx="151" cy="660" r="12"/>
+              <circle cx="245" cy="646" r="17"/>
+              <circle cx="180" cy="642" r="11"/>
+              <circle cx="283" cy="631" r="12"/>
+              <circle cx="593" cy="642" r="17"/>
+              <circle cx="521" cy="625" r="10"/>
+              <circle cx="627" cy="606" r="14"/>
+              <circle cx="661" cy="686" r="12"/>
+            </g>
+
+            <g fill="#f7d6b8">
+              <circle cx="111" cy="635" r="4"/>
+              <circle cx="70" cy="642" r="3"/>
+              <circle cx="151" cy="660" r="3"/>
+              <circle cx="245" cy="646" r="4"/>
+              <circle cx="180" cy="642" r="3"/>
+              <circle cx="283" cy="631" r="3"/>
+              <circle cx="593" cy="642" r="4"/>
+              <circle cx="521" cy="625" r="3"/>
+              <circle cx="627" cy="606" r="3"/>
+              <circle cx="661" cy="686" r="3"/>
+            </g>
+          </svg>
+        </div>
+
+        <svg class="hero-constellation" viewBox="0 0 500 360">
+          <g fill="none" stroke="currentColor" stroke-width="1" opacity="0.55">
+            <path d="M42 275 L117 218 L182 247 L255 168 L326 196 L418 101"/>
+            <path d="M117 218 L149 118 L255 168 L279 66 L418 101"/>
+            <path d="M182 247 L251 305 L326 196 L409 263"/>
+          </g>
+          <g fill="currentColor">
+            <circle cx="42" cy="275" r="3"/><circle cx="117" cy="218" r="4"/><circle cx="182" cy="247" r="3"/>
+            <circle cx="255" cy="168" r="5"/><circle cx="326" cy="196" r="3"/><circle cx="418" cy="101" r="4"/>
+            <circle cx="149" cy="118" r="3"/><circle cx="279" cy="66" r="4"/><circle cx="251" cy="305" r="3"/><circle cx="409" cy="263" r="3"/>
+          </g>
+        </svg>
+      </div>
     </section>
 
-    <section class="section field" id="work" aria-labelledby="work-title">
-      <div class="section-heading">
-        <p class="section-heading__number">01</p>
-        <div>
-          <p class="kicker">Selected bodies of work</p>
-          <h2 id="work-title">The field, not the filing cabinet.</h2>
-        </div>
+    <section class="practice-band" aria-label="How I work">
+      <article>
+        <span class="practice-icon practice-icon--sun" aria-hidden="true"></span>
+        <h2>Systems design</h2>
+        <p>Designing programs and operational infrastructure that are useful, equitable, and built to last.</p>
+      </article>
+      <article>
+        <span class="practice-icon practice-icon--people" aria-hidden="true"></span>
+        <h2>Community centered</h2>
+        <p>Centering relationships and lived experience to co-create real solutions with those most impacted.</p>
+      </article>
+      <article>
+        <span class="practice-icon practice-icon--leaf" aria-hidden="true"></span>
+        <h2>Story &amp; strategy</h2>
+        <p>Bringing clarity to complexity and aligning story with strategy to move people and systems forward.</p>
+      </article>
+      <article>
+        <span class="practice-icon practice-icon--mountains" aria-hidden="true"></span>
+        <h2>Civic impact</h2>
+        <p>Advancing care, equity, and collective power through thoughtful partnership and action.</p>
+      </article>
+    </section>
+
+    <section class="section section--cream" id="work" aria-labelledby="work-title">
+      <div class="section-intro">
+        <p class="eyebrow eyebrow--dark">Selected bodies of work</p>
+        <h2 id="work-title">My work is a <em>constellation.</em></h2>
+        <p>Across roles, places, and partners, I find the patterns, follow the throughlines, and build infrastructure that helps people act together.</p>
       </div>
 
-      <div class="field-map" aria-label="Selected bodies of work">
-        <div class="field-map__axis field-map__axis--horizontal" aria-hidden="true"></div>
-        <div class="field-map__axis field-map__axis--vertical" aria-hidden="true"></div>
-        <div class="field-map__center" aria-hidden="true">
-          <span>neighbor</span>
-          <span>systems</span>
-          <span>practice</span>
-        </div>
+      <div class="work-constellation" aria-label="Four connected bodies of work">
+        <svg viewBox="0 0 1000 620" aria-hidden="true">
+          <g fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.48">
+            <path d="M165 340 L365 145 L635 205 L805 420 L465 500 Z"/>
+            <path d="M165 340 L635 205 L465 500 L365 145"/>
+            <path d="M365 145 L805 420" stroke-dasharray="4 8"/>
+            <ellipse cx="490" cy="316" rx="390" ry="225" stroke-dasharray="3 8"/>
+          </g>
+          <g fill="currentColor">
+            <circle cx="165" cy="340" r="7"/><circle cx="365" cy="145" r="7"/><circle cx="635" cy="205" r="7"/><circle cx="805" cy="420" r="7"/><circle cx="465" cy="500" r="7"/>
+            <circle cx="265" cy="244" r="3"/><circle cx="500" cy="174" r="3"/><circle cx="720" cy="313" r="3"/><circle cx="628" cy="459" r="3"/><circle cx="316" cy="421" r="3"/>
+          </g>
+        </svg>
 
-        <article class="work-node work-node--one">
-          <p class="work-node__type">Civic infrastructure</p>
-          <h3>EPIC</h3>
-          <p>Designing structures that help people move from concern to meaningful civic participation.</p>
-          <span class="work-node__status">Case study in development</span>
-        </article>
-
-        <article class="work-node work-node--two">
-          <p class="work-node__type">Training + practice</p>
-          <h3>TRACEs</h3>
-          <p>A framework for relational, trauma-aware engagement built to travel across systems.</p>
-          <span class="work-node__status">Case study in development</span>
-        </article>
-
-        <article class="work-node work-node--three">
-          <p class="work-node__type">Research</p>
-          <h3>Statewide Needs Assessment</h3>
-          <p>Turning lived experience, system data, and practitioner knowledge into usable direction.</p>
-          <span class="work-node__status">Case study in development</span>
-        </article>
-
-        <article class="work-node work-node--four">
-          <p class="work-node__type">Civic R&amp;D</p>
-          <h3>IncuBrighter</h3>
-          <p>An evolving home for grassroots experimentation, practical tools, and public problem-solving.</p>
-          <span class="work-node__status">Case study in development</span>
-        </article>
+        <a class="work-point work-point--epic" href="#contact">
+          <span class="work-point__label">EPIC</span>
+          <span>Equitable Partners in Care</span>
+        </a>
+        <a class="work-point work-point--traces" href="#contact">
+          <span class="work-point__label">TRACEs</span>
+          <span>Relational accountability and community engagement</span>
+        </a>
+        <a class="work-point work-point--needs" href="#contact">
+          <span class="work-point__label">Needs Assessment</span>
+          <span>Statewide data. Real stories. Stronger systems.</span>
+        </a>
+        <a class="work-point work-point--incu" href="#contact">
+          <span class="work-point__label">IncuBrighter</span>
+          <span>Civic R&amp;D for grassroots solutions</span>
+        </a>
       </div>
     </section>
 
-    <section class="section writing" id="writing" aria-labelledby="writing-title">
-      <div class="section-heading">
-        <p class="section-heading__number">02</p>
-        <div>
-          <p class="kicker">Writing and working theories</p>
-          <h2 id="writing-title">Ideas with dirt under their fingernails.</h2>
-        </div>
+    <section class="section section--night" id="writing" aria-labelledby="writing-title">
+      <div class="section-intro section-intro--wide">
+        <p class="eyebrow">Writing and working theories</p>
+        <h2 id="writing-title">Ideas meant to be <em>used.</em></h2>
       </div>
 
-      <div class="writing-grid">
-        <article class="writing-card writing-card--featured">
-          <p class="writing-card__meta">Field note · forthcoming</p>
+      <div class="writing-list">
+        <article>
+          <p>Public service</p>
           <h3>What public service owes the public</h3>
-          <p>On dissent, responsibility, and why service is never value-neutral.</p>
+          <span>On dissent, responsibility, and why service is never value-neutral.</span>
         </article>
-
-        <article class="writing-card">
-          <p class="writing-card__meta">Working theory · forthcoming</p>
+        <article>
+          <p>Working theory</p>
           <h3>Relational ontometry</h3>
-          <p>A way of measuring systems by the relationships they make possible, distort, or destroy.</p>
+          <span>Measuring systems by the relationships they make possible, distort, or destroy.</span>
         </article>
-
-        <article class="writing-card">
-          <p class="writing-card__meta">Practice note · forthcoming</p>
+        <article>
+          <p>Practice note</p>
           <h3>Designing for the person who cannot attend the meeting</h3>
-          <p>Why civic participation must work beyond the room, the app, and the professional class.</p>
+          <span>Participation beyond the room, the app, and the professional class.</span>
         </article>
       </div>
     </section>
 
-    <section class="section about" id="about" aria-labelledby="about-title">
-      <div class="section-heading">
-        <p class="section-heading__number">03</p>
+    <section class="section section--peach" id="resources" aria-labelledby="resources-title">
+      <div class="resource-grid">
         <div>
-          <p class="kicker">About the work</p>
-          <h2 id="about-title">I build connective tissue.</h2>
+          <p class="eyebrow eyebrow--dark">Resources</p>
+          <h2 id="resources-title">Work that can leave my hands.</h2>
         </div>
+        <p>Guides, worksheets, frameworks, templates, and practical tools belong here when they are ready to travel. The goal is not merely to display the work. It is to make more of it usable by other people.</p>
       </div>
+    </section>
 
-      <div class="about__grid">
-        <p class="about__lead">
-          My work sits where public systems, lived experience, and practical implementation collide.
-        </p>
-        <div class="about__body">
-          <p>
-            I am interested in the gap between what institutions say they value and what people can actually reach, use, and trust. That gap is where I tend to work: mapping the system, finding the friction, and building something more honest in its place.
-          </p>
-          <p>
-            This site will keep changing because the work does. Finished projects live beside active experiments, emerging theories, and tools meant to be picked up by other people.
-          </p>
+    <section class="section section--cream" id="about" aria-labelledby="about-title">
+      <div class="about-grid">
+        <div>
+          <p class="eyebrow eyebrow--dark">About</p>
+          <h2 id="about-title">I build the connective tissue.</h2>
+        </div>
+        <div class="about-copy">
+          <p class="about-lead">My work sits where public systems, lived experience, political imagination, and practical implementation collide.</p>
+          <p>I am interested in the distance between what institutions say they value and what people can actually reach, use, and trust. That distance is where I tend to work: mapping the system, finding the friction, and building something more honest in its place.</p>
+          <p>This site will keep changing because the work does. Finished projects live beside active experiments, emerging theories, and tools meant to be picked up by other people.</p>
         </div>
       </div>
     </section>
 
-    <section class="closing" aria-label="Closing statement">
-      <p>Public work should leave people with more power than it found them.</p>
-      <a class="text-link text-link--light" href="mailto:hello@leahbuzek.com">Start a conversation <span aria-hidden="true">↗</span></a>
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2 id="contact-title">Let’s build something that deserves to last.</h2>
+      </div>
+      <a class="button button--outline" href="mailto:hello@leahbuzek.com">Start a conversation <span aria-hidden="true">↗</span></a>
     </section>
   </main>
 
   <footer class="site-footer">
     <p>© <span data-year>2026</span> Leah Buzek</p>
-    <p>Built as a living system, not a finished monument.</p>
+    <p>For the love of our neighbors.</p>
   </footer>
 </body>
 </html>
