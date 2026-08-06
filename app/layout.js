@@ -1,5 +1,6 @@
 import './globals.css';
 import './hero-overrides.css';
+import './practice-icons.css';
 
 export const metadata = {
   metadataBase: new URL('https://leahbuzek.com'),
