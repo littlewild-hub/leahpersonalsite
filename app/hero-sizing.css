@@ -1,44 +1,52 @@
 .hero {
-  min-height: calc(90svh - 5rem);
-  padding-top: clamp(4.5rem, 8vw, 7rem);
-  padding-bottom: clamp(4rem, 7vw, 6rem);
+  min-height: calc(82svh - 4.5rem);
+  padding-top: clamp(4.1rem, 7.35vw, 6.45rem);
+  padding-bottom: clamp(3.7rem, 6.45vw, 5.5rem);
+}
+
+.hero h1 {
+  font-size: clamp(3.7rem, 6.8vw, 8rem);
 }
 
 .hero__constellation-field {
-  min-height: 38rem;
+  min-height: 35rem;
 }
 
 .hero__constellation-field > .constellation {
-  width: min(92%, 44rem);
+  width: min(86%, 40.5rem);
 }
 
 @media (max-width: 1000px) {
   .hero {
     min-height: auto;
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
+    padding-top: 4.1rem;
+    padding-bottom: 4.1rem;
   }
 
   .hero__constellation-field {
-    min-height: 30rem;
+    min-height: 27.5rem;
   }
 
   .hero__constellation-field > .constellation {
-    width: min(84%, 38rem);
+    width: min(77%, 35rem);
   }
 }
 
 @media (max-width: 720px) {
   .hero {
-    padding-top: 3.5rem;
-    padding-bottom: 3.75rem;
+    padding-top: 3.2rem;
+    padding-bottom: 3.45rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.2rem, 15.6vw, 5.3rem);
   }
 
   .hero__constellation-field {
-    min-height: 23rem;
+    min-height: 21rem;
   }
 
   .hero__constellation-field > .constellation {
-    width: 100%;
+    width: 92%;
   }
 }
