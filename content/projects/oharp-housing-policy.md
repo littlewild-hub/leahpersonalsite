@@ -10,9 +10,7 @@ tools: ["Policy design", "Legislative drafting", "Fiscal modeling"]
 cover:
   url: "/plate-mechanism.svg"
   alt: "Technical study of interlocking gears, drawn in ink on linen paper"
-links:
-  - label: "Read the full proposal (PDF)"
-    href: "/papers/oharp-ohio-housing-accountability-revitalization-program.pdf"
+links: []
 marginalia: []
 ---
 

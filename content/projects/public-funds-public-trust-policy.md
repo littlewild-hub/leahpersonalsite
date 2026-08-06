@@ -10,9 +10,7 @@ tools: ["Policy design", "Legislative drafting"]
 cover:
   url: "/plate-mechanism.svg"
   alt: "Technical study of interlocking gears, drawn in ink on linen paper"
-links:
-  - label: "Read the full brief (PDF)"
-    href: "/papers/public-funds-public-trust-data-protection-act.pdf"
+links: []
 marginalia:
   - "Addressed to Chairman James Comer and the House Committee on Oversight and Accountability."
 ---

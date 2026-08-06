@@ -10,9 +10,7 @@ tools: ["Moral philosophy", "Care ethics"]
 cover:
   url: "/plate-proportion.svg"
   alt: "Golden-section construction over a rectangular grid, drawn in ink on linen paper"
-links:
-  - label: "Read the full paper (PDF)"
-    href: "/papers/continuity-of-the-subjective-experience.pdf"
+links: []
 marginalia: []
 ---
 

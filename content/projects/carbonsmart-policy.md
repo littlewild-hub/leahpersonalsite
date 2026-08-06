@@ -10,9 +10,7 @@ tools: ["Policy design", "Legislative drafting", "Fiscal modeling"]
 cover:
   url: "/plate-proportion.svg"
   alt: "Golden-section construction over a rectangular grid, drawn in ink on linen paper"
-links:
-  - label: "Read the full proposal (PDF)"
-    href: "/papers/carbonsmart-program.pdf"
+links: []
 marginalia: []
 ---
 

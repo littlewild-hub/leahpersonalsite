@@ -10,9 +10,7 @@ tools: ["Cultural rhetoric analysis"]
 cover:
   url: "/plate-mechanism.svg"
   alt: "Technical study of interlocking gears, drawn in ink on linen paper"
-links:
-  - label: "Read the full paper (PDF)"
-    href: "/papers/bean-soup-theory-rhetorical-analysis.pdf"
+links: []
 marginalia: []
 ---
 

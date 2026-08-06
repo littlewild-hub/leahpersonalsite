@@ -10,9 +10,7 @@ tools: ["Literature review", "Trauma-informed framework design"]
 cover:
   url: "/plate-water.svg"
   alt: "Technical study of a water mechanism, drawn in ink on linen paper"
-links:
-  - label: "Read the full paper (PDF)"
-    href: "/papers/calling-it-what-it-is.pdf"
+links: []
 marginalia:
   - "Draws on lived experience, practitioner insight, and more than 40 scholarly sources."
   - "The paper the UConn poster and every TRACEs talk since have been drawn from."

@@ -13,8 +13,6 @@ cover:
   alt: "Technical study of interlocking gears, drawn in ink on linen paper"
   caption: "Plate I — the mechanism, not the metaphor"
 links:
-  - label: "Read the paper: Calling It What It Is (PDF)"
-    href: "/papers/calling-it-what-it-is.pdf"
   - label: "Facilitator guide (PDF)"
     href: "/traces/traces-facilitator-guide.pdf"
   - label: "Training presentation (PDF)"

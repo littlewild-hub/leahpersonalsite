@@ -10,9 +10,7 @@ tools: ["Policy design", "Legislative drafting", "Fiscal modeling"]
 cover:
   url: "/plate-wing.svg"
   alt: "Technical study of a wing structure, drawn in ink on linen paper"
-links:
-  - label: "Read the full proposal (PDF)"
-    href: "/papers/oswap-ohio-skilled-workforce-advancement-program.pdf"
+links: []
 marginalia: []
 ---
 

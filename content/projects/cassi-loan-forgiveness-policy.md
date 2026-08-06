@@ -10,9 +10,7 @@ tools: ["Policy design", "Legislative drafting", "Fiscal modeling"]
 cover:
   url: "/plate-water.svg"
   alt: "Technical study of a water mechanism, drawn in ink on linen paper"
-links:
-  - label: "Read the full proposal (PDF)"
-    href: "/papers/cassi-loan-forgiveness-program.pdf"
+links: []
 marginalia: []
 ---
 
