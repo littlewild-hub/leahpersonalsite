@@ -4,17 +4,10 @@ import { content } from "@/lib/content";
 import { Nav } from "@/components/site/nav";
 import { Footer } from "@/components/site/footer";
 
-/* ---------------------------------------------------------------------------
- * Fonts are loaded via <link> rather than next/font so the project builds in
- * environments without access to fonts.googleapis.com at build time.
- * To self-host them instead (no layout shift, no third-party request), see the
- * "Self-hosting the fonts" section of README.md — it is a drop-in swap.
- * ------------------------------------------------------------------------- */
 const FONT_HREF =
   "https://fonts.googleapis.com/css2" +
-  "?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600" +
-  "&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600" +
-  "&family=JetBrains+Mono:wght@400;500" +
+  "?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500" +
+  "&family=Inter:wght@400;500;600;700" +
   "&display=swap";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -44,7 +37,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body>
         <a
           href="#main"
-          className="folio sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:border focus:border-ink focus:bg-paper focus:px-4 focus:py-2"
+          className="folio sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:bg-paper focus:px-4 focus:py-2"
         >
           Skip to contents
         </a>
