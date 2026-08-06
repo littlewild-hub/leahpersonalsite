@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Layered Appalachian mountain horizon with botanical linework</title>
+  <desc id="desc">A warm peach sky fades into layered blue mountain ridges, with copper and navy wildflower linework rising from the lower right.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#f8d3bc"/>
+      <stop offset="0.48" stop-color="#f4ad7f"/>
+      <stop offset="1" stop-color="#e98b64"/>
+    </linearGradient>
+    <linearGradient id="mist" x1="0" x2="1">
+      <stop offset="0" stop-color="#fff3e8" stop-opacity=".62"/>
+      <stop offset=".6" stop-color="#fff3e8" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#fff3e8" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <pattern id="grain" width="220" height="220" patternUnits="userSpaceOnUse">
+      <filter id="noise">
+        <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" seed="7"/>
+      </filter>
+      <rect width="220" height="220" filter="url(#noise)" opacity=".08"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <ellipse cx="980" cy="230" rx="560" ry="180" fill="#fff0df" opacity=".25" filter="url(#soft)"/>
+  <path d="M0 510 C210 472 340 485 510 462 C690 438 760 389 920 414 C1070 438 1180 487 1325 469 C1440 455 1510 424 1600 432 L1600 900 L0 900 Z" fill="#c99682" opacity=".72"/>
+  <path d="M0 585 C180 540 315 561 470 530 C630 498 720 458 860 474 C1045 495 1112 557 1274 543 C1418 530 1512 493 1600 500 L1600 900 L0 900 Z" fill="#887f82" opacity=".78"/>
+  <path d="M0 655 C168 614 292 627 410 596 C566 555 664 542 782 564 C944 595 1042 646 1198 629 C1357 612 1479 567 1600 577 L1600 900 L0 900 Z" fill="#4f6372" opacity=".9"/>
+  <path d="M0 744 C170 697 292 702 434 672 C589 639 724 641 848 676 C1015 724 1121 737 1245 706 C1371 675 1493 646 1600 660 L1600 900 L0 900 Z" fill="#18354d"/>
+  <path d="M0 816 C170 788 305 782 454 757 C610 731 736 738 874 771 C1029 808 1163 814 1290 790 C1409 768 1514 747 1600 753 L1600 900 L0 900 Z" fill="#0b253b"/>
+  <rect width="930" height="900" fill="url(#mist)"/>
+
+  <g fill="none" stroke="#0b253b" stroke-linecap="round" stroke-linejoin="round">
+    <g transform="translate(1115 808) scale(1.05)">
+      <path d="M0 0 C-4 -118 20 -245 77 -382" stroke-width="3"/>
+      <path d="M18 -91 C-18 -130 -34 -176 -42 -224" stroke-width="2.5"/>
+      <path d="M38 -174 C83 -212 105 -253 115 -301" stroke-width="2.5"/>
+      <path d="M61 -280 C34 -313 23 -348 20 -382" stroke-width="2.2"/>
+      <g stroke-width="1.8">
+        <path d="M-28 -190 c-34 -6 -50 -25 -63 -46 c27 2 50 14 63 46Z"/>
+        <path d="M-19 -162 c-31 4 -50 20 -65 40 c28 1 52 -9 65 -40Z"/>
+        <path d="M70 -225 c36 -7 56 -27 69 -50 c-31 2 -55 16 -69 50Z"/>
+        <path d="M83 -260 c31 3 54 18 70 39 c-30 2 -55 -9 -70 -39Z"/>
+        <path d="M34 -334 c-28 -8 -43 -25 -54 -44 c25 3 44 15 54 44Z"/>
+        <path d="M49 -320 c31 -1 50 12 66 31 c-27 5 -51 -3 -66 -31Z"/>
+      </g>
+    </g>
+
+    <g transform="translate(1280 820) scale(.96)">
+      <path d="M0 0 C10 -145 6 -270 30 -500" stroke-width="3.2"/>
+      <path d="M12 -112 C-41 -150 -67 -194 -83 -241" stroke-width="2.4"/>
+      <path d="M19 -203 C63 -242 86 -286 95 -337" stroke-width="2.4"/>
+      <path d="M24 -300 C-19 -337 -41 -379 -52 -425" stroke-width="2.4"/>
+      <path d="M28 -401 C61 -432 78 -467 85 -503" stroke-width="2.2"/>
+      <g stroke-width="1.7">
+        <path d="M-59 -225 c-27 -18 -48 -21 -72 -16 c18 22 41 31 72 16Z"/>
+        <path d="M-43 -199 c-35 0 -59 14 -78 35 c31 6 58 -4 78 -35Z"/>
+        <path d="M70 -298 c34 -12 55 -33 66 -61 c-31 7 -54 26 -66 61Z"/>
+        <path d="M76 -269 c32 2 55 17 71 39 c-29 4 -55 -7 -71 -39Z"/>
+        <path d="M-35 -399 c-28 -11 -49 -31 -62 -57 c28 5 51 22 62 57Z"/>
+        <path d="M-19 -374 c-33 -1 -57 11 -76 31 c30 7 57 -1 76 -31Z"/>
+        <path d="M68 -471 c27 -11 45 -29 56 -51 c-26 5 -46 20 -56 51Z"/>
+      </g>
+    </g>
+
+    <g transform="translate(1452 818) scale(.82)">
+      <path d="M0 0 C-4 -170 28 -318 5 -535" stroke-width="3"/>
+      <path d="M8 -145 C54 -185 74 -230 80 -278" stroke-width="2.3"/>
+      <path d="M13 -258 C-34 -292 -57 -335 -68 -380" stroke-width="2.3"/>
+      <path d="M10 -379 C47 -414 65 -454 69 -496" stroke-width="2.2"/>
+      <g stroke-width="1.7">
+        <path d="M61 -254 c32 -9 53 -29 67 -54 c-31 4 -55 20 -67 54Z"/>
+        <path d="M52 -219 c33 0 56 13 74 34 c-31 6 -57 -3 -74 -34Z"/>
+        <path d="M-48 -360 c-31 -10 -53 -29 -68 -53 c31 3 56 19 68 53Z"/>
+        <path d="M-40 -328 c-33 2 -56 17 -72 40 c31 3 57 -8 72 -40Z"/>
+        <path d="M53 -471 c29 -9 47 -27 58 -49 c-27 4 -48 19 -58 49Z"/>
+      </g>
+    </g>
+
+    <g transform="translate(1000 820)">
+      <path d="M0 0 C18 -95 37 -173 92 -246" stroke-width="2.8"/>
+      <path d="M25 -95 C-8 -126 -25 -158 -31 -194" stroke-width="2"/>
+      <path d="M55 -162 C90 -181 113 -207 126 -239" stroke-width="2"/>
+      <circle cx="-34" cy="-204" r="18" stroke-width="2"/>
+      <circle cx="-50" cy="-192" r="16" stroke-width="2"/>
+      <circle cx="-20" cy="-188" r="16" stroke-width="2"/>
+      <circle cx="130" cy="-244" r="16" stroke-width="2"/>
+      <circle cx="115" cy="-252" r="14" stroke-width="2"/>
+      <circle cx="142" cy="-258" r="13" stroke-width="2"/>
+    </g>
+  </g>
+
+  <g fill="#ef9b6d" stroke="#0b253b" stroke-width="1.2">
+    <ellipse cx="1190" cy="550" rx="8" ry="22" transform="rotate(-27 1190 550)"/>
+    <ellipse cx="1219" cy="520" rx="8" ry="22" transform="rotate(24 1219 520)"/>
+    <ellipse cx="1360" cy="475" rx="8" ry="22" transform="rotate(-30 1360 475)"/>
+    <ellipse cx="1393" cy="447" rx="8" ry="22" transform="rotate(27 1393 447)"/>
+    <ellipse cx="1510" cy="512" rx="8" ry="22" transform="rotate(22 1510 512)"/>
+    <ellipse cx="1540" cy="478" rx="8" ry="22" transform="rotate(-28 1540 478)"/>
+  </g>
+
+  <rect width="1600" height="900" fill="url(#grain)" opacity=".12" style="mix-blend-mode:multiply"/>
+</svg>
