@@ -1,0 +1,127 @@
+.about-thesis,
+.about-presentations,
+.about-formation,
+.about-credentials {
+  background: var(--paper-light);
+}
+
+.about-thesis,
+.about-experience,
+.about-presentations,
+.about-learning,
+.about-credentials {
+  padding-top: clamp(4.5rem, 7vw, 6.5rem);
+  padding-bottom: clamp(4.5rem, 7vw, 6.5rem);
+}
+
+.about-formation__column {
+  padding-top: clamp(4rem, 6.5vw, 6rem);
+  padding-bottom: clamp(4rem, 6.5vw, 6rem);
+}
+
+.about-section-heading {
+  margin-bottom: clamp(3.25rem, 5vw, 5rem);
+}
+
+.about-learning__intro {
+  margin-bottom: clamp(3.5rem, 5vw, 4.75rem);
+}
+
+.about-learning__intensives {
+  grid-template-columns: minmax(18rem, .78fr) minmax(0, 1.22fr);
+  gap: clamp(3rem, 7vw, 7rem);
+  align-items: start;
+}
+
+.about-topic-panel {
+  min-width: 0;
+}
+
+.about-topic-note {
+  max-width: 31rem;
+  margin-bottom: 2rem;
+  color: var(--muted-light);
+  font-size: .94rem;
+}
+
+.about-topic-distribution {
+  border-top: 1px solid var(--line-light);
+}
+
+.about-topic-distribution article {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: .65rem 1.5rem;
+  padding: 1.15rem 0 1.25rem;
+  border-bottom: 1px solid var(--line-light);
+}
+
+.about-topic-distribution article > div:first-child {
+  min-width: 0;
+}
+
+.about-topic-distribution h3 {
+  margin: 0 0 .2rem;
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.about-topic-distribution span {
+  color: var(--muted-light);
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.about-topic-distribution strong {
+  align-self: start;
+  color: var(--peach);
+  font-size: .82rem;
+  letter-spacing: .06em;
+}
+
+.about-topic-bar {
+  grid-column: 1 / -1;
+  height: 3px;
+  overflow: hidden;
+  background: rgba(247, 230, 211, .14);
+}
+
+.about-topic-bar i {
+  display: block;
+  height: 100%;
+  background: var(--peach);
+  box-shadow: 0 0 .8rem rgba(239, 154, 109, .38);
+}
+
+.about-intensive-column > .eyebrow {
+  margin-bottom: 1.2rem;
+}
+
+@media (max-width: 900px) {
+  .about-learning__intensives {
+    grid-template-columns: 1fr;
+  }
+
+  .about-topic-panel {
+    max-width: 42rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .about-thesis,
+  .about-experience,
+  .about-presentations,
+  .about-learning,
+  .about-credentials {
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
+  }
+
+  .about-formation__column {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+}
