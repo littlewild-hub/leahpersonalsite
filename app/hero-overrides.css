@@ -131,12 +131,16 @@
   color: var(--ink);
 }
 
-.featured-work .section-title-row--light {
+.featured-work .section-title-row--light,
+.featured-work .eyebrow,
+.featured-work .section-title-row > p,
+.featured-work .featured-grid p,
+.featured-work .featured-grid span,
+.featured-work .featured-grid b {
   color: var(--ink);
 }
 
 .featured-work .section-title-row > p {
-  color: var(--muted-dark);
   opacity: 1;
 }
 
@@ -151,19 +155,7 @@
 }
 
 .featured-work .featured-grid a:hover {
-  background: rgba(200, 100, 69, 0.08);
-}
-
-.featured-work .featured-grid p {
-  color: var(--copper);
-}
-
-.featured-work .featured-grid span {
-  color: var(--muted-dark);
-}
-
-.featured-work .featured-grid b {
-  color: var(--copper);
+  background: rgba(12, 36, 56, 0.06);
 }
 
 @media (max-width: 1000px) {
