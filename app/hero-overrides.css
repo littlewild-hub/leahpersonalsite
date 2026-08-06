@@ -127,7 +127,7 @@
 }
 
 .featured-work {
-  background: var(--paper);
+  background: var(--paper-light);
   color: var(--ink);
 }
 
