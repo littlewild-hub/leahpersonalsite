@@ -1,3 +1,16 @@
+main.about-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-hero { order: 1; }
+.about-thesis { order: 2; }
+.about-formation { order: 3; }
+.about-experience { order: 4; }
+.about-presentations { order: 5; }
+.about-learning { order: 6; }
+.about-credentials { order: 7; }
+
 .about-thesis,
 .about-presentations,
 .about-formation,
