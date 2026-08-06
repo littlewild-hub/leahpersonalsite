@@ -60,13 +60,32 @@ const presentations = [
   },
 ];
 
-const learningDomains = [
-  'Family peer support & multi-system youth',
-  'Trauma, domestic violence & safety planning',
-  'Program design, evaluation & data use',
-  'Leadership, organizing & stakeholder communication',
-  'Substance-use prevention & behavioral health',
-  'Ethics, equity & cultural humility',
+const trainingTopics = [
+  {
+    name: 'Family, youth & multi-system care',
+    count: 76,
+    percent: 50.7,
+  },
+  {
+    name: 'Behavioral health & treatment',
+    count: 63,
+    percent: 42.0,
+  },
+  {
+    name: 'Trauma, violence & safety',
+    count: 44,
+    percent: 29.3,
+  },
+  {
+    name: 'Leadership, ethics & civic practice',
+    count: 28,
+    percent: 18.7,
+  },
+  {
+    name: 'Program design, data & operations',
+    count: 13,
+    percent: 8.7,
+  },
 ];
 
 const intensiveLearning = [
@@ -269,28 +288,40 @@ export default function AboutPage() {
             </div>
           </header>
 
-          <div className="about-learning__domains">
-            {learningDomains.map((domain, index) => (
-              <div key={domain}><span>{String(index + 1).padStart(2, '0')}</span><p>{domain}</p></div>
-            ))}
-          </div>
-
           <div className="about-learning__intensives">
-            <div>
-              <p className="eyebrow">Selected intensive learning</p>
-              <p>
-                The full archive is broader than a conventional certification list. It tracks the
-                subjects, providers, instructors, dates, and contact hours behind the practice.
+            <div className="about-topic-panel">
+              <p className="eyebrow">Training distribution</p>
+              <p className="about-topic-note">
+                Share of the 150-record archive tagged within each domain. Trainings can span more
+                than one topic, so the percentages intentionally overlap.
               </p>
+              <div className="about-topic-distribution">
+                {trainingTopics.map((topic) => (
+                  <article key={topic.name}>
+                    <div>
+                      <h3>{topic.name}</h3>
+                      <span>{topic.count} trainings</span>
+                    </div>
+                    <strong>{topic.percent.toFixed(1)}%</strong>
+                    <div className="about-topic-bar" aria-hidden="true">
+                      <i style={{ width: `${topic.percent}%` }} />
+                    </div>
+                  </article>
+                ))}
+              </div>
             </div>
-            <div className="about-intensive-list">
-              {intensiveLearning.map((item) => (
-                <article key={`${item.title}-${item.year}`}>
-                  <span>{item.year}</span>
-                  <div><h3>{item.title}</h3><p>{item.provider}</p></div>
-                  <strong>{item.hours}</strong>
-                </article>
-              ))}
+
+            <div className="about-intensive-column">
+              <p className="eyebrow">Selected intensive learning</p>
+              <div className="about-intensive-list">
+                {intensiveLearning.map((item) => (
+                  <article key={`${item.title}-${item.year}`}>
+                    <span>{item.year}</span>
+                    <div><h3>{item.title}</h3><p>{item.provider}</p></div>
+                    <strong>{item.hours}</strong>
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
         </section>
