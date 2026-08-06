@@ -1,11 +1,17 @@
+import './globals.css';
+
 export const metadata = {
-  title: 'Leah Buzek — for the love of our neighbors',
+  metadataBase: new URL('https://leahbuzek.com'),
+  title: {
+    default: 'Leah Buzek — for the love of our neighbors',
+    template: '%s',
+  },
   description:
-    "Leah Buzek's growing body of work in public service, civic infrastructure, research, writing, and practical tools.",
+    "Leah Buzek's growing body of work in relational ethics, caregiver trauma, civic infrastructure, policy design, and public writing.",
   openGraph: {
     title: 'Leah Buzek — for the love of our neighbors',
     description:
-      'A living body of work in systems design, civic infrastructure, research, writing, and public problem-solving.',
+      'A living body of work in public systems, care, civic infrastructure, research, and practical problem-solving.',
     type: 'website',
   },
 };
