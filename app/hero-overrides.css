@@ -126,6 +126,46 @@
   transform: scale(0.5);
 }
 
+.featured-work {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.featured-work .section-title-row--light {
+  color: var(--ink);
+}
+
+.featured-work .section-title-row > p {
+  color: var(--muted-dark);
+  opacity: 1;
+}
+
+.featured-work .featured-grid {
+  border-top-color: rgba(12, 36, 56, 0.42);
+}
+
+.featured-work .featured-grid a {
+  color: var(--ink);
+  border-right-color: rgba(12, 36, 56, 0.26);
+  border-bottom-color: rgba(12, 36, 56, 0.26);
+}
+
+.featured-work .featured-grid a:hover {
+  background: rgba(200, 100, 69, 0.08);
+}
+
+.featured-work .featured-grid p {
+  color: var(--copper);
+}
+
+.featured-work .featured-grid span {
+  color: var(--muted-dark);
+}
+
+.featured-work .featured-grid b {
+  color: var(--copper);
+}
+
 @media (max-width: 1000px) {
   .hero__constellation-field {
     min-height: 34rem;
