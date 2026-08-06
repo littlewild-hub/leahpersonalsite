@@ -66,17 +66,18 @@ export default async function HomePage() {
         />
 
         <div className="relative mx-auto max-w-[94rem] px-6 pt-36 sm:px-10 sm:pt-40 lg:px-[4.7rem] lg:pt-[9.8rem]">
-          <div className="max-w-[620px]">
-            <h1 className="settle font-hand text-[clamp(3.55rem,5.25vw,5.35rem)] font-medium leading-[0.9] tracking-[-0.025em] text-ink">
-              Rooted in rural.
+          <div className="max-w-[660px]">
+            <h1 className="settle font-hand text-[clamp(3.6rem,5.4vw,5.7rem)] font-medium leading-[0.9] tracking-[-0.025em] text-ink">
+              For the love of
               <br />
-              Driven by care.
-              <br />
-              Built for <em className="font-normal text-sanguine-ink">impact.</em>
+              our <em className="font-normal text-sanguine-ink">neighbors.</em>
             </h1>
 
             <div className="mt-7 h-[2px] w-12 bg-sanguine" aria-hidden="true" />
-            <p className="mt-4 max-w-[31rem] text-[1rem] leading-[1.65] text-ink sm:text-[1.05rem]">
+            <p className="mt-4 max-w-[34rem] font-note text-[0.78rem] font-semibold uppercase tracking-[0.14em] text-ink-soft">
+              Rooted in rural. Driven by care. Built for impact.
+            </p>
+            <p className="mt-3 max-w-[31rem] text-[1rem] leading-[1.65] text-ink sm:text-[1.05rem]">
               I partner with communities and organizations to design what is needed, not just what is easy.
             </p>
 
