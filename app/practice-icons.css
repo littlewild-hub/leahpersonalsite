@@ -1,0 +1,56 @@
+.practice-icon {
+  display: block;
+  width: 4.75rem;
+  height: 4.75rem;
+  margin: 0 auto 1.65rem;
+  overflow: visible;
+  color: var(--peach);
+  filter: drop-shadow(0 0 10px rgba(239, 154, 109, 0.16));
+}
+
+.practice-icon__line {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.35;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.72;
+  vector-effect: non-scaling-stroke;
+}
+
+.practice-icon__node {
+  fill: var(--night);
+  stroke: currentColor;
+  stroke-width: 1.55;
+  vector-effect: non-scaling-stroke;
+  transition: fill 180ms ease, filter 180ms ease, transform 180ms ease;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.practice-icon__node--core {
+  fill: currentColor;
+  filter: drop-shadow(0 0 4px rgba(239, 154, 109, 0.5));
+}
+
+.practice-band article:hover .practice-icon__node--core {
+  filter: drop-shadow(0 0 9px rgba(239, 154, 109, 0.92));
+  transform: scale(1.14);
+}
+
+.practice-band article:hover .practice-icon__line {
+  opacity: 0.92;
+}
+
+@media (max-width: 720px) {
+  .practice-icon {
+    width: 4.25rem;
+    height: 4.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .practice-icon__node {
+    transition: none;
+  }
+}
