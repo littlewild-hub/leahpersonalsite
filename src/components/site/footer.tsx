@@ -1,51 +1,54 @@
 import Link from "next/link";
 import type { Profile } from "@/lib/content";
-import { Divider, VitruvianMark } from "@/components/notebook/ornaments";
 
 export function Footer({ profile }: { profile: Profile }) {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="no-print mx-auto mt-28 max-w-6xl px-5 pb-16 sm:px-8">
-      <Divider className="mb-10" />
+    <footer className="no-print border-t border-paper/15 bg-ink text-paper">
+      <div className="mx-auto max-w-[94rem] px-6 py-16 sm:px-10 lg:px-16">
+        <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div className="max-w-2xl">
+            <p className="folio text-[#e88c60]">For the love of our neighbors</p>
+            <h2 className="mt-4 font-hand text-[clamp(2.8rem,5vw,5rem)] leading-[0.92] text-paper">
+              Good systems should feel like care made visible.
+            </h2>
+            <p className="mt-5 max-w-xl text-[0.98rem] leading-7 text-paper/70">{profile.title}</p>
+          </div>
 
-      <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
-        <div className="max-w-sm">
-          <p className="font-hand text-2xl leading-tight text-ink">{profile.name}</p>
-          <p className="mt-1 text-[0.95rem] italic text-ink-soft">{profile.title}</p>
-          {profile.email && (
-            <a href={`mailto:${profile.email}`} className="link-ink mt-3 inline-block font-note text-sm">
-              {profile.email}
-            </a>
-          )}
-        </div>
-
-        <div className="flex items-start gap-10">
-          {profile.socials.length > 0 && (
-            <ul className="space-y-1.5">
-              {profile.socials.map((s) => (
-                <li key={s.href}>
-                  <Link
-                    href={s.href}
-                    className="folio text-ink-faint transition-colors hover:text-ink"
-                    target={s.href.startsWith("http") ? "_blank" : undefined}
-                    rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  >
-                    {s.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          )}
-          <div className="hidden h-24 w-24 text-verdigris sm:block" aria-hidden="true">
-            <VitruvianMark />
+          <div className="lg:text-right">
+            {profile.email && (
+              <a
+                href={`mailto:${profile.email}`}
+                className="font-note text-sm text-paper underline decoration-[#e88c60] underline-offset-4"
+              >
+                {profile.email}
+              </a>
+            )}
+            {profile.socials.length > 0 && (
+              <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 lg:justify-end">
+                {profile.socials.map((social) => (
+                  <li key={social.href}>
+                    <Link
+                      href={social.href}
+                      className="folio text-paper/65 transition-colors hover:text-[#e88c60]"
+                      target={social.href.startsWith("http") ? "_blank" : undefined}
+                      rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    >
+                      {social.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
-      </div>
 
-      <p className="folio mt-10 text-ink-faint/70">
-        {year} — compiled and recompiled, continuously
-      </p>
+        <div className="mt-14 flex flex-col gap-2 border-t border-paper/15 pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="folio text-paper/45">© {year} {profile.name}</p>
+          <p className="folio text-paper/45">Rooted in Ohio. Built for impact.</p>
+        </div>
+      </div>
     </footer>
   );
 }

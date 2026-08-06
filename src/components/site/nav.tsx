@@ -5,60 +5,56 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { href: "/", label: "Home" },
-  { href: "/work", label: "Folios" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Get in Touch" },
+  { href: "/work", label: "Work" },
+  { href: "/work?discipline=writing", label: "Writing" },
+  { href: "/work?discipline=research", label: "Resources" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function Nav({ name }: { name: string }) {
   const pathname = usePathname();
 
   return (
-    <header className="no-print sticky top-0 z-50 border-b border-ink-ghost/60 bg-paper/85 backdrop-blur-[3px]">
+    <header className="no-print absolute inset-x-0 top-0 z-50 px-4 pt-4 sm:px-8 sm:pt-7">
       <nav
         aria-label="Primary"
-        className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-6 px-5 sm:px-8"
+        className="nav-glass mx-auto flex min-h-16 max-w-[94rem] items-center justify-between gap-5 rounded-2xl px-5 py-3 sm:px-8"
       >
-        <Link
-          href="/"
-          className="group flex items-baseline gap-2 no-underline"
-          aria-label={`${name} — home`}
-        >
-          <span className="font-hand text-xl font-semibold tracking-tight text-ink">{name}</span>
-          <span
-            className="folio hidden text-sanguine transition-opacity duration-300 group-hover:opacity-100 sm:inline opacity-0"
-            aria-hidden="true"
-          >
-            <span className="mirror inline-block">codex</span>
+        <Link href="/" className="no-underline" aria-label={`${name} — home`}>
+          <span className="font-note text-[0.95rem] font-medium uppercase tracking-[0.22em] text-ink sm:text-[1.08rem]">
+            {name}
           </span>
         </Link>
 
-        <ul className="flex items-center gap-1 sm:gap-2">
-          {links.map((l) => {
-            const active = l.href === "/" ? pathname === "/" : pathname.startsWith(l.href);
-            return (
-              <li key={l.href}>
-                <Link
-                  href={l.href}
-                  aria-current={active ? "page" : undefined}
-                  className={cn(
-                    "folio relative px-2 py-2 no-underline transition-colors duration-200 sm:px-3",
-                    active ? "text-ink" : "text-ink-faint hover:text-ink"
-                  )}
-                >
-                  {l.label}
-                  {active && (
-                    <span
-                      aria-hidden="true"
-                      className="absolute inset-x-2 -bottom-px h-[2px] bg-sanguine sm:inset-x-3"
-                    />
-                  )}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+        <div className="flex items-center gap-2">
+          <ul className="hidden items-center gap-1 lg:flex">
+            {links.map((link) => {
+              const active = pathname.startsWith(link.href.split("?")[0]) && link.href !== "/contact";
+              return (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    aria-current={active ? "page" : undefined}
+                    className={cn(
+                      "folio rounded-md px-3 py-2 no-underline transition-colors",
+                      active ? "text-sanguine-ink" : "text-ink hover:text-sanguine-ink"
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+
+          <Link
+            href="/contact"
+            className="folio rounded-sm border border-ink bg-ink px-4 py-3 text-paper no-underline transition-colors hover:bg-transparent hover:text-ink sm:px-5"
+          >
+            Let&apos;s connect
+          </Link>
+        </div>
       </nav>
     </header>
   );

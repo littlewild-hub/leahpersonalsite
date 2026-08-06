@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 760" role="img" aria-labelledby="title desc">
+<title id="title">Appalachian mountain horizon with botanical linework</title>
+<desc id="desc">Warm peach and terracotta sky over layered blue Appalachian mountains with dense copper and navy wildflower linework on the right.</desc>
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#fae2d2"/>
+    <stop offset=".38" stop-color="#f8c8a6"/>
+    <stop offset=".72" stop-color="#f0a072"/>
+    <stop offset="1" stop-color="#e98660"/>
+  </linearGradient>
+  <linearGradient id="haze" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#fff8f1" stop-opacity=".76"/>
+    <stop offset=".52" stop-color="#fff8f1" stop-opacity=".13"/>
+    <stop offset="1" stop-color="#fff8f1" stop-opacity="0"/>
+  </linearGradient>
+  <filter id="soft"><feGaussianBlur stdDeviation="13"/></filter>
+  <filter id="grain">
+    <feTurbulence type="fractalNoise" baseFrequency=".82" numOctaves="3" seed="13"/>
+    <feColorMatrix type="saturate" values="0"/>
+    <feComponentTransfer><feFuncA type="table" tableValues="0 .075"/></feComponentTransfer>
+  </filter>
+  <g id="leaf">
+    <path d="M0 0 C7-14 18-15 23-4 C15 5 6 6 0 0Z"/>
+    <path d="M1 0 C8-4 15-5 22-4" fill="none"/>
+  </g>
+  <g id="sprig">
+    <path d="M0 0 Q27-31 54-62" fill="none"/>
+    <use href="#leaf" transform="translate(15 -18) rotate(-28) scale(.72)"/>
+    <use href="#leaf" transform="translate(29 -35) rotate(28) scale(.66)"/>
+    <use href="#leaf" transform="translate(44 -52) rotate(-25) scale(.58)"/>
+  </g>
+  <g id="flower">
+    <ellipse cx="0" cy="-9" rx="5" ry="10"/>
+    <ellipse cx="8" cy="-2" rx="5" ry="10" transform="rotate(60 8 -2)"/>
+    <ellipse cx="5" cy="8" rx="5" ry="10" transform="rotate(120 5 8)"/>
+    <ellipse cx="-5" cy="8" rx="5" ry="10" transform="rotate(-120 -5 8)"/>
+    <ellipse cx="-8" cy="-2" rx="5" ry="10" transform="rotate(-60 -8 -2)"/>
+    <circle r="3.6" fill="#ef9466"/>
+  </g>
+</defs>
+
+<rect width="1600" height="760" fill="url(#sky)"/>
+<ellipse cx="1000" cy="155" rx="535" ry="120" fill="#fff5eb" opacity=".22" filter="url(#soft)"/>
+<rect width="1600" height="760" fill="url(#haze)"/>
+
+<path d="M0 492 L105 478 L188 488 L278 468 L362 462 L455 451 L545 438 L630 414 L707 382 L765 350 L812 329 L855 348 L899 382 L946 408 L1003 391 L1068 421 L1132 434 L1200 417 L1274 437 L1352 416 L1427 426 L1512 404 L1600 414 L1600 760 L0 760Z" fill="#bf9082" opacity=".55"/>
+<path d="M0 548 L96 538 L176 526 L252 538 L338 514 L424 497 L505 481 L592 465 L676 443 L758 425 L846 444 L930 467 L1006 480 L1084 470 L1160 490 L1238 476 L1322 490 L1410 469 L1500 479 L1600 464 L1600 760 L0 760Z" fill="#817980" opacity=".72"/>
+<path d="M0 607 L88 590 L176 586 L261 563 L351 551 L440 537 L530 523 L619 516 L708 531 L795 548 L881 561 L970 550 L1057 565 L1145 555 L1232 570 L1320 554 L1412 546 L1510 535 L1600 541 L1600 760 L0 760Z" fill="#536879" opacity=".9"/>
+<path d="M0 674 L95 658 L185 644 L278 633 L362 620 L452 608 L540 598 L632 609 L720 621 L814 638 L903 645 L993 634 L1083 647 L1175 639 L1263 629 L1352 616 L1445 604 L1532 597 L1600 601 L1600 760 L0 760Z" fill="#23465f"/>
+<path d="M0 721 L110 706 L220 699 L330 687 L440 681 L560 675 L680 683 L800 696 L920 703 L1040 699 L1160 693 L1280 679 L1400 667 L1510 661 L1600 657 L1600 760 L0 760Z" fill="#0a2940"/>
+
+<g fill="none" stroke="#f9c8a8" stroke-opacity=".12" stroke-width="1.2">
+  <path d="M0 548 L96 538 L176 526 L252 538 L338 514 L424 497 L505 481 L592 465 L676 443 L758 425 L846 444 L930 467 L1006 480 L1084 470 L1160 490 L1238 476 L1322 490 L1410 469 L1500 479 L1600 464"/>
+  <path d="M0 607 L88 590 L176 586 L261 563 L351 551 L440 537 L530 523 L619 516 L708 531 L795 548 L881 561 L970 550 L1057 565 L1145 555 L1232 570 L1320 554 L1412 546 L1510 535 L1600 541"/>
+</g>
+
+<g fill="none" stroke="#0a2940" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M1000 760 C1008 632 1035 492 1092 356" stroke-width="2.5"/>
+  <use href="#sprig" transform="translate(1022 625) rotate(198) scale(1.04)"/>
+  <use href="#sprig" transform="translate(1047 548) rotate(-9) scale(.95)"/>
+  <use href="#sprig" transform="translate(1070 462) rotate(197) scale(.82)"/>
+  <use href="#sprig" transform="translate(1087 388) rotate(-8) scale(.68)"/>
+  <use href="#flower" transform="translate(1095 350) scale(.86)"/>
+
+  <path d="M1070 760 C1068 615 1088 457 1072 272" stroke-width="2.35"/>
+  <use href="#sprig" transform="translate(1077 633) rotate(-8) scale(1.08)"/>
+  <use href="#sprig" transform="translate(1080 557) rotate(194) scale(.98)"/>
+  <use href="#sprig" transform="translate(1081 475) rotate(-10) scale(.9)"/>
+  <use href="#sprig" transform="translate(1078 392) rotate(196) scale(.8)"/>
+  <use href="#sprig" transform="translate(1074 315) rotate(-7) scale(.68)"/>
+
+  <path d="M1142 760 C1148 624 1173 486 1220 326" stroke-width="2.55"/>
+  <use href="#sprig" transform="translate(1152 638) rotate(194) scale(1.08)"/>
+  <use href="#sprig" transform="translate(1173 563) rotate(-8) scale(1.02)"/>
+  <use href="#sprig" transform="translate(1188 486) rotate(197) scale(.92)"/>
+  <use href="#sprig" transform="translate(1205 406) rotate(-10) scale(.78)"/>
+  <use href="#sprig" transform="translate(1216 347) rotate(196) scale(.62)"/>
+  <use href="#flower" transform="translate(1222 320) scale(.82)"/>
+
+  <path d="M1210 760 C1208 592 1231 415 1266 220" stroke-width="2.7"/>
+  <use href="#sprig" transform="translate(1217 642) rotate(-7) scale(1.12)"/>
+  <use href="#sprig" transform="translate(1228 558) rotate(194) scale(1.04)"/>
+  <use href="#sprig" transform="translate(1242 470) rotate(-8) scale(.94)"/>
+  <use href="#sprig" transform="translate(1252 382) rotate(196) scale(.83)"/>
+  <use href="#sprig" transform="translate(1261 294) rotate(-6) scale(.7)"/>
+
+  <path d="M1280 760 C1289 620 1320 472 1368 305" stroke-width="2.45"/>
+  <use href="#sprig" transform="translate(1292 642) rotate(197) scale(1.08)"/>
+  <use href="#sprig" transform="translate(1312 561) rotate(-8) scale(1.0)"/>
+  <use href="#sprig" transform="translate(1331 480) rotate(195) scale(.9)"/>
+  <use href="#sprig" transform="translate(1350 390) rotate(-9) scale(.76)"/>
+  <use href="#flower" transform="translate(1371 298) scale(.9)"/>
+
+  <path d="M1350 760 C1353 604 1364 438 1350 258" stroke-width="2.5"/>
+  <use href="#sprig" transform="translate(1353 641) rotate(-8) scale(1.09)"/>
+  <use href="#sprig" transform="translate(1358 555) rotate(194) scale(1.01)"/>
+  <use href="#sprig" transform="translate(1359 470) rotate(-9) scale(.9)"/>
+  <use href="#sprig" transform="translate(1356 382) rotate(197) scale(.8)"/>
+  <use href="#sprig" transform="translate(1352 300) rotate(-7) scale(.67)"/>
+
+  <path d="M1418 760 C1424 632 1462 495 1513 363" stroke-width="2.5"/>
+  <use href="#sprig" transform="translate(1430 646) rotate(196) scale(1.06)"/>
+  <use href="#sprig" transform="translate(1452 573) rotate(-9) scale(.98)"/>
+  <use href="#sprig" transform="translate(1478 493) rotate(195) scale(.86)"/>
+  <use href="#sprig" transform="translate(1497 414) rotate(-7) scale(.73)"/>
+  <use href="#flower" transform="translate(1517 356) scale(.8)"/>
+
+  <path d="M1490 760 C1490 624 1501 487 1491 330" stroke-width="2.3"/>
+  <use href="#sprig" transform="translate(1495 645) rotate(-8) scale(1.04)"/>
+  <use href="#sprig" transform="translate(1499 560) rotate(194) scale(.97)"/>
+  <use href="#sprig" transform="translate(1500 479) rotate(-8) scale(.86)"/>
+  <use href="#sprig" transform="translate(1497 394) rotate(196) scale(.72)"/>
+
+  <path d="M1550 760 C1546 636 1568 510 1590 392" stroke-width="2.2"/>
+  <use href="#sprig" transform="translate(1557 650) rotate(195) scale(.98)"/>
+  <use href="#sprig" transform="translate(1570 575) rotate(-8) scale(.9)"/>
+  <use href="#sprig" transform="translate(1580 500) rotate(194) scale(.78)"/>
+</g>
+
+<g fill="#ef996b" stroke="#0a2940" stroke-width="1.05">
+  <use href="#leaf" transform="translate(1040 552) rotate(18) scale(.68)"/>
+  <use href="#leaf" transform="translate(1111 492) rotate(-15) scale(.72)"/>
+  <use href="#leaf" transform="translate(1170 579) rotate(20) scale(.7)"/>
+  <use href="#leaf" transform="translate(1232 431) rotate(-14) scale(.68)"/>
+  <use href="#leaf" transform="translate(1318 522) rotate(16) scale(.73)"/>
+  <use href="#leaf" transform="translate(1380 467) rotate(-18) scale(.72)"/>
+  <use href="#leaf" transform="translate(1450 535) rotate(19) scale(.7)"/>
+  <use href="#leaf" transform="translate(1526 476) rotate(-16) scale(.68)"/>
+</g>
+
+<rect width="1600" height="760" filter="url(#grain)" opacity=".32" style="mix-blend-mode:multiply"/>
+</svg>

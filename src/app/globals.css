@@ -1,56 +1,38 @@
 @import "tailwindcss";
 
-/* ===========================================================================
-   THE CODEX — design tokens
-   Palette: White / Navy / Teal / Bubblegum Pink / Periwinkle / Blush,
-   mapped onto a Renaissance notebook: paper, ink, red chalk.
-   =========================================================================== */
 @theme {
-  /* --- Ground: the page itself ------------------------------------------ */
-  --color-paper:        #FFFFFF;  /* White — primary paper */
-  --color-paper-2:      #F5F7FA;  /* recessed surface */
-  --color-paper-3:      #ECEFF3;  /* deepest fold */
+  --color-paper: #fff7ef;
+  --color-paper-2: #f9e4d3;
+  --color-paper-3: #edc5ab;
 
-  /* --- Ink: iron gall, the writing hand --------------------------------- */
-  --color-ink:          #011936;  /* Prussian Blue — headings, body */
-  --color-ink-soft:     #33455E;  /* secondary text (8.65:1 on paper) */
-  --color-ink-faint:    #6B7A8F;  /* captions, metadata */
-  --color-ink-ghost:    #B9C2CE;  /* rules, hairlines */
+  --color-ink: #09243a;
+  --color-ink-soft: #334b5d;
+  --color-ink-faint: #697a86;
+  --color-ink-ghost: #d7bda9;
 
-  /* --- Verdigris: the technical hand (diagrams, measure, links) --------- */
-  --color-verdigris:      #008E89;  /* Dark Cyan — decorative / large only */
-  --color-verdigris-ink:  #00706C;  /* text-safe, 5.27:1 on paper */
-  --color-verdigris-wash: #DCEFEE;  /* tint fill */
+  --color-verdigris: #2d7775;
+  --color-verdigris-ink: #205f5d;
+  --color-verdigris-wash: #dce9e4;
 
-  /* --- Sanguine: red chalk, the annotating hand ------------------------- */
-  --color-sanguine:      #FF5666;  /* Bubblegum Pink — marks, fills */
-  --color-sanguine-ink:  #C41E36;  /* text-safe, 5.20:1 on paper */
-  --color-blush:         #FFCCC9;  /* Cotton Rose — highlight wash */
+  --color-sanguine: #d86f4c;
+  --color-sanguine-ink: #a84f35;
+  --color-blush: #f5c8b5;
 
-  /* --- Wash: the blue study ground -------------------------------------- */
-  --color-wash:          #C9DDFF;  /* Periwinkle */
-  --color-wash-deep:     #A9C7F5;
+  --color-wash: #c9d1ea;
+  --color-wash-deep: #929fc5;
 
-  /* --- Typography -------------------------------------------------------- */
-  --font-hand:  "EB Garamond", Georgia, "Times New Roman", serif;
-  --font-body:  "Crimson Text", Georgia, "Times New Roman", serif;
-  --font-note:  "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-hand: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Inter", Arial, sans-serif;
+  --font-note: "Inter", Arial, sans-serif;
 
-  --text-folio:      0.6875rem;
+  --text-folio: 0.7rem;
   --text-folio--line-height: 1.2;
-
-  /* --- Motion ------------------------------------------------------------ */
   --ease-quill: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* ===========================================================================
-   BASE
-   =========================================================================== */
 @layer base {
   :root {
     color-scheme: light;
-    /* Paper fibre. Two turbulence layers = irregular, non-tiling grain. */
-    --texture-fibre: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.38'/%3E%3C/svg%3E");
   }
 
   * { border-color: var(--color-ink-ghost); }
@@ -61,45 +43,19 @@
   }
 
   body {
-    background-color: var(--color-paper);
+    margin: 0;
+    background: var(--color-paper);
     color: var(--color-ink);
     font-family: var(--font-body);
-    font-size: 1.0625rem;
+    font-size: 1rem;
     line-height: 1.7;
-    position: relative;
-  }
-
-  /* Paper grain, laid over everything, never intercepting a click. */
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    pointer-events: none;
-    background-image: var(--texture-fibre);
-    mix-blend-mode: multiply;
-    opacity: 0.3;
-  }
-
-  /* Faint plate-mark vignette — the page never quite reaches the edge. */
-  body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: 9998;
-    pointer-events: none;
-    background: radial-gradient(
-      ellipse 120% 80% at 50% 40%,
-      transparent 55%,
-      rgba(1, 25, 54, 0.05) 100%
-    );
   }
 
   h1, h2, h3, h4 {
     font-family: var(--font-hand);
     font-weight: 500;
-    letter-spacing: -0.015em;
-    line-height: 1.1;
+    letter-spacing: -0.025em;
+    line-height: 1;
     text-wrap: balance;
   }
 
@@ -111,71 +67,39 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-verdigris-ink);
-    outline-offset: 3px;
-    border-radius: 1px;
+    outline: 2px solid var(--color-sanguine);
+    outline-offset: 4px;
+    border-radius: 2px;
   }
 }
 
-/* ===========================================================================
-   NOTEBOOK UTILITIES
-   =========================================================================== */
 @layer utilities {
-
-  /* --- Folio label: the mono hand used for dates, numbers, categories --- */
   .folio {
     font-family: var(--font-note);
     font-size: var(--text-folio);
-    letter-spacing: 0.18em;
+    font-weight: 600;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    font-weight: 500;
   }
 
-  /* --- Ruled ground: faint horizontal rules, like a lined leaf ---------- */
-  .ruled {
-    background-image: repeating-linear-gradient(
-      to bottom,
-      transparent 0,
-      transparent 2.03rem,
-      color-mix(in srgb, var(--color-ink) 7%, transparent) 2.03rem,
-      color-mix(in srgb, var(--color-ink) 7%, transparent) calc(2.03rem + 1px)
-    );
-  }
-
-  /* --- Plotted ground: the engineer's grid ------------------------------ */
+  .ruled,
   .plotted {
-    background-image:
-      linear-gradient(to right, color-mix(in srgb, var(--color-ink) 6%, transparent) 1px, transparent 1px),
-      linear-gradient(to bottom, color-mix(in srgb, var(--color-ink) 6%, transparent) 1px, transparent 1px);
-    background-size: 1.5rem 1.5rem;
+    background-image: none;
   }
 
-  /* --- Margin rule: the vertical line a scribe rules before writing ----- */
   .margin-rule {
-    position: relative;
+    border-left: 1px solid color-mix(in srgb, var(--color-sanguine) 55%, transparent);
   }
-  .margin-rule::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background: color-mix(in srgb, var(--color-sanguine) 45%, transparent);
+  .margin-rule::before { display: none; }
+
+  .pinned,
+  .pinned-r,
+  .pinned-0 {
+    transform: none;
   }
 
-  /* --- Pinned: a sheet laid on the desk, very slightly askew ------------ */
-  .pinned    { transform: rotate(-0.35deg); }
-  .pinned-r  { transform: rotate(0.45deg); }
-  .pinned-0  { transform: rotate(0deg); }
-
-  /* --- Ink underline that looks drawn, not typeset ---------------------- */
   .drawn-underline {
-    background-image: linear-gradient(
-      to right,
-      var(--color-sanguine) 0%,
-      var(--color-sanguine) 100%
-    );
+    background-image: linear-gradient(var(--color-sanguine), var(--color-sanguine));
     background-repeat: no-repeat;
     background-size: 100% 2px;
     background-position: 0 100%;
@@ -183,52 +107,66 @@
   }
 
   .link-ink {
-    color: var(--color-verdigris-ink);
+    color: var(--color-ink);
     text-decoration: none;
-    background-image: linear-gradient(currentColor, currentColor);
-    background-size: 0% 1px;
+    background-image: linear-gradient(var(--color-sanguine), var(--color-sanguine));
+    background-size: 0 2px;
     background-repeat: no-repeat;
     background-position: 0 100%;
-    transition: background-size 260ms var(--ease-quill);
+    transition: background-size 240ms var(--ease-quill), color 240ms var(--ease-quill);
   }
-  .link-ink:hover { background-size: 100% 1px; }
-
-  /* --- Drop cap, for the opening of a folio ----------------------------- */
-  .dropcap::first-letter {
-    font-family: var(--font-hand);
-    float: left;
-    font-size: 3.6em;
-    line-height: 0.82;
-    padding-right: 0.09em;
-    padding-top: 0.06em;
+  .link-ink:hover {
     color: var(--color-sanguine-ink);
-    font-weight: 600;
+    background-size: 100% 2px;
   }
 
-  /* --- Mirror writing. Da Vinci wrote right-to-left. --------------------- */
-  .mirror { display: inline-block; transform: scaleX(-1); }
+  .dropcap::first-letter {
+    float: left;
+    padding-right: 0.08em;
+    padding-top: 0.02em;
+    color: var(--color-sanguine-ink);
+    font-family: var(--font-hand);
+    font-size: 4em;
+    font-weight: 500;
+    line-height: 0.78;
+  }
 
-  /* --- Entrance: ink settling into paper -------------------------------- */
+  .mirror { display: inline-block; transform: none; }
+
   .settle {
     animation: settle 620ms var(--ease-quill) both;
   }
   @keyframes settle {
-    from { opacity: 0; transform: translateY(10px); filter: blur(3px); }
-    to   { opacity: 1; transform: none;             filter: blur(0); }
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: none; }
   }
 
-  /* --- Ink stroke drawing itself along a path --------------------------- */
   .draw-stroke {
     stroke-dasharray: var(--len, 400);
     stroke-dashoffset: var(--len, 400);
     animation: draw 1400ms var(--ease-quill) forwards;
   }
   @keyframes draw { to { stroke-dashoffset: 0; } }
+
+  .editorial-surface {
+    border: 1px solid color-mix(in srgb, var(--color-ink) 14%, transparent);
+    background: color-mix(in srgb, var(--color-paper) 92%, transparent);
+    box-shadow: 0 24px 60px -42px rgba(9, 36, 58, 0.55);
+  }
+
+  .nav-glass {
+    border: 1px solid rgba(255,255,255,.72);
+    background: rgba(255,247,239,.42);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.48);
+    backdrop-filter: blur(14px);
+  }
+
+  .navy-section {
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
 }
 
-/* ===========================================================================
-   REDUCED MOTION — the checklist item people forget
-   =========================================================================== */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -236,14 +174,9 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  .pinned, .pinned-r { transform: none; }
 }
 
-/* ===========================================================================
-   PRINT — a notebook should print like one
-   =========================================================================== */
 @media print {
-  body::before, body::after { display: none; }
   .no-print { display: none !important; }
   body { background: #fff; color: #000; }
 }

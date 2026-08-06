@@ -2,12 +2,6 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import { folioLabel } from "@/lib/utils";
 
-/* ---------------------------------------------------------------------------
- * Paper — a leaf of the codex.
- *
- * `ground` picks the ruling; `folio` stamps a catalogue number in the corner
- * the way an archivist would.
- * ------------------------------------------------------------------------- */
 export function Paper({
   children,
   className,
@@ -23,21 +17,17 @@ export function Paper({
   askew?: "left" | "right" | false;
   as?: React.ElementType;
 }) {
-  const groundClass = ground === "ruled" ? "ruled" : ground === "plotted" ? "plotted" : "";
-  const tilt = askew === "left" ? "pinned" : askew === "right" ? "pinned-r" : "";
-
   return (
     <Tag
       className={cn(
-        "relative border border-ink-ghost/70 bg-paper-2/45",
-        "shadow-[2px_3px_0_0_rgba(1,25,54,0.055),6px_8px_18px_-10px_rgba(1,25,54,0.22)]",
-        groundClass,
-        tilt,
+        "editorial-surface relative overflow-hidden bg-paper",
+        ground === "plotted" && "bg-paper-2/55",
+        ground === "ruled" && "bg-paper/90",
         className
       )}
     >
       {folio != null && (
-        <span className="folio pointer-events-none absolute right-3 top-2.5 text-ink-faint/70 select-none">
+        <span className="folio pointer-events-none absolute right-4 top-4 z-10 text-ink-faint/65 select-none">
           {typeof folio === "number" ? folioLabel(folio) : folio}
         </span>
       )}
@@ -46,10 +36,6 @@ export function Paper({
   );
 }
 
-/* ---------------------------------------------------------------------------
- * Marginalia — an annotation in the outer margin, in red chalk.
- * Hidden below xl, where there is no margin to speak of.
- * ------------------------------------------------------------------------- */
 export function Marginalia({
   children,
   className,
@@ -69,11 +55,9 @@ export function Marginalia({
     >
       <div
         className={cn(
-          "font-hand text-[0.95rem] italic leading-snug text-sanguine-ink/85",
-          side === "right" ? "border-l pl-3" : "border-r pr-3",
-          "border-sanguine/40"
+          "border-sanguine/45 font-hand text-[1rem] italic leading-snug text-sanguine-ink",
+          side === "right" ? "border-l pl-3" : "border-r pr-3"
         )}
-        style={{ transform: side === "right" ? "rotate(-1.1deg)" : "rotate(1.1deg)" }}
       >
         {children}
       </div>
@@ -81,9 +65,6 @@ export function Marginalia({
   );
 }
 
-/* ---------------------------------------------------------------------------
- * FieldLabel — the small mono hand used for metadata pairs.
- * ------------------------------------------------------------------------- */
 export function Field({
   label,
   children,
@@ -94,9 +75,9 @@ export function Field({
   className?: string;
 }) {
   return (
-    <div className={cn("border-t border-ink-ghost/60 pt-2", className)}>
-      <dt className="folio text-ink-faint">{label}</dt>
-      <dd className="mt-1 font-body text-[0.95rem] leading-snug text-ink">{children}</dd>
+    <div className={cn("border-t border-ink/15 pt-3", className)}>
+      <dt className="folio text-sanguine-ink">{label}</dt>
+      <dd className="mt-1 text-[0.95rem] leading-snug text-ink">{children}</dd>
     </div>
   );
 }
