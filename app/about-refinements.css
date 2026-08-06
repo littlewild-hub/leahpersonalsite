@@ -51,8 +51,8 @@
 .about-topic-distribution article {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: .65rem 1.5rem;
-  padding: 1.15rem 0 1.25rem;
+  gap: .8rem 1.5rem;
+  padding: 1.25rem 0 1.4rem;
   border-bottom: 1px solid var(--line-light);
 }
 
@@ -76,24 +76,34 @@
 }
 
 .about-topic-distribution strong {
-  align-self: start;
-  color: var(--peach);
-  font-size: .82rem;
-  letter-spacing: .06em;
+  align-self: center;
+  color: var(--cream);
+  font-family: var(--sans);
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: .04em;
 }
 
 .about-topic-bar {
   grid-column: 1 / -1;
-  height: 3px;
+  position: relative;
+  height: .78rem;
   overflow: hidden;
-  background: rgba(247, 230, 211, .14);
+  border: 1px solid rgba(239, 154, 109, .3);
+  border-radius: 999px;
+  background: rgba(247, 230, 211, .1);
+  box-shadow: inset 0 1px 3px rgba(2, 10, 21, .35);
 }
 
 .about-topic-bar i {
   display: block;
+  min-width: .78rem;
   height: 100%;
-  background: var(--peach);
-  box-shadow: 0 0 .8rem rgba(239, 154, 109, .38);
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--copper), var(--peach));
+  box-shadow:
+    0 0 .8rem rgba(239, 154, 109, .45),
+    inset 0 1px rgba(247, 230, 211, .32);
 }
 
 .about-intensive-column > .eyebrow {
