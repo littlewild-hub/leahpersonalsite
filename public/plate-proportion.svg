@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="400" height="300" fill="#F3E7D9"/>
+  <g fill="none" stroke="#011936" stroke-width="1" opacity="0.5">
+    <rect x="60" y="30" width="240" height="240"/>
+    <rect x="60" y="30" width="148" height="240"/>
+    <rect x="60" y="30" width="148" height="148"/>
+    <rect x="60" y="30" width="92" height="148"/>
+    <rect x="152" y="30" width="56" height="92"/>
+  </g>
+  <g fill="none" stroke="#008E89" stroke-width="1.3">
+    <path d="M60 178 A 92 148 0 0 1 152 30"/>
+    <path d="M152 30 A 56 148 0 0 1 208 178"/>
+    <path d="M208 178 A 148 92 0 0 1 60 178" opacity="0.55"/>
+  </g>
+  <g fill="none" stroke="#FF5666" stroke-width="1" opacity="0.75" stroke-dasharray="3 4">
+    <line x1="60" y1="286" x2="300" y2="286"/><line x1="60" y1="280" x2="60" y2="292"/><line x1="300" y1="280" x2="300" y2="292"/>
+    <line x1="322" y1="30" x2="322" y2="270"/><line x1="316" y1="30" x2="328" y2="30"/><line x1="316" y1="270" x2="328" y2="270"/>
+  </g>
+  <text x="24" y="22" font-family="Georgia,serif" font-size="13" font-style="italic" fill="#011936" opacity="0.5">de divina proportione</text>
+</svg>

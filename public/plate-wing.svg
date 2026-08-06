@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="400" height="300" fill="#F3E7D9"/>
+  <g fill="none" stroke="#011936" stroke-width="1" opacity="0.55">
+    <path d="M40 210 C 90 130, 170 96, 250 104 C 310 110, 350 134, 366 160"/>
+    <path d="M40 210 C 96 186, 176 166, 250 164 C 306 166, 344 156, 366 160"/>
+    <path d="M66 200 C 110 168, 150 152, 190 146"/>
+    <path d="M96 192 C 136 166, 176 152, 214 148"/>
+    <path d="M130 182 C 168 162, 204 152, 240 150"/>
+    <path d="M166 174 C 200 160, 232 154, 264 154"/>
+    <path d="M206 168 C 236 158, 264 156, 292 158"/>
+    <path d="M246 164 C 272 158, 300 158, 326 160"/>
+  </g>
+  <g fill="none" stroke="#008E89" stroke-width="1" stroke-dasharray="3 4" opacity="0.8">
+    <path d="M40 210 L 366 160"/><circle cx="40" cy="210" r="3"/><circle cx="366" cy="160" r="3"/>
+  </g>
+  <g fill="none" stroke="#FF5666" stroke-width="1.2" opacity="0.85">
+    <path d="M56 246 l290 -44" stroke-dasharray="6 4"/>
+    <path d="M56 240 l0 12 M346 196 l0 12"/>
+  </g>
+  <text x="24" y="40" font-family="Georgia,serif" font-size="13" font-style="italic" fill="#011936" opacity="0.5">studio dell'ala</text>
+</svg>
