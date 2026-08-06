@@ -18,7 +18,7 @@ export default function Home() {
         <section className="hero" id="top">
           <div className="hero__copy">
             <p className="eyebrow">Public systems · relational ethics · civic infrastructure</p>
-            <h1>for the <em>love</em><br />of our neighbors.</h1>
+            <h1>for the <em>love</em><br />of our <em>neighbors.</em></h1>
             <div className="hero-rule" />
             <p className="hero__lede">Building the language, programs, policy, and infrastructure required to make care operational.</p>
             <div className="hero-actions">
@@ -27,17 +27,13 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hero__art">
-            <div className="landscape-arch">
-              <div className="landscape-sun" />
-              <div className="ridge ridge--far" />
-              <div className="ridge ridge--middle" />
-              <div className="ridge ridge--near" />
-              <div className="wildflowers" aria-hidden="true">
-                <i /><i /><i /><i /><i /><i /><i />
-              </div>
-            </div>
+          <div className="hero__art hero__constellation-field" aria-hidden="true">
+            <div className="hero__star-cloud hero__star-cloud--one" />
+            <div className="hero__star-cloud hero__star-cloud--two" />
             <ConstellationGraphic compact />
+            <span className="hero__bright-star hero__bright-star--one" />
+            <span className="hero__bright-star hero__bright-star--two" />
+            <span className="hero__bright-star hero__bright-star--three" />
           </div>
         </section>
 
