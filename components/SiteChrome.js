@@ -7,6 +7,7 @@ export function SiteHeader({ tone = 'night' }) {
         Leah Buzek
       </Link>
       <nav className="site-nav" aria-label="Primary navigation">
+        <Link href="/about">About</Link>
         <Link href="/work">Body of work</Link>
         <Link href="/writing">Writing</Link>
         <a href="mailto:LeahGBuzek@gmail.com">Contact</a>
