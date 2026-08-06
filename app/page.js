@@ -93,23 +93,6 @@ export default function Home() {
             ))}
           </div>
         </section>
-
-        <section className="about-home" id="about">
-          <div>
-            <p className="eyebrow eyebrow--dark">About the practice</p>
-            <h2>I build the connective tissue.</h2>
-          </div>
-          <div>
-            <p className="about-lead">My work sits where public systems, lived experience, political imagination, and practical implementation collide.</p>
-            <p>I am interested in the distance between what institutions say they value and what people can actually reach, use, and trust. That distance is where I tend to work: mapping the system, finding the friction, naming what has been left unnamed, and building something more honest in its place.</p>
-            <p>The forms vary—research, frameworks, programs, policy proposals, operational systems, training, and essays. The throughline does not.</p>
-          </div>
-        </section>
-
-        <section className="closing-call">
-          <p>Public work should leave people with more power than it found them.</p>
-          <a className="button button--outline" href="mailto:LeahGBuzek@gmail.com">Let’s connect →</a>
-        </section>
       </main>
       <SiteFooter />
     </>
