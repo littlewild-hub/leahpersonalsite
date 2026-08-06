@@ -1,8 +1,0 @@
-[
-  { "id": "d1", "slug": "nonprofit-ops", "name": "Nonprofit Operations & Infrastructure", "blurb": "The systems, training, and governance that let programs actually run." },
-  { "id": "d2", "slug": "research", "name": "Research", "blurb": "Frameworks, synthesis, and the patterns underneath the casework." },
-  { "id": "d3", "slug": "policy", "name": "Policy", "blurb": "Where lived experience gets turned into rule and process." },
-  { "id": "d4", "slug": "academic-papers", "name": "Academic Papers", "blurb": "Coursework and scholarship, kept rather than discarded." },
-  { "id": "d5", "slug": "public-speaking", "name": "Public Speaking", "blurb": "Talks, panels, and posters — the same argument in front of a room." },
-  { "id": "d6", "slug": "writing", "name": "Writing", "blurb": "Essays published elsewhere, kept here too." }
-]
