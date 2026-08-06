@@ -23,12 +23,6 @@ export default function WorkIndex() {
           <ConstellationGraphic compact />
         </section>
 
-        <section className="archive-note">
-          <p>
-            The source manuscripts remain private. Each page presents a substantive synopsis, the central proposition, the problem addressed, contributions, development history, and connected works. No PDF downloads; no abstract-only dead ends.
-          </p>
-        </section>
-
         <div className="constellation-index">
           {constellations.map((constellation) => {
             const items = getWorksByConstellation(constellation.id);
