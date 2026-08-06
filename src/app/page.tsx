@@ -1,132 +1,135 @@
 import Link from "next/link";
 import { content } from "@/lib/content";
 import { ProjectCard } from "@/components/site/project-card";
-import { Paper, Marginalia } from "@/components/notebook/paper";
-import { Divider, InkRule, SpiralMark, VitruvianMark } from "@/components/notebook/ornaments";
-import { Button } from "@/components/ui/button";
+
+const practices = [
+  {
+    title: "Program Design",
+    description: "Building person-centered programs that meet real needs.",
+    icon: (
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <circle cx="32" cy="32" r="15" stroke="currentColor" strokeWidth="1.5" />
+        <path d="M32 8v10M32 46v10M8 32h10M46 32h10M15 15l7 7M42 42l7 7M49 15l-7 7M22 42l-7 7" stroke="currentColor" strokeWidth="1.5" />
+        <path d="M24 38c8-1 12-5 16-14-1 10-4 16-12 18" stroke="currentColor" strokeWidth="1.5" />
+      </svg>
+    ),
+  },
+  {
+    title: "Data & Insight",
+    description: "Turning data into clarity so we can make better decisions together.",
+    icon: (
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path d="M32 55V19M32 31c-10-2-15-8-16-17 10 2 15 8 16 17ZM32 41c11-2 17-8 18-18-11 2-17 8-18 18ZM32 49c-8-1-13-5-16-12 8 1 13 5 16 12Z" stroke="currentColor" strokeWidth="1.5" />
+        <path d="M26 55h12" stroke="currentColor" strokeWidth="1.5" />
+      </svg>
+    ),
+  },
+  {
+    title: "Civic Infrastructure",
+    description: "Strengthening the systems and spaces where people can lead.",
+    icon: (
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <circle cx="24" cy="31" r="12" stroke="currentColor" strokeWidth="1.5" />
+        <circle cx="40" cy="31" r="12" stroke="currentColor" strokeWidth="1.5" />
+        <path d="M20 45c4 4 8 6 12 6s8-2 12-6" stroke="currentColor" strokeWidth="1.5" />
+      </svg>
+    ),
+  },
+  {
+    title: "Story & Strategy",
+    description: "Communicating with heart, strategy, and relational power.",
+    icon: (
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path d="M18 50c13-7 21-19 27-36M24 43c-1-7 1-13 7-18M33 35c7-1 12-4 16-10M40 24c-5-2-8-6-9-11M31 35c-6 0-11 2-15 6" stroke="currentColor" strokeWidth="1.5" />
+        <path d="m45 14 4-2-1 5" stroke="currentColor" strokeWidth="1.5" />
+      </svg>
+    ),
+  },
+];
 
 export default async function HomePage() {
-  const [profile, projects, disciplines] = await Promise.all([
-    content.getProfile(),
-    content.listProjects({ limit: 6 }),
+  const [projects, disciplines] = await Promise.all([
+    content.listProjects({ limit: 12 }),
     content.listDisciplines(),
   ]);
 
-  const featured = projects.filter((p) => p.featured);
+  const featured = projects.filter((project) => project.featured);
   const shown = (featured.length ? featured : projects).slice(0, 6);
 
   return (
     <>
-      {/* ---------------------------------------------------------------- */}
-      {/* FRONTISPIECE                                                      */}
-      {/* ---------------------------------------------------------------- */}
-      <section className="relative mx-auto max-w-6xl px-5 pt-16 pb-8 sm:px-8 sm:pt-24">
+      <section className="relative min-h-[760px] overflow-hidden bg-paper sm:min-h-[820px] lg:min-h-[850px]">
         <div
+          className="absolute inset-0 bg-cover bg-[position:64%_center] sm:bg-center"
+          style={{ backgroundImage: "url('/hero-rural-editorial.svg')" }}
           aria-hidden="true"
-          className="pointer-events-none absolute right-4 top-8 hidden h-56 w-56 text-verdigris opacity-40 lg:block"
-        >
-          <VitruvianMark />
-        </div>
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-paper/88 via-paper/48 to-transparent" aria-hidden="true" />
 
-        <p className="folio settle text-sanguine-ink">Folio i — frontispiece</p>
+        <div className="relative mx-auto flex min-h-[760px] max-w-[94rem] items-center px-6 pb-20 pt-36 sm:min-h-[820px] sm:px-10 sm:pt-40 lg:min-h-[850px] lg:px-20">
+          <div className="max-w-[720px]">
+            <h1 className="settle font-hand text-[clamp(4rem,7.5vw,7.4rem)] font-medium leading-[0.82] tracking-[-0.045em] text-ink">
+              Rooted in rural.
+              <br />
+              Driven by care.
+              <br />
+              Built for <em className="font-normal text-sanguine-ink">impact.</em>
+            </h1>
 
-        <h1 className="settle mt-4 max-w-3xl font-hand text-[clamp(2.75rem,7vw,5.25rem)] font-semibold leading-[0.94] tracking-[-0.02em] text-ink">
-          {profile.name}
-        </h1>
+            <div className="mt-9 h-[3px] w-12 bg-sanguine" aria-hidden="true" />
+            <p className="mt-5 max-w-xl text-[1.03rem] leading-relaxed text-ink sm:text-[1.12rem]">
+              I partner with communities and organizations to design what is needed, not just what is easy.
+            </p>
 
-        <p className="settle mt-3 max-w-2xl font-hand text-[clamp(1.25rem,2.4vw,1.75rem)] italic leading-snug text-verdigris-ink">
-          {profile.title}
-        </p>
-
-        <InkRule className="settle mt-8 max-w-xl" tone="chalk" />
-
-        <div className="settle relative mt-8 max-w-2xl">
-          <p className="dropcap text-[1.1rem] leading-[1.75] text-ink-soft">{profile.statement}</p>
-          <Marginalia side="right">
-            Inveniam viam aut faciam.
-          </Marginalia>
-        </div>
-
-        <div className="settle mt-10 flex flex-wrap items-center gap-3">
-          <Link href="/work">
-            <Button variant="ink" size="lg">Turn the page</Button>
-          </Link>
-          <Link href="/contact">
-            <Button variant="plate" size="lg">Get in touch</Button>
-          </Link>
+            <Link
+              href="/work"
+              className="folio mt-8 inline-flex border border-ink bg-ink px-6 py-4 text-paper no-underline transition-colors hover:bg-paper hover:text-ink"
+            >
+              View my work
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* ---------------------------------------------------------------- */}
-      {/* THE DISCIPLINES                                                   */}
-      {/* ---------------------------------------------------------------- */}
-      {disciplines.length > 0 && (
-        <section className="mx-auto max-w-6xl px-5 py-12 sm:px-8">
-          <Paper ground="plotted" className="p-6 sm:p-8" folio="ii">
-            <h2 className="folio text-ink-faint">Studies presently underway</h2>
-            <ul className="mt-5 grid gap-x-8 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
-              {disciplines.map((d, i) => (
-                <li key={d.slug} className="margin-rule pl-4">
-                  <Link
-                    href={`/work?discipline=${d.slug}`}
-                    className="group block no-underline"
-                  >
-                    <span className="folio text-verdigris-ink">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <p className="font-hand text-2xl leading-tight text-ink transition-colors group-hover:text-verdigris-ink">
-                      {d.name}
-                    </p>
-                    {d.blurb && (
-                      <p className="mt-1 text-[0.92rem] leading-snug text-ink-faint">{d.blurb}</p>
-                    )}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </Paper>
-        </section>
-      )}
+      <section className="navy-section border-t border-paper/20">
+        <div className="mx-auto grid max-w-[94rem] gap-0 px-6 py-14 sm:grid-cols-2 sm:px-10 lg:grid-cols-4 lg:px-16 lg:py-16">
+          {practices.map((practice, index) => (
+            <article
+              key={practice.title}
+              className={`px-6 py-7 text-center ${index > 0 ? "border-t border-paper/20 sm:border-t-0" : ""} ${index % 2 ? "sm:border-l" : ""} ${index > 1 ? "lg:border-l" : ""} border-paper/20`}
+            >
+              <div className="mx-auto h-14 w-14 text-[#df8258]">{practice.icon}</div>
+              <h2 className="folio mt-4 text-[#e88c60]">{practice.title}</h2>
+              <p className="mx-auto mt-4 max-w-[16rem] font-hand text-[1.27rem] leading-snug text-paper/88">
+                {practice.description}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
 
-      {/* ---------------------------------------------------------------- */}
-      {/* SELECTED FOLIOS                                                   */}
-      {/* ---------------------------------------------------------------- */}
-      <section className="mx-auto max-w-6xl px-5 py-12 sm:px-8">
-        <div className="flex items-end justify-between gap-6">
+      <section className="mx-auto max-w-[94rem] px-6 py-20 sm:px-10 lg:px-16 lg:py-28">
+        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
           <div>
-            <h2 className="font-hand text-4xl leading-tight text-ink">Selected folios</h2>
-            <p className="mt-1 text-[0.98rem] italic text-ink-soft">
-              A handful of leaves, pulled from the whole.
-            </p>
+            <p className="folio text-sanguine-ink">Selected work</p>
+            <h2 className="mt-3 max-w-xl font-hand text-[clamp(3.2rem,5vw,5.5rem)] leading-[0.92] text-ink">
+              Systems, research, and stories built to be used.
+            </h2>
           </div>
-          <div aria-hidden="true" className="hidden h-16 w-24 shrink-0 text-sanguine opacity-60 sm:block">
-            <SpiralMark />
-          </div>
+          <p className="max-w-2xl text-[1.02rem] leading-8 text-ink-soft lg:justify-self-end">
+            My body of work moves across program strategy, research, policy, writing, public speaking, and civic infrastructure. The throughline is practical: make complex systems more humane, more legible, and more useful to the people living inside them.
+          </p>
         </div>
 
-        <Divider className="my-8" />
-
-        {shown.length ? (
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {shown.map((p, i) => (
-              <ProjectCard key={p.id} project={p} index={i} disciplines={disciplines} />
-            ))}
-          </div>
-        ) : (
-          <Paper ground="ruled" className="p-10 text-center">
-            <p className="font-hand text-2xl text-ink-soft">The codex is blank.</p>
-            <p className="mt-2 text-[0.95rem] text-ink-faint">
-              Add a markdown file to <code className="font-note text-sm">content/projects/</code> and it
-              will appear here.
-            </p>
-          </Paper>
-        )}
-
-        <div className="mt-10">
-          <Link href="/work" className="link-ink font-note text-sm uppercase tracking-[0.16em]">
-            All folios →
-          </Link>
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {shown.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} disciplines={disciplines} />
+          ))}
         </div>
+
+        <Link href="/work" className="link-ink folio mt-12 inline-block">
+          Explore the full body of work →
+        </Link>
       </section>
     </>
   );
