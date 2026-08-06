@@ -1,3 +1,8 @@
+.wordmark,
+.site-nav {
+  font-weight: 700;
+}
+
 .hero {
   min-height: calc(82svh - 4.5rem);
   padding-top: clamp(4.1rem, 7.35vw, 6.45rem);
