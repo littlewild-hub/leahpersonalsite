@@ -3,6 +3,7 @@ import './hero-overrides.css';
 import './practice-icons.css';
 import './hero-sizing.css';
 import './about.css';
+import './about-refinements.css';
 
 export const metadata = {
   metadataBase: new URL('https://leahbuzek.com'),
