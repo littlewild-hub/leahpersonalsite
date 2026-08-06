@@ -24,7 +24,7 @@ links:
   - label: "Vignettes (PDF)"
     href: "/traces/traces-vignettes.pdf"
 marginalia:
-  - "Presented in five venues between 2024 and 2026."
+  - "Presented in six venues between 2024 and 2026."
   - "Six overlapping domains, not six boxes."
 ---
 
