@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { content } from "@/lib/content";
-import { Paper, Marginalia, Field } from "@/components/notebook/paper";
-import { Divider, VitruvianMark } from "@/components/notebook/ornaments";
+import { Paper, Field } from "@/components/notebook/paper";
+import { Divider } from "@/components/notebook/ornaments";
 import { EducationLedger } from "@/components/notebook/ledger";
 import { LeadershipPrograms } from "@/components/notebook/leadership";
 
@@ -32,46 +32,39 @@ export default async function AboutPage() {
 
       <Divider className="my-10" />
 
-      <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_16rem]">
-        <div className="relative max-w-2xl">
-          {profile.bio.length ? (
-            profile.bio.map((p, i) => (
-              <p
-                key={i}
-                className={`text-[1.075rem] leading-[1.8] text-ink ${i === 0 ? "dropcap" : "mt-6"}`}
-              >
-                {p}
-              </p>
-            ))
-          ) : (
-            <p className="text-[1.075rem] leading-[1.8] text-ink-soft">{profile.statement}</p>
-          )}
-
-          <Marginalia side="right">
-            Everything here is provisional. That is the point of a notebook.
-          </Marginalia>
-        </div>
-
-        <aside className="space-y-6">
-          <Paper ground="plotted" className="p-5" folio="colophon" askew="right">
-            <dl className="space-y-4">
-              <Field label="Practice">{profile.title}</Field>
-              {profile.location && <Field label="Situated">{profile.location}</Field>}
-              <Field label="Keeping this since">{firstYear}</Field>
-              <Field label="Folios">{projects.length}</Field>
-              <Field label="Disciplines">{disciplines.length}</Field>
-            </dl>
-          </Paper>
-
-          <LeadershipPrograms programs={leadershipPrograms} />
-
-          {education && <EducationLedger data={education} />}
-
-          <div className="mx-auto h-32 w-32 text-verdigris opacity-50" aria-hidden="true">
-            <VitruvianMark />
-          </div>
-        </aside>
+      <div className="max-w-3xl">
+        {profile.bio.length ? (
+          profile.bio.map((p, i) => (
+            <p
+              key={i}
+              className={`text-[1.075rem] leading-[1.8] text-ink ${i === 0 ? "dropcap" : "mt-6"}`}
+            >
+              {p}
+            </p>
+          ))
+        ) : (
+          <p className="text-[1.075rem] leading-[1.8] text-ink-soft">{profile.statement}</p>
+        )}
       </div>
+
+      <Divider className="my-12" />
+
+      <Paper ground="plotted" className="p-6 sm:p-8" folio="colophon">
+        <dl className="grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-3 lg:grid-cols-5">
+          <Field label="Practice">{profile.title}</Field>
+          {profile.location && <Field label="Situated">{profile.location}</Field>}
+          <Field label="Keeping this since">{firstYear}</Field>
+          <Field label="Folios">{projects.length}</Field>
+          <Field label="Disciplines">{disciplines.length}</Field>
+        </dl>
+      </Paper>
+
+      {(leadershipPrograms.length > 0 || education) && (
+        <div className="mt-8 grid gap-8 lg:grid-cols-2">
+          <LeadershipPrograms programs={leadershipPrograms} />
+          {education && <EducationLedger data={education} />}
+        </div>
+      )}
     </section>
   );
 }
