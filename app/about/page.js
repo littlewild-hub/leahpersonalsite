@@ -31,20 +31,6 @@ const experience = [
   },
 ];
 
-const presentations = [
-  {
-    date: 'July 2025–February 2026',
-    host: 'UConn Training Institutes · Courage to Caregivers · NAMI Ohio FPS ProNet · FREDLA PPS Provider Learning Community',
-    title: 'TRACEs & Calling It What It Is — caregiver-trauma research presented across poster, summit, peer-network, and provider-learning settings',
-    detail: 'UConn poster presentation, July 6–10, 2025 · Courage to Caregivers, November 6, 2025 · NAMI Ohio FPS ProNet, November 11, 2025 · FREDLA, February 12, 2026',
-  },
-  {
-    date: '2024',
-    host: 'OhioPRO Summit',
-    title: 'Panelist on multi-system youth caregiving',
-  },
-];
-
 const trainingTopics = [
   {
     name: 'Family, youth & multi-system care',
@@ -236,26 +222,6 @@ export default function AboutPage() {
                   <h3>{item.role}</h3>
                   <p>{item.description}</p>
                 </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="about-presentations">
-          <header className="about-section-heading about-section-heading--dark">
-            <p className="eyebrow eyebrow--dark">Presentations & talks</p>
-            <h2>Research made public.</h2>
-            <p>Selected presentations translating caregiver-trauma research into language and tools practitioners can use.</p>
-          </header>
-          <div className="about-talk-grid">
-            {presentations.map((talk) => (
-              <article key={`${talk.date}-${talk.host}`}>
-                <div className="about-talk__meta">
-                  <time>{talk.date}</time>
-                </div>
-                <p>{talk.host}</p>
-                <h3>{talk.title}</h3>
-                {talk.detail ? <p className="about-talk__detail">{talk.detail}</p> : null}
               </article>
             ))}
           </div>
