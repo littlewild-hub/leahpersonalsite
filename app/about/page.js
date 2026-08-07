@@ -32,31 +32,11 @@ const experience = [
 ];
 
 const trainingTopics = [
-  {
-    name: 'Family, youth & multi-system care',
-    count: 76,
-    percent: 50.7,
-  },
-  {
-    name: 'Behavioral health & treatment',
-    count: 63,
-    percent: 42.0,
-  },
-  {
-    name: 'Trauma, violence & safety',
-    count: 44,
-    percent: 29.3,
-  },
-  {
-    name: 'Leadership, ethics & civic practice',
-    count: 28,
-    percent: 18.7,
-  },
-  {
-    name: 'Program design, data & operations',
-    count: 13,
-    percent: 8.7,
-  },
+  { name: 'Family, youth & multi-system care', count: 76, percent: 50.7 },
+  { name: 'Behavioral health & treatment', count: 63, percent: 42.0 },
+  { name: 'Trauma, violence & safety', count: 44, percent: 29.3 },
+  { name: 'Leadership, ethics & civic practice', count: 28, percent: 18.7 },
+  { name: 'Program design, data & operations', count: 13, percent: 8.7 },
 ];
 
 const intensiveLearning = [
@@ -149,66 +129,9 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="about-thesis">
-          <div>
-            <p className="eyebrow eyebrow--dark">The throughline</p>
-            <h2>I translate <em>friction</em><br />into infrastructure.</h2>
-          </div>
-          <div className="about-thesis__body">
-            <p>
-              My work begins with the distance between what an institution says it values and what
-              people can actually reach, use, trust, or survive. I map that distance: the broken
-              handoff, the missing language, the invisible labor, the power imbalance, the form that
-              no human being can reasonably complete.
-            </p>
-            <p>
-              Then I build. Sometimes the result is a statewide advisory council, an assessment,
-              a training curriculum, or an operational system. Sometimes it is a theory, a policy
-              proposal, or a framework that gives people better language for what they already know
-              is happening.
-            </p>
-            <p>
-              The forms change. The method does not: listen closely, name the structure honestly,
-              and leave behind something that increases people’s capacity to act.
-            </p>
-          </div>
-        </section>
-
-        <section className="about-formation">
-          <div className="about-formation__column">
-            <p className="eyebrow eyebrow--dark">Education</p>
-            <article>
-              <span>In progress</span>
-              <h3>Master of Public Service</h3>
-              <p>University of Arkansas · Clinton School of Public Service</p>
-            </article>
-            <article>
-              <span>Completed</span>
-              <h3>Bachelor of Specialized Studies</h3>
-              <p>Ohio University · Applied Social Studies</p>
-            </article>
-          </div>
-
-          <div className="about-formation__column">
-            <p className="eyebrow eyebrow--dark">Leadership development</p>
-            <article>
-              <span>May 2025</span>
-              <h3>NEW Leadership Ohio</h3>
-              <p>A residential public-leadership institute focused on women in politics, policymaking, skill-building, and leadership practice.</p>
-              <a href="https://wgss.osu.edu/newleadershipohio" target="_blank" rel="noreferrer">Program information ↗</a>
-            </article>
-            <article>
-              <span>Spring 2026</span>
-              <h3>Leadership Stark County Spotlight</h3>
-              <p>A community leadership program centered on personal strengths, local institutions, service, and meaningful civic connection.</p>
-              <a href="https://leadershipstarkcounty.org/course/spotlight/" target="_blank" rel="noreferrer">Program information ↗</a>
-            </article>
-          </div>
-        </section>
-
         <section className="about-experience">
-          <header className="about-section-heading">
-            <p className="eyebrow">Professional practice</p>
+          <header className="about-section-heading about-section-heading--dark">
+            <p className="eyebrow eyebrow--dark">Work</p>
             <h2>Work built in the field.</h2>
             <p>Experience spanning direct family support, statewide program development, research, training, and operational design.</p>
           </header>
@@ -227,10 +150,61 @@ export default function AboutPage() {
           </div>
         </section>
 
+        <section className="about-formation">
+          <header className="about-formal-header">
+            <p className="eyebrow">Formal education</p>
+            <h2>Structured learning.<br /><em>Applied immediately.</em></h2>
+            <p>Degree study, leadership development, and formal practice credentials that support the work.</p>
+          </header>
+
+          <div className="about-formal-grid">
+            <div className="about-formation__column">
+              <p className="eyebrow">Degrees</p>
+              <article>
+                <span>In progress</span>
+                <h3>Master of Public Service</h3>
+                <p>University of Arkansas · Clinton School of Public Service</p>
+              </article>
+              <article>
+                <span>Completed</span>
+                <h3>Bachelor of Specialized Studies</h3>
+                <p>Ohio University · Applied Social Studies</p>
+              </article>
+            </div>
+
+            <div className="about-formation__column">
+              <p className="eyebrow">Leadership development</p>
+              <article>
+                <span>May 2025</span>
+                <h3>NEW Leadership Ohio</h3>
+                <p>A residential public-leadership institute focused on women in politics, policymaking, skill-building, and leadership practice.</p>
+                <a href="https://wgss.osu.edu/newleadershipohio" target="_blank" rel="noreferrer">Program information ↗</a>
+              </article>
+              <article>
+                <span>Spring 2026</span>
+                <h3>Leadership Stark County Spotlight</h3>
+                <p>A community leadership program centered on personal strengths, local institutions, service, and meaningful civic connection.</p>
+                <a href="https://leadershipstarkcounty.org/course/spotlight/" target="_blank" rel="noreferrer">Program information ↗</a>
+              </article>
+            </div>
+
+            <div className="about-formation__column about-formation__column--credentials">
+              <p className="eyebrow">Credentials</p>
+              {credentials.map((credential) => (
+                <article key={credential.title}>
+                  <span>Practice foundation</span>
+                  <h3>{credential.title}</h3>
+                  <p>{credential.detail}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="about-learning">
           <header className="about-learning__intro">
             <div>
-              <p className="eyebrow">Independent study</p>
+              <p className="eyebrow eyebrow--dark">Independent study</p>
               <h2>The study underneath the work.</h2>
             </div>
             <div>
@@ -241,7 +215,7 @@ export default function AboutPage() {
 
           <div className="about-learning__intensives">
             <div className="about-topic-panel">
-              <p className="eyebrow">Training distribution</p>
+              <p className="eyebrow eyebrow--dark">Training distribution</p>
               <p className="about-topic-note">
                 Share of the 150-record archive tagged within each domain. Trainings can span more
                 than one topic, so the percentages intentionally overlap.
@@ -263,7 +237,7 @@ export default function AboutPage() {
             </div>
 
             <div className="about-intensive-column">
-              <p className="eyebrow">Selected intensive learning</p>
+              <p className="eyebrow eyebrow--dark">Selected intensive learning</p>
               <div className="about-intensive-list">
                 {intensiveLearning.map((item) => (
                   <article key={`${item.title}-${item.year}`}>
@@ -274,21 +248,6 @@ export default function AboutPage() {
                 ))}
               </div>
             </div>
-          </div>
-        </section>
-
-        <section className="about-credentials">
-          <header>
-            <p className="eyebrow eyebrow--dark">Credentials</p>
-            <h2>Formal practice foundations.</h2>
-          </header>
-          <div>
-            {credentials.map((credential) => (
-              <article key={credential.title}>
-                <h3>{credential.title}</h3>
-                <p>{credential.detail}</p>
-              </article>
-            ))}
           </div>
         </section>
       </main>
