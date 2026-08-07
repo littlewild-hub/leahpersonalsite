@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ConstellationGraphic, SiteFooter, SiteHeader } from '../components/SiteChrome';
-import { constellations, getWorksByConstellation, works } from '../data/works';
+import { constellations, getWorksByConstellation, works } from '../data/catalog';
 
 function PracticeIcon({ type }) {
   const commonProps = {
@@ -74,10 +74,10 @@ function PracticeIcon({ type }) {
 export default function Home() {
   const featured = [
     'continuity-ethics',
-    'calling-it-what-it-is',
+    'traces',
+    'epic',
+    'raise-the-bar',
     'statewide-needs-assessment',
-    'ohio-housing-accountability-revitalization',
-    'trouble-with-new',
   ].map((slug) => works.find((work) => work.slug === slug)).filter(Boolean);
 
   return (
@@ -161,7 +161,7 @@ export default function Home() {
         <section className="featured-work">
           <header className="section-title-row section-title-row--light">
             <div><p className="eyebrow">Selected works</p><h2>Five entry points.</h2></div>
-            <p>Different doors into the same underlying concern: what people owe one another, and what systems must be built to make that obligation real.</p>
+            <p>Theory, research, participatory design, campaign infrastructure, and applied statewide work—different expressions of the same concern with making care operational.</p>
           </header>
           <div className="featured-grid">
             {featured.map((work) => (
