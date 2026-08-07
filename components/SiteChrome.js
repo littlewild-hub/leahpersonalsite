@@ -27,6 +27,7 @@ export function SiteFooter() {
         <a href="https://medium.com/@progresswithpurpose" target="_blank" rel="noreferrer">Medium ↗</a>
         <a href="https://substack.com/@coordinatesmayvary" target="_blank" rel="noreferrer">Substack ↗</a>
         <a href="mailto:LeahGBuzek@gmail.com">Email ↗</a>
+        <a href="/llms.txt">LLMs.txt ↗</a>
       </div>
       <p className="footer-note">Full source manuscripts are retained privately. The public site presents authored synopses rather than downloadable files.</p>
     </footer>
