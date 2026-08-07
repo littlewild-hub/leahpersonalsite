@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { SiteFooter, SiteHeader } from '../../components/SiteChrome';
-import { works } from '../../data/works';
+import { works } from '../../data/catalog';
 import { getExternalWriting, SOURCES } from '../../lib/external-writing';
 
 export const metadata = {
