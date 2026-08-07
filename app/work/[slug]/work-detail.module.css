@@ -4,7 +4,7 @@
 }
 
 .proposition {
-  padding: clamp(4.5rem, 8vw, 8rem) var(--pad);
+  padding: clamp(3rem, 5vw, 4.75rem) var(--pad);
   background: var(--paper);
   border-bottom: 1px solid var(--line-dark);
 }
@@ -16,13 +16,13 @@
 }
 
 .proposition blockquote {
-  max-width: 26ch;
-  margin: 0 0 2.5rem;
+  max-width: 38ch;
+  margin: 0 0 2rem;
   font-family: var(--serif);
-  font-size: clamp(2rem, 3.2vw, 3.4rem);
+  font-size: clamp(1.75rem, 2.55vw, 2.75rem);
   font-weight: 400;
-  line-height: 1.08;
-  letter-spacing: -.025em;
+  line-height: 1.12;
+  letter-spacing: -.018em;
 }
 
 .article {
@@ -32,7 +32,7 @@
 }
 
 .section {
-  padding: clamp(4rem, 7vw, 7rem) 0;
+  padding: clamp(3.5rem, 6vw, 6rem) 0;
   border-bottom: 1px solid var(--line-dark);
 }
 
@@ -41,12 +41,12 @@
 }
 
 .synopsisLead {
-  max-width: 44ch;
+  max-width: 58ch;
   margin-bottom: 0;
   font-family: var(--serif);
-  font-size: clamp(1.4rem, 2.2vw, 2.05rem);
-  line-height: 1.35;
-  letter-spacing: -.012em;
+  font-size: clamp(1.25rem, 1.75vw, 1.7rem);
+  line-height: 1.42;
+  letter-spacing: -.008em;
 }
 
 .bodyCopy,
@@ -72,12 +72,13 @@
 
 @media (max-width: 720px) {
   .proposition {
-    padding-block: 3.75rem;
+    padding-block: 2.75rem;
   }
 
   .proposition blockquote {
     max-width: none;
-    font-size: clamp(1.8rem, 8vw, 2.7rem);
+    font-size: clamp(1.55rem, 7vw, 2.2rem);
+    line-height: 1.16;
   }
 
   .article {
@@ -85,11 +86,11 @@
   }
 
   .section {
-    padding-block: 3.5rem;
+    padding-block: 3rem;
   }
 
   .synopsisLead {
     max-width: none;
-    font-size: clamp(1.3rem, 5.5vw, 1.75rem);
+    font-size: clamp(1.2rem, 4.8vw, 1.55rem);
   }
 }
