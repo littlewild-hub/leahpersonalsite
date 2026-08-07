@@ -60,10 +60,22 @@ export default async function AboutPage() {
       </Paper>
 
       {(leadershipPrograms.length > 0 || education) && (
-        <div className="mt-8 grid gap-8 lg:grid-cols-2">
-          <LeadershipPrograms programs={leadershipPrograms} />
-          {education && <EducationLedger data={education} />}
-        </div>
+        <section className="mt-16">
+          <div className="max-w-2xl">
+            <p className="folio text-sanguine-ink">Learning & leadership</p>
+            <h2 className="mt-3 font-hand text-[clamp(2.4rem,4.5vw,3.8rem)] font-medium leading-[0.95] text-ink">
+              Education & leadership development
+            </h2>
+            <p className="mt-4 max-w-xl text-[1rem] leading-7 text-ink-soft">
+              Formal study, continuing education, and leadership programs that have shaped how I approach the work.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-8 lg:grid-cols-2">
+            <LeadershipPrograms programs={leadershipPrograms} />
+            {education && <EducationLedger data={education} />}
+          </div>
+        </section>
       )}
     </section>
   );
