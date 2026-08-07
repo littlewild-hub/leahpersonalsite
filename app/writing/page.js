@@ -6,6 +6,13 @@ import { getExternalWriting, SOURCES } from '../../lib/external-writing';
 export const metadata = {
   title: 'Writing — Leah Buzek',
   description: 'Essays, cultural analysis, public arguments, and developing ideas from Leah Buzek.',
+  alternates: { canonical: '/writing' },
+  openGraph: {
+    title: 'Writing — Leah Buzek',
+    description: 'Essays, cultural analysis, public arguments, and developing ideas from Leah Buzek.',
+    url: '/writing',
+    type: 'website',
+  },
 };
 
 export const revalidate = 3600;
