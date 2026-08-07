@@ -1,0 +1,66 @@
+name: Notify IndexNow
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for production deployment
+        run: sleep 90
+
+      - name: Submit sitemap URLs to IndexNow
+        env:
+          INDEXNOW_KEY: f80bcdefd235ff19f741365d0e3ad577
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import time
+          import urllib.request
+          import xml.etree.ElementTree as ET
+
+          host = 'leahbuzek.com'
+          base = f'https://{host}'
+          key = os.environ['INDEXNOW_KEY']
+          sitemap_url = f'{base}/sitemap.xml'
+
+          urls = []
+          for attempt in range(6):
+              try:
+                  with urllib.request.urlopen(sitemap_url, timeout=20) as response:
+                      root = ET.fromstring(response.read())
+                  ns = {'sm': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
+                  urls = [node.text for node in root.findall('sm:url/sm:loc', ns) if node.text]
+                  if urls:
+                      break
+              except Exception as exc:
+                  print(f'Sitemap attempt {attempt + 1} failed: {exc}')
+              time.sleep(20)
+
+          if not urls:
+              raise SystemExit('No sitemap URLs found; skipping IndexNow submission.')
+
+          payload = json.dumps({
+              'host': host,
+              'key': key,
+              'keyLocation': f'{base}/{key}.txt',
+              'urlList': urls[:10000],
+          }).encode('utf-8')
+
+          request = urllib.request.Request(
+              'https://api.indexnow.org/indexnow',
+              data=payload,
+              headers={'Content-Type': 'application/json; charset=utf-8'},
+              method='POST',
+          )
+
+          with urllib.request.urlopen(request, timeout=30) as response:
+              print(f'IndexNow response: {response.status}')
+              print(f'Submitted {len(urls)} URLs.')
+          PY
