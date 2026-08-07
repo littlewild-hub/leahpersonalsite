@@ -33,25 +33,10 @@ const experience = [
 
 const presentations = [
   {
-    date: 'November 11, 2026',
-    status: 'Scheduled',
-    host: 'NAMI Ohio FPS ProNet',
-    title: 'TRACEs: Trauma and Relational Adversity in Caregiving Environments',
-  },
-  {
-    date: 'February 12, 2026',
-    host: 'FREDLA PPS Provider Learning Community',
-    title: 'TRACEs of Care: Mapping the Trauma Footprint of Family Caregiving',
-  },
-  {
-    date: 'November 6, 2025',
-    host: 'Courage to Caregivers Summit',
-    title: 'TRACEs of Care: Mapping the Trauma Footprint of Family Caregiving',
-  },
-  {
-    date: 'July 6–10, 2025',
-    host: 'UConn Training Institutes',
-    title: 'Poster: Calling It What It Is — Multi-Systemic Youth Caregiving as Trauma',
+    date: 'July 2025–February 2026',
+    host: 'UConn Training Institutes · Courage to Caregivers · NAMI Ohio FPS ProNet · FREDLA PPS Provider Learning Community',
+    title: 'TRACEs & Calling It What It Is — caregiver-trauma research presented across poster, summit, peer-network, and provider-learning settings',
+    detail: 'UConn poster presentation, July 6–10, 2025 · Courage to Caregivers, November 6, 2025 · NAMI Ohio FPS ProNet, November 11, 2025 · FREDLA, February 12, 2026',
   },
   {
     date: '2024',
@@ -203,6 +188,38 @@ export default function AboutPage() {
           </div>
         </section>
 
+        <section className="about-formation">
+          <div className="about-formation__column">
+            <p className="eyebrow eyebrow--dark">Education</p>
+            <article>
+              <span>In progress</span>
+              <h3>Master of Public Service</h3>
+              <p>University of Arkansas · Clinton School of Public Service</p>
+            </article>
+            <article>
+              <span>Completed</span>
+              <h3>Bachelor of Specialized Studies</h3>
+              <p>Ohio University · Applied Social Studies</p>
+            </article>
+          </div>
+
+          <div className="about-formation__column">
+            <p className="eyebrow eyebrow--dark">Leadership development</p>
+            <article>
+              <span>May 2025</span>
+              <h3>NEW Leadership Ohio</h3>
+              <p>A residential public-leadership institute focused on women in politics, policymaking, skill-building, and leadership practice.</p>
+              <a href="https://wgss.osu.edu/newleadershipohio" target="_blank" rel="noreferrer">Program information ↗</a>
+            </article>
+            <article>
+              <span>Spring 2026</span>
+              <h3>Leadership Stark County Spotlight</h3>
+              <p>A community leadership program centered on personal strengths, local institutions, service, and meaningful civic connection.</p>
+              <a href="https://leadershipstarkcounty.org/course/spotlight/" target="_blank" rel="noreferrer">Program information ↗</a>
+            </article>
+          </div>
+        </section>
+
         <section className="about-experience">
           <header className="about-section-heading">
             <p className="eyebrow">Professional practice</p>
@@ -235,44 +252,12 @@ export default function AboutPage() {
               <article key={`${talk.date}-${talk.host}`}>
                 <div className="about-talk__meta">
                   <time>{talk.date}</time>
-                  {talk.status ? <span>{talk.status}</span> : null}
                 </div>
                 <p>{talk.host}</p>
                 <h3>{talk.title}</h3>
+                {talk.detail ? <p className="about-talk__detail">{talk.detail}</p> : null}
               </article>
             ))}
-          </div>
-        </section>
-
-        <section className="about-formation">
-          <div className="about-formation__column">
-            <p className="eyebrow eyebrow--dark">Education</p>
-            <article>
-              <span>In progress</span>
-              <h3>Master of Public Service</h3>
-              <p>University of Arkansas · Clinton School of Public Service</p>
-            </article>
-            <article>
-              <span>Completed</span>
-              <h3>Bachelor of Specialized Studies</h3>
-              <p>Ohio University · Applied Social Studies</p>
-            </article>
-          </div>
-
-          <div className="about-formation__column">
-            <p className="eyebrow eyebrow--dark">Leadership development</p>
-            <article>
-              <span>May 2025</span>
-              <h3>NEW Leadership Ohio</h3>
-              <p>A residential public-leadership institute focused on women in politics, policymaking, skill-building, and leadership practice.</p>
-              <a href="https://wgss.osu.edu/newleadershipohio" target="_blank" rel="noreferrer">Program information ↗</a>
-            </article>
-            <article>
-              <span>Spring 2026</span>
-              <h3>Leadership Stark County Spotlight</h3>
-              <p>A community leadership program centered on personal strengths, local institutions, service, and meaningful civic connection.</p>
-              <a href="https://leadershipstarkcounty.org/course/spotlight/" target="_blank" rel="noreferrer">Program information ↗</a>
-            </article>
           </div>
         </section>
 
