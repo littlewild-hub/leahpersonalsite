@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { SiteFooter, SiteHeader } from '../../../components/SiteChrome';
 import { getConstellation, getWork, works } from '../../../data/catalog';
+import styles from './work-detail.module.css';
 
 export function generateStaticParams() {
   return works.map((work) => ({ slug: work.slug }));
@@ -50,27 +51,29 @@ export default async function WorkPage({ params }) {
           </div>
         </section>
 
-        <section className="work-reading-grid">
-          <aside className="work-thesis">
-            <p className="eyebrow eyebrow--dark">Central proposition</p>
-            <blockquote>{work.proposition}</blockquote>
-            {work.externalUrl ? (
-              <a className="text-link text-link--dark" href={work.externalUrl} target="_blank" rel="noreferrer">Read on the original platform ↗</a>
-            ) : null}
-          </aside>
+        <div className={styles.readingFlow}>
+          <section className={styles.proposition}>
+            <div className={styles.propositionInner}>
+              <p className="eyebrow eyebrow--dark">Central proposition</p>
+              <blockquote>{work.proposition}</blockquote>
+              {work.externalUrl ? (
+                <a className="text-link text-link--dark" href={work.externalUrl} target="_blank" rel="noreferrer">Read on the original platform ↗</a>
+              ) : null}
+            </div>
+          </section>
 
-          <article className="work-article">
-            <section>
+          <article className={styles.article}>
+            <section className={styles.section}>
               <p className="section-label">Synopsis</p>
-              <p className="synopsis-lead">{work.summary}</p>
+              <p className={styles.synopsisLead}>{work.summary}</p>
             </section>
 
-            <section>
+            <section className={styles.section}>
               <p className="section-label">The problem it responds to</p>
-              <p>{work.problem}</p>
+              <p className={styles.bodyCopy}>{work.problem}</p>
             </section>
 
-            <section>
+            <section className={styles.section}>
               <p className="section-label">What the work contributes</p>
               <ul className="contribution-list">
                 {work.contributions.map((item) => <li key={item}>{item}</li>)}
@@ -78,9 +81,9 @@ export default async function WorkPage({ params }) {
             </section>
 
             {(work.sections || []).map((section) => (
-              <section key={section.label}>
+              <section className={styles.section} key={section.label}>
                 <p className="section-label">{section.label}</p>
-                {section.intro ? <p>{section.intro}</p> : null}
+                {section.intro ? <p className={styles.sectionIntro}>{section.intro}</p> : null}
                 {section.items?.length ? (
                   <ul className="development-list">
                     {section.items.map((item) => <li key={item}>{item}</li>)}
@@ -89,21 +92,21 @@ export default async function WorkPage({ params }) {
               </section>
             ))}
 
-            <section>
+            <section className={styles.section}>
               <p className="section-label">Development</p>
               <ul className="development-list">
                 {work.development.map((item) => <li key={item}>{item}</li>)}
               </ul>
             </section>
 
-            <section>
+            <section className={styles.section}>
               <p className="section-label">Keywords</p>
               <div className="tag-list">
                 {work.tags.map((tag) => <span key={tag}>{tag}</span>)}
               </div>
             </section>
           </article>
-        </section>
+        </div>
 
         {related.length ? (
           <section className="related-works">
