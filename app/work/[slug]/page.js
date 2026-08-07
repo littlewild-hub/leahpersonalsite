@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { SiteFooter, SiteHeader } from '../../../components/SiteChrome';
-import { getConstellation, getWork, works } from '../../../data/works';
+import { getConstellation, getWork, works } from '../../../data/catalog';
 
 export function generateStaticParams() {
   return works.map((work) => ({ slug: work.slug }));
@@ -24,7 +24,7 @@ export default async function WorkPage({ params }) {
   if (!work) notFound();
 
   const constellation = getConstellation(work.constellation);
-  const related = work.related.map(getWork).filter(Boolean);
+  const related = (work.related || []).map(getWork).filter(Boolean);
 
   return (
     <>
@@ -45,7 +45,7 @@ export default async function WorkPage({ params }) {
             <dl className="work-facts">
               <div><dt>Status</dt><dd>{work.status}</dd></div>
               <div><dt>Body of work</dt><dd>{constellation.name}</dd></div>
-              <div><dt>Public format</dt><dd>Authored synopsis</dd></div>
+              <div><dt>Public format</dt><dd>{work.publicFormat || 'Authored synopsis'}</dd></div>
             </dl>
           </div>
         </section>
@@ -76,6 +76,18 @@ export default async function WorkPage({ params }) {
                 {work.contributions.map((item) => <li key={item}>{item}</li>)}
               </ul>
             </section>
+
+            {(work.sections || []).map((section) => (
+              <section key={section.label}>
+                <p className="section-label">{section.label}</p>
+                {section.intro ? <p>{section.intro}</p> : null}
+                {section.items?.length ? (
+                  <ul className="development-list">
+                    {section.items.map((item) => <li key={item}>{item}</li>)}
+                  </ul>
+                ) : null}
+              </section>
+            ))}
 
             <section>
               <p className="section-label">Development</p>
