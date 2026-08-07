@@ -21,7 +21,7 @@ export default function WorkIndex() {
               Papers, frameworks, programs, policy proposals, and essays are organized by the questions they share.
             </p>
           </div>
-          <ConstellationGraphic compact />
+          <ConstellationGraphic compact ambient />
         </section>
 
         <div className="constellation-index">
