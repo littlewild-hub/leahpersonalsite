@@ -17,7 +17,7 @@ export default function WorkIndex() {
             <p className="eyebrow">The public edition</p>
             <h1>An actual <em>body of work.</em></h1>
             <p className="archive-hero__lede">
-              Papers, frameworks, programs, policy proposals, and essays are organized by the questions they share—not by the folders they arrived in.
+              Papers, frameworks, programs, policy proposals, and essays are organized by the questions they share.
             </p>
           </div>
           <ConstellationGraphic compact />
