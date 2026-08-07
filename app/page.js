@@ -132,14 +132,14 @@ export default function Home() {
         <section className="corpus-intro">
           <div>
             <p className="eyebrow eyebrow--dark">A connected corpus</p>
-            <h2>The work is a <em>constellation,</em><br />not a filing cabinet.</h2>
+            <h2>A body of work, <em>connected.</em></h2>
           </div>
           <div>
             <p>
               This site is the public edition of a growing body of work: theory that becomes a model, research that becomes a framework, a framework that becomes training, and public problems translated into programs or policy.
             </p>
             <p>
-              Visitors can read substantive synopses and follow the relationships between works. The underlying PDFs and manuscripts remain private.
+              Visitors can read substantive synopses and follow the relationships between works.
             </p>
             <Link className="button button--night" href="/work">Explore all {works.length} works →</Link>
           </div>
