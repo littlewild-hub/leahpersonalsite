@@ -40,6 +40,16 @@ main.about-page {
   margin-bottom: clamp(3.5rem, 5vw, 4.75rem);
 }
 
+.about-talk-grid article > .about-talk__detail {
+  margin-top: 1.25rem;
+  color: var(--muted-dark);
+  font-size: .9rem;
+  font-weight: 400;
+  line-height: 1.55;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
 .about-learning__intensives {
   grid-template-columns: minmax(18rem, .78fr) minmax(0, 1.22fr);
   gap: clamp(3rem, 7vw, 7rem);
