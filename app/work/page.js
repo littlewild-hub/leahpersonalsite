@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ConstellationGraphic, SiteFooter, SiteHeader } from '../../components/SiteChrome';
-import { constellations, getWorksByConstellation } from '../../data/works';
+import { constellations, getWorksByConstellation } from '../../data/catalog';
 
 export const metadata = {
   title: 'Body of Work — Leah Buzek',
