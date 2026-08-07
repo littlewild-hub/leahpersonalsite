@@ -8,7 +8,7 @@
   scroll-margin-top: 2rem;
 }
 
-.group:nth-child(even) {
+.group:nth-child(odd) {
   color: var(--ink);
   background: var(--paper-light);
   border-bottom-color: var(--line-dark);
@@ -30,7 +30,7 @@
   border-bottom: 1px solid rgba(247, 230, 211, .38);
 }
 
-.group:nth-child(even) .header {
+.group:nth-child(odd) .header {
   border-bottom-color: var(--ink);
 }
 
@@ -42,7 +42,7 @@
   letter-spacing: .04em;
 }
 
-.group:nth-child(even) .number {
+.group:nth-child(odd) .number {
   color: var(--copper);
 }
 
@@ -68,7 +68,7 @@
   line-height: 1.65;
 }
 
-.group:nth-child(even) .context p {
+.group:nth-child(odd) .context p {
   color: var(--muted-dark);
 }
 
@@ -81,7 +81,7 @@
   letter-spacing: .15em;
 }
 
-.group:nth-child(even) .count {
+.group:nth-child(odd) .count {
   color: var(--copper);
 }
 
@@ -94,7 +94,7 @@
   background: rgba(247, 230, 211, .18);
 }
 
-.group:nth-child(even) .grid {
+.group:nth-child(odd) .grid {
   border-color: var(--ink);
   background: var(--ink);
 }
@@ -122,7 +122,7 @@
   grid-column: span 3;
 }
 
-.group:nth-child(even) .card {
+.group:nth-child(odd) .card {
   color: var(--ink);
   background: var(--paper-light);
 }
@@ -134,8 +134,8 @@
   background: #17324b;
 }
 
-.group:nth-child(even) .card:hover,
-.group:nth-child(even) .card:focus-visible {
+.group:nth-child(odd) .card:hover,
+.group:nth-child(odd) .card:focus-visible {
   background: #f4c9a7;
 }
 
@@ -155,7 +155,7 @@
   letter-spacing: .14em;
 }
 
-.group:nth-child(even) .meta {
+.group:nth-child(odd) .meta {
   color: var(--copper);
 }
 
@@ -167,7 +167,7 @@
   transition: transform .18s ease;
 }
 
-.group:nth-child(even) .arrow {
+.group:nth-child(odd) .arrow {
   color: var(--copper);
 }
 
@@ -194,7 +194,7 @@
   line-height: 1.55;
 }
 
-.group:nth-child(even) .subtitle {
+.group:nth-child(odd) .subtitle {
   color: var(--muted-dark);
 }
 
@@ -208,7 +208,7 @@
   border-top: 1px solid rgba(247, 230, 211, .18);
 }
 
-.group:nth-child(even) .footer {
+.group:nth-child(odd) .footer {
   border-top-color: var(--line-dark);
 }
 
@@ -219,7 +219,7 @@
   letter-spacing: .12em;
 }
 
-.group:nth-child(even) .status {
+.group:nth-child(odd) .status {
   color: var(--muted-dark);
 }
 
