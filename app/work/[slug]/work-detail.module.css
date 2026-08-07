@@ -1,0 +1,94 @@
+.readingFlow {
+  color: var(--ink);
+  background: var(--paper-light);
+}
+
+.proposition {
+  padding: clamp(4.5rem, 8vw, 8rem) var(--pad);
+  background: var(--paper);
+  border-bottom: 1px solid var(--line-dark);
+}
+
+.propositionInner {
+  width: 100%;
+  max-width: 74rem;
+  margin: 0 auto;
+}
+
+.proposition blockquote {
+  max-width: 20ch;
+  margin: 0 0 2.5rem;
+  font-family: var(--serif);
+  font-size: clamp(2.65rem, 5.2vw, 5.6rem);
+  font-weight: 400;
+  line-height: .98;
+  letter-spacing: -.035em;
+}
+
+.article {
+  width: min(100%, 74rem);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+.section {
+  padding: clamp(4rem, 7vw, 7rem) 0;
+  border-bottom: 1px solid var(--line-dark);
+}
+
+.section:last-child {
+  border-bottom: 0;
+}
+
+.synopsisLead {
+  max-width: 34ch;
+  margin-bottom: 0;
+  font-family: var(--serif);
+  font-size: clamp(1.85rem, 3.4vw, 3.25rem);
+  line-height: 1.2;
+  letter-spacing: -.018em;
+}
+
+.bodyCopy,
+.sectionIntro {
+  max-width: 54rem;
+  margin-bottom: 0;
+  font-size: clamp(1.02rem, 1.3vw, 1.15rem);
+  line-height: 1.75;
+}
+
+.sectionIntro {
+  margin-bottom: 2rem;
+}
+
+.section :global(.contribution-list),
+.section :global(.development-list) {
+  max-width: 58rem;
+}
+
+.section :global(.tag-list) {
+  max-width: 58rem;
+}
+
+@media (max-width: 720px) {
+  .proposition {
+    padding-block: 3.75rem;
+  }
+
+  .proposition blockquote {
+    max-width: none;
+    font-size: clamp(2.4rem, 11vw, 3.8rem);
+  }
+
+  .article {
+    padding-inline: var(--pad);
+  }
+
+  .section {
+    padding-block: 3.5rem;
+  }
+
+  .synopsisLead {
+    max-width: none;
+  }
+}
