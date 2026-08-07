@@ -4,20 +4,21 @@
 }
 
 .proposition {
-  padding: clamp(3rem, 5vw, 4.75rem) var(--pad);
+  padding: clamp(2.75rem, 4vw, 3.75rem) 0;
   background: var(--paper);
   border-bottom: 1px solid var(--line-dark);
 }
 
-.propositionInner {
-  width: 100%;
-  max-width: 74rem;
+.propositionInner,
+.article {
+  width: min(100%, 74rem);
   margin: 0 auto;
+  padding-inline: var(--pad);
 }
 
 .proposition blockquote {
   max-width: 38ch;
-  margin: 0 0 2rem;
+  margin: 0;
   font-family: var(--serif);
   font-size: clamp(1.75rem, 2.55vw, 2.75rem);
   font-weight: 400;
@@ -25,14 +26,13 @@
   letter-spacing: -.018em;
 }
 
-.article {
-  width: min(100%, 74rem);
-  margin: 0 auto;
-  padding: 0 var(--pad);
+.proposition :global(.text-link) {
+  display: inline-flex;
+  margin-top: 2rem;
 }
 
 .section {
-  padding: clamp(3.5rem, 6vw, 6rem) 0;
+  padding: clamp(3.25rem, 5vw, 5rem) 0;
   border-bottom: 1px solid var(--line-dark);
 }
 
@@ -72,17 +72,13 @@
 
 @media (max-width: 720px) {
   .proposition {
-    padding-block: 2.75rem;
+    padding-block: 2.5rem;
   }
 
   .proposition blockquote {
     max-width: none;
     font-size: clamp(1.55rem, 7vw, 2.2rem);
     line-height: 1.16;
-  }
-
-  .article {
-    padding-inline: var(--pad);
   }
 
   .section {
