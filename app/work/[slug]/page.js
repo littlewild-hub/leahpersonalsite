@@ -54,7 +54,6 @@ export default async function WorkPage({ params }) {
           <aside className="work-thesis">
             <p className="eyebrow eyebrow--dark">Central proposition</p>
             <blockquote>{work.proposition}</blockquote>
-            <p className="source-policy">The underlying manuscript or source document is not available for direct download.</p>
             {work.externalUrl ? (
               <a className="text-link text-link--dark" href={work.externalUrl} target="_blank" rel="noreferrer">Read on the original platform ↗</a>
             ) : null}
