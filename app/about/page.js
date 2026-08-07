@@ -5,6 +5,14 @@ export const metadata = {
   title: 'About Leah Buzek',
   description:
     'Leah Buzek is a program strategist, systems designer, researcher, and public-service practitioner working across care, civic infrastructure, and institutional design.',
+  alternates: { canonical: '/about' },
+  openGraph: {
+    title: 'About Leah Buzek',
+    description:
+      'Leah Buzek is a program strategist, systems designer, researcher, and public-service practitioner working across care, civic infrastructure, and institutional design.',
+    url: '/about',
+    type: 'profile',
+  },
 };
 
 const experience = [
@@ -40,57 +48,18 @@ const trainingTopics = [
 ];
 
 const intensiveLearning = [
-  {
-    year: '2024',
-    title: 'FREDLA Parent Peer Support Practice Model',
-    provider: 'The Mosaic Project',
-    hours: '40 hours',
-  },
-  {
-    year: '2023',
-    title: 'NAMI Ohio Family Peer Support',
-    provider: 'NAMI Ohio / StarkMHAR',
-    hours: '40 hours',
-  },
-  {
-    year: '2024',
-    title: 'Empowering Caregivers, Strengthening Families',
-    provider: 'R. Cassidy Seminars',
-    hours: '10 hours',
-  },
-  {
-    year: '2024',
-    title: 'Exercising Leadership: Foundational Principles',
-    provider: 'HarvardX',
-    hours: '7 hours',
-  },
-  {
-    year: '2024–2025',
-    title: 'Applied Scrum & Sprint Planning',
-    provider: 'USMx',
-    hours: '14 hours',
-  },
-  {
-    year: '2025',
-    title: 'Nonprofit Capacity Building: Strategy',
-    provider: 'OCAAR',
-    hours: '3 hours',
-  },
+  { year: '2024', title: 'FREDLA Parent Peer Support Practice Model', provider: 'The Mosaic Project', hours: '40 hours' },
+  { year: '2023', title: 'NAMI Ohio Family Peer Support', provider: 'NAMI Ohio / StarkMHAR', hours: '40 hours' },
+  { year: '2024', title: 'Empowering Caregivers, Strengthening Families', provider: 'R. Cassidy Seminars', hours: '10 hours' },
+  { year: '2024', title: 'Exercising Leadership: Foundational Principles', provider: 'HarvardX', hours: '7 hours' },
+  { year: '2024–2025', title: 'Applied Scrum & Sprint Planning', provider: 'USMx', hours: '14 hours' },
+  { year: '2025', title: 'Nonprofit Capacity Building: Strategy', provider: 'OCAAR', hours: '3 hours' },
 ];
 
 const credentials = [
-  {
-    title: 'Certified Family Peer Support',
-    detail: 'FREDLA Model · FREDLA Supervision · NAMI Model',
-  },
-  {
-    title: 'Triple P',
-    detail: 'Level 3 Discussion Group · Level 4 Standard',
-  },
-  {
-    title: 'CANS Assessor',
-    detail: 'TCOM / Praed Foundation',
-  },
+  { title: 'Certified Family Peer Support', detail: 'FREDLA Model · FREDLA Supervision · NAMI Model' },
+  { title: 'Triple P', detail: 'Level 3 Discussion Group · Level 4 Standard' },
+  { title: 'CANS Assessor', detail: 'TCOM / Praed Foundation' },
 ];
 
 export default function AboutPage() {
