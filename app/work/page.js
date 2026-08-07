@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ConstellationGraphic, SiteFooter, SiteHeader } from '../../components/SiteChrome';
 import { constellations, getWorksByConstellation } from '../../data/catalog';
+import styles from './work.module.css';
 
 export const metadata = {
   title: 'Body of Work — Leah Buzek',
@@ -27,28 +28,34 @@ export default function WorkIndex() {
           {constellations.map((constellation) => {
             const items = getWorksByConstellation(constellation.id);
             return (
-              <section className="constellation-group" id={constellation.id} key={constellation.id}>
-                <header className="constellation-group__header">
-                  <span>{constellation.number}</span>
-                  <div>
-                    <h2>{constellation.name}</h2>
-                    <p>{constellation.short}</p>
-                  </div>
-                </header>
-                <div className="work-list">
-                  {items.map((work) => (
-                    <Link className="work-row" href={`/work/${work.slug}`} key={work.slug}>
-                      <div>
-                        <p className="work-row__meta">{work.kind} · {work.year}</p>
+              <section className={styles.group} id={constellation.id} key={constellation.id}>
+                <div className={styles.inner}>
+                  <header className={styles.header}>
+                    <p className={styles.number}>{constellation.number}</p>
+                    <div className={styles.titleBlock}>
+                      <h2>{constellation.name}</h2>
+                    </div>
+                    <div className={styles.context}>
+                      <p>{constellation.short}</p>
+                      <span className={styles.count}>{items.length} {items.length === 1 ? 'work' : 'works'} in this constellation</span>
+                    </div>
+                  </header>
+
+                  <div className={styles.grid}>
+                    {items.map((work) => (
+                      <Link className={styles.card} href={`/work/${work.slug}`} key={work.slug}>
+                        <div className={styles.cardTop}>
+                          <p className={styles.meta}>{work.kind} · {work.year}</p>
+                          <span className={styles.arrow} aria-hidden="true">↗</span>
+                        </div>
                         <h3>{work.title}</h3>
-                        <p>{work.subtitle}</p>
-                      </div>
-                      <div className="work-row__right">
-                        <span>{work.status}</span>
-                        <b aria-hidden="true">↗</b>
-                      </div>
-                    </Link>
-                  ))}
+                        <p className={styles.subtitle}>{work.subtitle}</p>
+                        <div className={styles.footer}>
+                          <span className={styles.status}>{work.status}</span>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </section>
             );
