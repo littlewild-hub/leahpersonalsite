@@ -70,7 +70,7 @@ export default async function WritingPage() {
           <header className="section-title-row section-title-row--light">
             <div>
               <p className="eyebrow">In the body of work</p>
-              <h2>Essays with their context intact.</h2>
+              <h2>Essays with context.</h2>
             </div>
             <p>These pages explain the argument and connect each essay to the wider corpus.</p>
           </header>
