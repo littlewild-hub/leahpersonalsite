@@ -4,6 +4,8 @@ import { SiteFooter, SiteHeader } from '../../../components/SiteChrome';
 import { getConstellation, getWork, works } from '../../../data/catalog';
 import styles from './work-detail.module.css';
 
+const siteUrl = 'https://leahbuzek.com';
+
 export function generateStaticParams() {
   return works.map((work) => ({ slug: work.slug }));
 }
@@ -13,9 +15,25 @@ export async function generateMetadata({ params }) {
   const work = getWork(slug);
   if (!work) return {};
 
+  const canonical = `/work/${work.slug}`;
+
   return {
     title: `${work.title} — Leah Buzek`,
     description: work.summary,
+    alternates: { canonical },
+    keywords: [work.title, ...(work.tags || []), 'Leah Buzek'],
+    openGraph: {
+      title: `${work.title} — Leah Buzek`,
+      description: work.summary,
+      type: 'article',
+      url: canonical,
+      siteName: 'Leah Buzek — Public Portfolio',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${work.title} — Leah Buzek`,
+      description: work.summary,
+    },
   };
 }
 
@@ -26,11 +44,63 @@ export default async function WorkPage({ params }) {
 
   const constellation = getConstellation(work.constellation);
   const related = (work.related || []).map(getWork).filter(Boolean);
+  const canonicalUrl = `${siteUrl}/work/${work.slug}`;
+
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'CreativeWork',
+        '@id': `${canonicalUrl}#work`,
+        url: canonicalUrl,
+        name: work.title,
+        headline: work.title,
+        alternativeHeadline: work.subtitle,
+        description: work.summary,
+        abstract: work.proposition,
+        author: { '@id': `${siteUrl}/#person` },
+        creator: { '@id': `${siteUrl}/#person` },
+        isPartOf: { '@id': `${siteUrl}/#website` },
+        genre: work.kind,
+        keywords: (work.tags || []).join(', '),
+        inLanguage: 'en-US',
+        about: (work.tags || []).map((tag) => ({ '@type': 'Thing', name: tag })),
+        citation: related.map((item) => `${siteUrl}/work/${item.slug}`),
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Body of work',
+            item: `${siteUrl}/work`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: constellation.name,
+            item: `${siteUrl}/work#${constellation.id}`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: work.title,
+            item: canonicalUrl,
+          },
+        ],
+      },
+    ],
+  };
 
   return (
     <>
       <SiteHeader />
       <main className="work-page">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <section className="work-masthead">
           <div className="work-masthead__breadcrumb">
             <Link href="/work">Body of work</Link>
