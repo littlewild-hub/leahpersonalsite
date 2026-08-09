@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ConstellationGraphic, SiteFooter, SiteHeader } from '../../components/SiteChrome';
+import { socialImage } from '../../lib/site-metadata';
 
 export const metadata = {
   title: 'About Leah Buzek',
@@ -12,6 +13,7 @@ export const metadata = {
       'Leah Buzek is a program strategist, systems designer, researcher, and public-service practitioner working across care, civic infrastructure, and institutional design.',
     url: '/about',
     type: 'profile',
+    images: [socialImage],
   },
 };
 
