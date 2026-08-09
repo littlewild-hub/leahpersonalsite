@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { SiteFooter, SiteHeader } from '../../../components/SiteChrome';
 import { getConstellation, getWork, works } from '../../../data/catalog';
+import { socialImage, twitterImage } from '../../../lib/site-metadata';
 import styles from './work-detail.module.css';
 
 const siteUrl = 'https://leahbuzek.com';
@@ -28,11 +29,13 @@ export async function generateMetadata({ params }) {
       type: 'article',
       url: canonical,
       siteName: 'Leah Buzek — Public Portfolio',
+      images: [socialImage],
     },
     twitter: {
       card: 'summary_large_image',
       title: `${work.title} — Leah Buzek`,
       description: work.summary,
+      images: [twitterImage],
     },
   };
 }

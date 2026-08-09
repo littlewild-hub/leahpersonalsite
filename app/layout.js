@@ -1,5 +1,6 @@
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { socialImage, twitterImage } from '../lib/site-metadata';
 import './globals.css';
 import './hero-overrides.css';
 import './practice-icons.css';
@@ -53,12 +54,14 @@ export const metadata = {
     type: 'website',
     url: siteUrl,
     siteName: 'Leah Buzek — Public Portfolio',
+    images: [socialImage],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Leah Buzek — for the love of our neighbors',
     description:
       'A living body of work in public systems, care, civic infrastructure, research, and practical problem-solving.',
+    images: [twitterImage],
   },
 };
 

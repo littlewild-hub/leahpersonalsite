@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { SiteFooter, SiteHeader } from '../../components/SiteChrome';
 import { works } from '../../data/catalog';
 import { getExternalWriting, SOURCES } from '../../lib/external-writing';
+import { socialImage } from '../../lib/site-metadata';
 
 export const metadata = {
   title: 'Writing — Leah Buzek',
@@ -12,6 +13,7 @@ export const metadata = {
     description: 'Essays, cultural analysis, public arguments, and developing ideas from Leah Buzek.',
     url: '/writing',
     type: 'website',
+    images: [socialImage],
   },
 };
 
