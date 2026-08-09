@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ConstellationGraphic, SiteFooter, SiteHeader } from '../../components/SiteChrome';
 import { constellations, getWorksByConstellation } from '../../data/catalog';
+import { socialImage } from '../../lib/site-metadata';
 import styles from './work.module.css';
 
 export const metadata = {
@@ -12,6 +13,7 @@ export const metadata = {
     description: 'A connected body of work in relational ethics, caregiver trauma, civic infrastructure, policy design, and public writing.',
     url: '/work',
     type: 'website',
+    images: [socialImage],
   },
 };
 
