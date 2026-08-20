@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { SiteFooter, SiteHeader } from '../../../components/SiteChrome';
-import { getConstellation, getWork, works } from '../../../data/catalog';
+import { getConstellation, getWork, works } from '../../../data/catalog-extended';
 import { socialImage, twitterImage } from '../../../lib/site-metadata';
 import styles from './work-detail.module.css';
 
