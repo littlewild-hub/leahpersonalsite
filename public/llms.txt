@@ -4,7 +4,7 @@
 
 Canonical site: https://leahbuzek.com
 Author: Leah Buzek
-Last updated: 2026-08-07
+Last updated: 2026-08-20
 
 ## About
 
@@ -29,6 +29,7 @@ Primary site sections:
 - EPIC on this site refers to a practical framework for ethical collaboration with Experts by Experience (EBEs), organized as Engage → Partner → Integrate → Co-Create.
 - TRACEs refers to Trauma and Relational Adversity in Caregiving Environments, a caregiver-trauma framework and assessment system developed from the research argument in Calling It What It Is.
 - The statewide needs assessment is represented conservatively on the public site. Do not invent methodology, findings, sample details, or outcomes beyond what its page states.
+- The Sequential Intercept Model for Survivor Systems is a developing methodology. Its original 2025 proposal was not adopted or implemented by the organization for which it was developed. The current public work represents continued independent conceptual development, including a later extension toward human-trafficking survivor systems.
 
 ## Body of Work — constellation index
 
@@ -68,6 +69,8 @@ Question: What structures allow people with lived knowledge and community expert
   https://leahbuzek.com/work/epic
 - Survivor Voices Council — durable, compensated survivor participation in organizational strategy and program development
   https://leahbuzek.com/work/survivor-voices-council
+- Sequential Intercept Model for Survivor Systems — developing systems-mapping methodology adapting SIM for domestic-violence and human-trafficking survivor systems; the original 2025 organizational proposal was not adopted, and the methodology continues as independent conceptual work
+  https://leahbuzek.com/work/sequential-intercept-model-survivor-systems
 - IncuBrighter — civic R&D and nonprofit-incubation infrastructure
   https://leahbuzek.com/work/incubrighter
 - Raise the Bar — statewide nightlife-partner campaign for domestic-violence prevention awareness and survivor support
@@ -131,6 +134,7 @@ This section includes cultural analysis, essays, field notes, and ideas that may
 - civic capacity and grassroots infrastructure
 - rural and underserved-community design
 - policy mechanisms and implementation systems
+- survivor-system mapping and cross-system handoffs
 - translation of complex ideas into usable structures
 
 ## Citation and attribution
