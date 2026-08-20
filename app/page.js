@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ConstellationGraphic, SiteFooter, SiteHeader } from '../components/SiteChrome';
-import { constellations, getWorksByConstellation, works } from '../data/catalog';
+import { constellations, getWorksByConstellation, works } from '../data/catalog-extended';
 
 function PracticeIcon({ type }) {
   const commonProps = {
