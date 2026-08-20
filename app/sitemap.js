@@ -1,4 +1,4 @@
-import { works } from '../data/catalog';
+import { works } from '../data/catalog-extended';
 
 const baseUrl = 'https://leahbuzek.com';
 
