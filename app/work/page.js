@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ConstellationGraphic, SiteFooter, SiteHeader } from '../../components/SiteChrome';
-import { constellations, getWorksByConstellation } from '../../data/catalog';
+import { constellations, getWorksByConstellation } from '../../data/catalog-extended';
 import { socialImage } from '../../lib/site-metadata';
 import styles from './work.module.css';
 
