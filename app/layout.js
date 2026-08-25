@@ -1,5 +1,6 @@
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Cormorant_Garamond, Manrope } from 'next/font/google';
 import { socialImage, twitterImage } from '../lib/site-metadata';
 import './globals.css';
 import './hero-overrides.css';
@@ -7,8 +8,23 @@ import './practice-icons.css';
 import './hero-sizing.css';
 import './about.css';
 import './about-refinements.css';
+import './design-refresh.css';
 
-const siteUrl = 'https://leahbuzek.com';
+const displayFont = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+  variable: '--font-display',
+});
+
+const sansFont = Manrope({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-sans',
+});
+
+const siteUrl = 'https://www.leahbuzek.com';
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
@@ -118,7 +134,8 @@ const structuredData = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${displayFont.variable} ${sansFont.variable}`}>
+        <a className="skip-link" href="#main-content">Skip to main content</a>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
