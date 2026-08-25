@@ -31,6 +31,9 @@ export const metadata = {
     'civic infrastructure',
     'systems design',
     'public service',
+    'public service speaker',
+    'advocacy keynote speaker',
+    'caregiver trauma speaker',
     'policy design',
   ],
   alternates: {

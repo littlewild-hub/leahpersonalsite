@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ConstellationGraphic, SiteFooter, SiteHeader } from '../components/SiteChrome';
 import { constellations, getWorksByConstellation, works } from '../data/catalog-extended';
+import speakingStyles from './speaking/speaking.module.css';
 
 function PracticeIcon({ type }) {
   const commonProps = {
@@ -172,6 +173,27 @@ export default function Home() {
                 <b aria-hidden="true">↗</b>
               </Link>
             ))}
+          </div>
+        </section>
+
+        <section className={speakingStyles.homePreview} aria-labelledby="home-speaking-heading">
+          <div>
+            <p className="eyebrow eyebrow--dark">Speaking · plenaries · public conversation</p>
+            <h2 id="home-speaking-heading">Some things deserve to be said <em>out loud.</em></h2>
+            <p className={speakingStyles.homePreviewLead}>
+              Talks about public service, advocacy, lived expertise, caregiver trauma,
+              civic power, and the emotional realities we are too often asked to tidy up.
+            </p>
+          </div>
+          <div className={speakingStyles.homePreviewBody}>
+            <blockquote>
+              Hope should not be the price of admission to conversations about injustice.
+            </blockquote>
+            <p className={speakingStyles.homePreviewFeatured}>
+              Featured plenary: Sitting in the Ick
+            </p>
+            <p>Rage, Grief, and Heartache in Public Service and Advocacy</p>
+            <Link className="button button--night" href="/speaking">Explore speaking topics →</Link>
           </div>
         </section>
       </main>
