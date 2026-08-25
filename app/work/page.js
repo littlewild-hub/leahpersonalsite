@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { ConstellationGraphic, SiteFooter, SiteHeader } from '../../components/SiteChrome';
+import { SiteFooter, SiteHeader } from '../../components/SiteChrome';
+import { AtlasMapVisual, CategoryEmblem } from '../../components/EditorialVisuals';
 import { ArrowUpRightIcon } from '../../components/Icons';
 import { constellations, getWorksByConstellation } from '../../data/catalog-extended';
 import { socialImage } from '../../lib/site-metadata';
@@ -30,7 +31,7 @@ export default function WorkIndex() {
               Papers, frameworks, programs, policy proposals, and essays are organized by the questions they share.
             </p>
           </div>
-          <ConstellationGraphic compact ambient />
+          <AtlasMapVisual theme="midnight" compact />
         </section>
 
         <div className="constellation-index">
@@ -40,7 +41,8 @@ export default function WorkIndex() {
               <section className={styles.group} id={constellation.id} key={constellation.id}>
                 <div className={styles.inner}>
                   <header className={styles.header}>
-                    <div className={styles.titleBlock}>
+                    <div className={`${styles.titleBlock} work-group-heading-with-emblem`}>
+                      <CategoryEmblem type={constellation.id} />
                       <h2>{constellation.name}</h2>
                     </div>
                     <div className={styles.context}>
