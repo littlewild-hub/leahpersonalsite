@@ -67,13 +67,18 @@
   max-width: 70ch;
 }
 
-:global(.work-masthead__breadcrumb .inline-icon) {
+.breadcrumbIcon {
   width: 1rem;
   height: 1rem;
   margin: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-:global(.related-grid h3) {
+.relatedTitle {
   margin: 4rem 0 1rem;
   font-family: var(--serif);
   font-size: 2rem;
@@ -82,7 +87,7 @@
   letter-spacing: -.015em;
 }
 
-:global(.related-grid b) {
+.relatedArrow {
   display: inline-flex;
   align-items: center;
 }
