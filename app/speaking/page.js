@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { SiteFooter, SiteHeader } from '../../components/SiteChrome';
+import { MoonPhaseBand } from '../../components/EditorialVisuals';
 import { ArrowDownIcon, ArrowRightIcon, ArrowUpRightIcon } from '../../components/Icons';
 import { socialImage } from '../../lib/site-metadata';
 import styles from './speaking.module.css';
@@ -124,6 +125,10 @@ export default function SpeakingPage() {
             </p>
           </div>
         </section>
+
+        <div className="speaking-visual-divider">
+          <MoonPhaseBand />
+        </div>
 
         <section className={styles.topics} aria-labelledby="speaking-topics-heading">
           <header className={styles.topicsHeader}>
