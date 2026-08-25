@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { ConstellationGraphic, SiteFooter, SiteHeader } from '../../components/SiteChrome';
+import { SiteFooter, SiteHeader } from '../../components/SiteChrome';
+import { BotanicalArchiveVisual, EditorialPlate, MidnightNetworkVisual } from '../../components/EditorialVisuals';
 import { ArrowRightIcon, ArrowUpRightIcon } from '../../components/Icons';
 import { socialImage } from '../../lib/site-metadata';
 
@@ -90,7 +91,7 @@ export default function AboutPage() {
           </div>
 
           <div className="about-hero__field" aria-hidden="true">
-            <ConstellationGraphic compact />
+            <MidnightNetworkVisual compact />
             <span className="about-field-label about-field-label--care">care</span>
             <span className="about-field-label about-field-label--research">research</span>
             <span className="about-field-label about-field-label--systems">systems</span>
@@ -122,6 +123,13 @@ export default function AboutPage() {
               </article>
             ))}
           </div>
+        </section>
+
+        <section className="about-visual-interlude" aria-label="Practice and responsibility">
+          <div className="about-visual-interlude__botanical" aria-hidden="true">
+            <BotanicalArchiveVisual />
+          </div>
+          <EditorialPlate variant="stardust" tone="midnight" />
         </section>
 
         <section className="about-formation">
