@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { SiteFooter, SiteHeader } from '../../../components/SiteChrome';
+import { CategoryEmblem } from '../../../components/EditorialVisuals';
 import { ArrowRightIcon, ArrowUpRightIcon } from '../../../components/Icons';
 import { getConstellation, getWork, works } from '../../../data/catalog-extended';
 import { socialImage, twitterImage } from '../../../lib/site-metadata';
@@ -113,6 +114,10 @@ export default async function WorkPage({ params }) {
           </div>
           <div className="work-masthead__grid">
             <div>
+              <div className="work-masthead__visual-mark" aria-hidden="true">
+                <CategoryEmblem type={constellation.id} />
+                <span>{constellation.name}</span>
+              </div>
               <h1>{work.title}</h1>
               <p className="work-subtitle">{work.subtitle}</p>
               <p className="work-meta-line">{work.kind} · {work.year}</p>
