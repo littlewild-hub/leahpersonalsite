@@ -2,12 +2,25 @@ main.about-page {
   display: block;
 }
 
-/* 1. HERO — NAVY */
 .about-hero {
   background: var(--night);
 }
 
-/* Shared section rhythm */
+.about-hero__field::before {
+  background: radial-gradient(circle, rgba(28, 64, 93, .28), transparent 68%);
+  filter: none;
+}
+
+.about-hero__field .constellation {
+  filter: drop-shadow(0 8px 18px rgba(239, 154, 109, .16));
+}
+
+.about-field-label {
+  background: rgba(2, 10, 21, .92);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
 .about-experience,
 .about-formation,
 .about-learning {
@@ -19,7 +32,6 @@ main.about-page {
   margin-bottom: clamp(3.25rem, 5vw, 5rem);
 }
 
-/* 2. WORK — LINEN */
 .about-experience {
   background: var(--paper-light);
   color: var(--ink);
@@ -35,9 +47,7 @@ main.about-page {
 
 .about-experience .about-timeline__marker {
   background: var(--copper);
-  box-shadow:
-    0 0 0 .45rem var(--paper-light),
-    0 0 1.25rem rgba(200, 100, 69, .22);
+  box-shadow: 0 0 0 .4rem var(--paper-light);
 }
 
 .about-experience .about-timeline__period,
@@ -53,7 +63,6 @@ main.about-page {
   color: var(--muted-dark);
 }
 
-/* 3. FORMAL EDUCATION — NAVY */
 .about-formation {
   display: block;
   padding-left: 0;
@@ -72,19 +81,14 @@ main.about-page {
   padding: 0 var(--pad) clamp(3.25rem, 5vw, 5rem);
 }
 
-.about-formal-header .eyebrow {
-  grid-column: 1 / -1;
-  margin-bottom: .25rem;
-}
-
 .about-formal-header h2 {
   max-width: 11ch;
   margin: 0;
   font-family: var(--serif);
-  font-size: clamp(3.2rem, 5.6vw, 6rem);
+  font-size: clamp(3rem, 4.8vw, 5rem);
   font-weight: 400;
-  line-height: .95;
-  letter-spacing: -.045em;
+  line-height: .97;
+  letter-spacing: -.035em;
 }
 
 .about-formal-header h2 em {
@@ -110,16 +114,27 @@ main.about-page {
   border-right: 1px solid var(--line-light);
 }
 
-.about-formation__column:first-child {
-  border-right: 1px solid var(--line-light);
-}
-
 .about-formation__column:last-child {
   border-right: 0;
 }
 
-.about-formation__column > .eyebrow {
-  margin-bottom: 1.4rem;
+.about-column-title,
+.about-subsection-title {
+  margin: 0 0 1.4rem;
+  font-family: var(--sans) !important;
+  font-size: .72rem !important;
+  font-weight: 800 !important;
+  line-height: 1.3 !important;
+  text-transform: uppercase;
+  letter-spacing: .12em !important;
+}
+
+.about-column-title {
+  color: var(--peach) !important;
+}
+
+.about-subsection-title {
+  color: var(--copper);
 }
 
 .about-formation article {
@@ -135,8 +150,9 @@ main.about-page {
   color: var(--peach);
 }
 
-.about-formation h3 {
+.about-formation h3:not(.about-column-title) {
   color: var(--cream);
+  letter-spacing: -.015em;
 }
 
 .about-formation article p {
@@ -144,6 +160,9 @@ main.about-page {
 }
 
 .about-formation article a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
   color: var(--peach);
 }
 
@@ -151,7 +170,6 @@ main.about-page {
   min-height: 8.5rem;
 }
 
-/* 4. INDEPENDENT STUDY — LINEN */
 .about-learning {
   background: var(--paper-light);
   color: var(--ink);
@@ -215,7 +233,7 @@ main.about-page {
   color: var(--ink);
   font-family: var(--serif);
   font-size: 1.05rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.15;
 }
 
@@ -231,32 +249,26 @@ main.about-page {
   color: var(--ink);
   font-family: var(--sans);
   font-size: .85rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: .04em;
 }
 
 .about-topic-bar {
   grid-column: 1 / -1;
   position: relative;
-  height: .78rem;
+  height: .68rem;
   overflow: hidden;
-  border: 1px solid rgba(200, 100, 69, .36);
-  border-radius: 999px;
+  border: 1px solid rgba(154, 68, 46, .4);
+  border-radius: .2rem;
   background: rgba(12, 36, 56, .09);
-  box-shadow: inset 0 1px 3px rgba(12, 36, 56, .12);
 }
 
 .about-topic-bar i {
   display: block;
-  min-width: .78rem;
+  min-width: .68rem;
   height: 100%;
-  border-radius: inherit;
-  background: linear-gradient(90deg, var(--copper), var(--peach));
-  box-shadow: 0 0 .65rem rgba(200, 100, 69, .22);
-}
-
-.about-intensive-column > .eyebrow {
-  margin-bottom: 1.2rem;
+  border-radius: .1rem;
+  background: var(--copper);
 }
 
 .about-learning .about-intensive-list {
@@ -302,10 +314,6 @@ main.about-page {
 @media (max-width: 900px) {
   .about-formal-header {
     grid-template-columns: 1fr;
-  }
-
-  .about-formal-header .eyebrow {
-    grid-column: auto;
   }
 
   .about-formal-header > p:last-child {

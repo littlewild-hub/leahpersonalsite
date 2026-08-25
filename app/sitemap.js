@@ -1,6 +1,6 @@
 import { works } from '../data/catalog-extended';
 
-const baseUrl = 'https://leahbuzek.com';
+const baseUrl = 'https://www.leahbuzek.com';
 
 export default function sitemap() {
   const corePages = [

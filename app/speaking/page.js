@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { SiteFooter, SiteHeader } from '../../components/SiteChrome';
+import { MoonPhaseBand } from '../../components/EditorialVisuals';
+import { ArrowDownIcon, ArrowRightIcon, ArrowUpRightIcon } from '../../components/Icons';
 import { socialImage } from '../../lib/site-metadata';
 import styles from './speaking.module.css';
 
@@ -20,7 +22,6 @@ export const metadata = {
 
 const topics = [
   {
-    number: '02',
     title: 'Service Is Not Value-Neutral',
     subtitle: 'Public service, dissent, and the courage to take a side',
     description:
@@ -29,7 +30,6 @@ const topics = [
     audiences: 'Public-service professionals · civic leaders · policy and advocacy audiences',
   },
   {
-    number: '03',
     title: 'Experts by Experience',
     subtitle: 'Who gets to define the problem—and who gets to design the response',
     description:
@@ -38,7 +38,6 @@ const topics = [
     audiences: 'Nonprofit leaders · survivor advocates · participatory-design practitioners',
   },
   {
-    number: '04',
     title: 'When Care Becomes Invisible',
     subtitle: 'Caregiver trauma and the cost of holding systems together',
     description:
@@ -47,7 +46,6 @@ const topics = [
     audiences: 'Family-serving organizations · behavioral-health professionals · child-serving systems',
   },
   {
-    number: '05',
     title: 'Making Care Operational',
     subtitle: 'From good intentions to programs, policy, and civic infrastructure',
     description:
@@ -56,7 +54,6 @@ const topics = [
     audiences: 'Program designers · nonprofit executives · government and philanthropic leaders',
   },
   {
-    number: '06',
     title: 'Rural Is Not a Footnote',
     subtitle: 'Building civic capacity close to home',
     description:
@@ -65,7 +62,6 @@ const topics = [
     audiences: 'Community organizers · rural-serving organizations · civic and political convenings',
   },
   {
-    number: '07',
     title: 'Two Things Can Be True',
     subtitle: 'Nuance in a world that asks for precision',
     description:
@@ -79,24 +75,27 @@ export default function SpeakingPage() {
   return (
     <>
       <SiteHeader />
-      <main className={styles.page}>
+      <main className={styles.page} id="main-content">
         <section className={styles.hero}>
-          <p className="eyebrow">Speaking · plenaries · public conversation</p>
           <h1>The conversations we cannot afford to make <em>comfortable.</em></h1>
           <p className={styles.heroLede}>
             Clear-eyed talks about care, power, grief, lived experience, and the systems
             that shape whose lives are treated as worthy of attention.
           </p>
           <div className={styles.heroActions}>
-            <a className="button button--peach" href="#featured-plenary">Explore the featured plenary ↓</a>
-            <a className="text-link" href="mailto:LeahGBuzek@gmail.com?subject=Speaking%20inquiry">Inquire about speaking ↗</a>
+            <a className="button button--peach" href="#featured-plenary">
+              Explore the featured plenary <ArrowDownIcon />
+            </a>
+            <a className="text-link" href="mailto:LeahGBuzek@gmail.com?subject=Speaking%20inquiry">
+              Inquire about speaking <ArrowUpRightIcon />
+            </a>
           </div>
         </section>
 
         <section className={styles.featured} id="featured-plenary">
           <div className={styles.featuredIntro}>
-            <p className="eyebrow eyebrow--dark">01 · Featured plenary</p>
             <h2>Sitting in the <em>Ick.</em></h2>
+            <p className={styles.featuredLabel}>Featured plenary</p>
             <p className={styles.featuredSubtitle}>Rage, Grief, and Heartache in Public Service and Advocacy</p>
             <div className={styles.tags}>
               <span>Public service</span>
@@ -127,10 +126,13 @@ export default function SpeakingPage() {
           </div>
         </section>
 
+        <div className="speaking-visual-divider">
+          <MoonPhaseBand />
+        </div>
+
         <section className={styles.topics} aria-labelledby="speaking-topics-heading">
           <header className={styles.topicsHeader}>
             <div>
-              <p className="eyebrow">Additional speaking topics</p>
               <h2 id="speaking-topics-heading">Other necessary <em>conversations.</em></h2>
             </div>
             <p>
@@ -141,9 +143,8 @@ export default function SpeakingPage() {
 
           <div className={styles.topicList}>
             {topics.map((topic) => (
-              <article className={styles.topicCard} key={topic.number}>
+              <article className={styles.topicCard} key={topic.title}>
                 <div className={styles.topicHeading}>
-                  <span className={styles.topicNumber}>{topic.number}</span>
                   <h3>{topic.title}</h3>
                   <p className={styles.topicSubtitle}>{topic.subtitle}</p>
                 </div>
@@ -159,7 +160,6 @@ export default function SpeakingPage() {
 
         <section className={styles.invitation}>
           <div>
-            <p className="eyebrow eyebrow--dark">Bring the conversation into the room</p>
             <h2>For the discussions that deserve more than a tidy ending.</h2>
             <p>
               Available for plenaries, keynote conversations, panels, and workshops.
@@ -168,8 +168,12 @@ export default function SpeakingPage() {
             </p>
           </div>
           <div className={styles.invitationActions}>
-            <a className="button button--night" href="mailto:LeahGBuzek@gmail.com?subject=Speaking%20inquiry">Start a conversation →</a>
-            <Link className="text-link text-link--dark" href="/work">Explore the body of work ↗</Link>
+            <a className="button button--night" href="mailto:LeahGBuzek@gmail.com?subject=Speaking%20inquiry">
+              Start a conversation <ArrowRightIcon />
+            </a>
+            <Link className="text-link text-link--dark" href="/work">
+              Explore the body of work <ArrowUpRightIcon />
+            </Link>
           </div>
         </section>
       </main>

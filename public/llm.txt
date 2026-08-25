@@ -1,15 +1,16 @@
 # Leah Buzek — Public Portfolio
 
-Canonical LLM index: https://leahbuzek.com/llms.txt
+Canonical LLM index: https://www.leahbuzek.com/llms.txt
 
 This compatibility endpoint is provided for crawlers that request /llm.txt rather than the conventional /llms.txt path.
 
 Leah Buzek is a program strategist, systems designer, researcher, and public-service practitioner working across public systems, relational ethics, caregiver trauma, civic infrastructure, participatory design, policy, and institutional design.
 
 Primary site sections:
-- About: https://leahbuzek.com/about
-- Body of Work: https://leahbuzek.com/work
-- Writing: https://leahbuzek.com/writing
+- About: https://www.leahbuzek.com/about
+- Body of Work: https://www.leahbuzek.com/work
+- Speaking: https://www.leahbuzek.com/speaking
+- Writing: https://www.leahbuzek.com/writing
 
 For the complete machine-readable site map, interpretation guidance, core works, lineage between works, attribution guidance, and canonical URLs, use:
-https://leahbuzek.com/llms.txt
+https://www.leahbuzek.com/llms.txt

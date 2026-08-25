@@ -1,5 +1,7 @@
 import Link from 'next/link';
-import { ConstellationGraphic, SiteFooter, SiteHeader } from '../components/SiteChrome';
+import { SiteFooter, SiteHeader } from '../components/SiteChrome';
+import { AtlasMapVisual, MidnightNetworkVisual, MoonPhaseBand } from '../components/EditorialVisuals';
+import { ArrowRightIcon, ArrowUpRightIcon } from '../components/Icons';
 import { constellations, getWorksByConstellation, works } from '../data/catalog-extended';
 import speakingStyles from './speaking/speaking.module.css';
 
@@ -84,26 +86,25 @@ export default function Home() {
   return (
     <>
       <SiteHeader />
-      <main>
+      <main id="main-content">
         <section className="hero" id="top">
           <div className="hero__copy">
-            <p className="eyebrow">Public systems · relational ethics · civic infrastructure</p>
             <h1>for the <em>love</em><br />of our <em>neighbors.</em></h1>
             <div className="hero-rule" />
             <p className="hero__lede">Building the language, programs, policy, and infrastructure required to make care operational.</p>
             <div className="hero-actions">
-              <Link className="button button--peach" href="/work">Enter the body of work →</Link>
-              <Link className="text-link" href="/writing">Read the public writing ↗</Link>
+              <Link className="button button--peach" href="/work">
+                Enter the body of work <ArrowRightIcon />
+              </Link>
+              <Link className="text-link" href="/writing">
+                Read the public writing <ArrowUpRightIcon />
+              </Link>
             </div>
+            <p className="hero__domains">Public systems · relational ethics · civic infrastructure</p>
           </div>
 
           <div className="hero__art hero__constellation-field" aria-hidden="true">
-            <div className="hero__star-cloud hero__star-cloud--one" />
-            <div className="hero__star-cloud hero__star-cloud--two" />
-            <ConstellationGraphic compact />
-            <span className="hero__bright-star hero__bright-star--one" />
-            <span className="hero__bright-star hero__bright-star--two" />
-            <span className="hero__bright-star hero__bright-star--three" />
+            <MidnightNetworkVisual />
           </div>
         </section>
 
@@ -130,9 +131,10 @@ export default function Home() {
           </article>
         </section>
 
+        <MoonPhaseBand />
+
         <section className="corpus-intro">
           <div>
-            <p className="eyebrow eyebrow--dark">A connected corpus</p>
             <h2>A body of work, <em>connected.</em></h2>
           </div>
           <div>
@@ -142,16 +144,17 @@ export default function Home() {
             <p>
               Visitors can read substantive synopses and follow the relationships between works.
             </p>
-            <Link className="button button--night" href="/work">Explore all {works.length} works →</Link>
+            <Link className="button button--night" href="/work">
+              Explore all {works.length} works <ArrowRightIcon />
+            </Link>
           </div>
         </section>
 
-        <section className="constellation-preview">
-          <ConstellationGraphic />
+        <section className="constellation-preview" aria-label="Explore the body of work by constellation">
+          <AtlasMapVisual theme="midnight" />
           <div className="constellation-labels">
             {constellations.map((item, index) => (
               <Link className={`constellation-label constellation-label--${index + 1}`} href={`/work#${item.id}`} key={item.id}>
-                <span>{item.number}</span>
                 <strong>{item.name}</strong>
                 <small>{getWorksByConstellation(item.id).length} works</small>
               </Link>
@@ -161,7 +164,7 @@ export default function Home() {
 
         <section className="featured-work">
           <header className="section-title-row section-title-row--light">
-            <div><p className="eyebrow">Selected works</p><h2>Five entry points.</h2></div>
+            <div><h2>Five entry points.</h2></div>
             <p>Theory, research, participatory design, campaign infrastructure, and applied statewide work—different expressions of the same concern with making care operational.</p>
           </header>
           <div className="featured-grid">
@@ -170,7 +173,7 @@ export default function Home() {
                 <p>{work.kind} · {work.year}</p>
                 <h3>{work.title}</h3>
                 <span>{work.subtitle}</span>
-                <b aria-hidden="true">↗</b>
+                <b aria-hidden="true"><ArrowUpRightIcon /></b>
               </Link>
             ))}
           </div>
@@ -178,11 +181,9 @@ export default function Home() {
 
         <section className={speakingStyles.homePreview} aria-labelledby="home-speaking-heading">
           <div>
-            <p className="eyebrow eyebrow--dark">Speaking · plenaries · public conversation</p>
             <h2 id="home-speaking-heading">Some things deserve to be said <em>out loud.</em></h2>
             <p className={speakingStyles.homePreviewLead}>
-              Talks about public service, advocacy, lived expertise, caregiver trauma,
-              civic power, and the emotional realities we are too often asked to tidy up.
+              Talks about public service, advocacy, lived expertise, caregiver trauma, civic power, and the emotional realities we are too often asked to tidy up.
             </p>
           </div>
           <div className={speakingStyles.homePreviewBody}>
@@ -193,7 +194,9 @@ export default function Home() {
               Featured plenary: Sitting in the Ick
             </p>
             <p>Rage, Grief, and Heartache in Public Service and Advocacy</p>
-            <Link className="button button--night" href="/speaking">Explore speaking topics →</Link>
+            <Link className="button button--night" href="/speaking">
+              Explore speaking topics <ArrowRightIcon />
+            </Link>
           </div>
         </section>
       </main>

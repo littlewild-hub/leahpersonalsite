@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Leah Buzek">
-  <rect width="64" height="64" rx="14" fill="#f6f0e8"/>
-  <circle cx="31" cy="33" r="15" fill="none" stroke="#17151d" stroke-width="3"/>
-  <ellipse cx="31" cy="33" rx="27" ry="10" fill="none" stroke="#9098df" stroke-width="3" transform="rotate(-18 31 33)"/>
-  <circle cx="54" cy="24" r="5" fill="#dfa6ad"/>
-</svg>
