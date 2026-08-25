@@ -19,6 +19,15 @@ function isCurrent(pathname, href) {
 export function SiteHeaderClient({ tone = 'night' }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia('(max-width: 820px)');
+    const sync = () => setIsMobile(media.matches);
+    sync();
+    media.addEventListener('change', sync);
+    return () => media.removeEventListener('change', sync);
+  }, []);
 
   useEffect(() => {
     setOpen(false);
@@ -52,7 +61,12 @@ export function SiteHeaderClient({ tone = 'night' }) {
         {open ? <CloseIcon /> : <MenuIcon />}
       </button>
 
-      <nav id="site-navigation" className="site-nav" aria-label="Primary navigation">
+      <nav
+        id="site-navigation"
+        className="site-nav"
+        aria-label="Primary navigation"
+        hidden={isMobile && !open}
+      >
         {links.map((link) => (
           <Link
             href={link.href}
