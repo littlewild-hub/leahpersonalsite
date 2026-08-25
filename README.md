@@ -1,18 +1,43 @@
 # Leah Personal Site
 
-**Tagline:** for the love of our neighbors
+**Tagline:** for the love of our neighbors.
 
-A personal site for Leah Buzek's growing body of work across public service, civic infrastructure, research, writing, and practical tools.
+A public portfolio for Leah Buzek's growing body of work across public service, relational ethics, caregiver trauma, civic infrastructure, research, policy design, speaking, and public writing.
 
-## Current foundation
+## Stack
 
-This first build is intentionally dependency-free. It establishes the site's voice, visual language, and information architecture before adding a publishing framework or content system.
+- Next.js 15
+- React 19
+- Vercel Analytics
+- Vercel Speed Insights
+- Vercel deployment
 
-### Files
+## Project structure
 
-- `index.html` — homepage and initial content structure
-- `styles.css` — responsive visual system
-- `script.js` — small progressive enhancements
-- `favicon.svg` — site mark
+- `app/` — App Router pages, route metadata, and page-level styles
+- `components/` — shared site chrome, interface icons, and reusable visual elements
+- `data/` — public work catalog and structured content
+- `lib/` — metadata and external-writing helpers
+- `public/` — machine-readable public indexes and static assets
+- `AGENTS.md` — repository instructions for design-aware coding agents
+- `DESIGN_OPERATING_LAYER.md` — project integration of UI/UX Pro Max and Impeccable design criteria
 
-Open `index.html` directly in a browser to preview the site.
+The site deliberately treats the work as a connected corpus rather than a conventional chronological portfolio. Its visual language is editorial and civic, using a midnight/linen palette, copper-peach accents, serif display typography, and constellation/network geometry.
+
+## Local development
+
+```bash
+npm install
+npm run dev
+```
+
+Open `http://localhost:3000`.
+
+## Production
+
+```bash
+npm run build
+npm start
+```
+
+The canonical production domain is `https://www.leahbuzek.com`.
