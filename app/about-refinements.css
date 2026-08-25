@@ -6,6 +6,21 @@ main.about-page {
   background: var(--night);
 }
 
+.about-hero__field::before {
+  background: radial-gradient(circle, rgba(28, 64, 93, .28), transparent 68%);
+  filter: none;
+}
+
+.about-hero__field .constellation {
+  filter: drop-shadow(0 8px 18px rgba(239, 154, 109, .16));
+}
+
+.about-field-label {
+  background: rgba(2, 10, 21, .92);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
 .about-experience,
 .about-formation,
 .about-learning {
