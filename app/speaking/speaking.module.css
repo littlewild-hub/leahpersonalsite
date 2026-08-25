@@ -3,22 +3,21 @@
 }
 
 .hero {
-  min-height: 39rem;
-  padding: clamp(7rem, 12vw, 12rem) var(--pad) clamp(6rem, 10vw, 10rem);
+  min-height: 36rem;
+  padding: clamp(6rem, 10vw, 10rem) var(--pad) clamp(5rem, 8vw, 8rem);
   background:
-    radial-gradient(circle at 78% 25%, rgba(239, 154, 109, .16), transparent 30%),
-    radial-gradient(circle at 24% 72%, rgba(198, 100, 69, .1), transparent 35%),
+    radial-gradient(circle at 78% 25%, rgba(239, 154, 109, .13), transparent 30%),
     linear-gradient(145deg, var(--night-deep), var(--night));
 }
 
 .hero h1 {
-  max-width: 13ch;
+  max-width: 14ch;
   margin-bottom: 1.8rem;
   font-family: var(--serif);
-  font-size: clamp(3.8rem, 8.4vw, 8.6rem);
+  font-size: clamp(3.5rem, 6.2vw, 6rem);
   font-weight: 400;
   line-height: .96;
-  letter-spacing: -.055em;
+  letter-spacing: -.035em;
 }
 
 .hero h1 em,
@@ -28,10 +27,10 @@
 }
 
 .heroLede {
-  max-width: 42rem;
+  max-width: 44rem;
   margin-bottom: 2.4rem;
   color: var(--muted-light);
-  font-size: clamp(1.08rem, 1.9vw, 1.45rem);
+  font-size: clamp(1.08rem, 1.7vw, 1.4rem);
 }
 
 .heroActions {
@@ -45,20 +44,20 @@
   display: grid;
   grid-template-columns: .85fr 1.15fr;
   gap: clamp(4rem, 9vw, 10rem);
-  padding: clamp(7rem, 11vw, 11rem) var(--pad);
+  padding: clamp(6rem, 9vw, 9rem) var(--pad);
   color: var(--ink);
   background: var(--paper-light);
-  scroll-margin-top: 2rem;
+  scroll-margin-top: 5.5rem;
 }
 
 .featuredIntro h2 {
-  max-width: 8ch;
-  margin-bottom: 1.3rem;
+  max-width: 9ch;
+  margin-bottom: 1rem;
   font-family: var(--serif);
-  font-size: clamp(4.4rem, 8.3vw, 9rem);
+  font-size: clamp(3.8rem, 6.3vw, 6rem);
   font-weight: 400;
-  line-height: .89;
-  letter-spacing: -.065em;
+  line-height: .92;
+  letter-spacing: -.035em;
 }
 
 .featuredIntro h2 em {
@@ -66,10 +65,19 @@
   font-weight: 400;
 }
 
+.featuredLabel {
+  margin: 0 0 1.3rem;
+  color: var(--copper);
+  font-size: .66rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .13em;
+}
+
 .featuredSubtitle {
-  max-width: 23rem;
+  max-width: 25rem;
   font-family: var(--serif);
-  font-size: clamp(1.35rem, 2.25vw, 1.9rem);
+  font-size: clamp(1.35rem, 2.1vw, 1.85rem);
   line-height: 1.25;
 }
 
@@ -82,10 +90,10 @@
 
 .tags span {
   padding: .48rem .72rem;
-  border: 1px solid rgba(12, 36, 56, .24);
+  border: 1px solid rgba(12, 36, 56, .3);
   font-size: .62rem;
   text-transform: uppercase;
-  letter-spacing: .11em;
+  letter-spacing: .09em;
 }
 
 .featuredBody {
@@ -96,15 +104,16 @@
 
 .featuredBody blockquote {
   margin: 0 0 2.4rem;
-  padding-left: 1.45rem;
-  border-left: 2px solid var(--copper);
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--copper);
   font-family: var(--serif);
-  font-size: clamp(1.9rem, 3.7vw, 3.4rem);
-  line-height: 1.1;
-  letter-spacing: -.025em;
+  font-size: clamp(1.9rem, 3.4vw, 3.15rem);
+  line-height: 1.12;
+  letter-spacing: -.02em;
 }
 
 .featuredBody > p {
+  max-width: 68ch;
   margin-bottom: 1.35rem;
   color: var(--muted-dark);
 }
@@ -117,7 +126,7 @@
 }
 
 .topics {
-  padding: clamp(7rem, 10vw, 10rem) var(--pad);
+  padding: clamp(6rem, 9vw, 9rem) var(--pad);
   background: linear-gradient(160deg, var(--night), var(--night-deep));
 }
 
@@ -126,17 +135,17 @@
   grid-template-columns: 1fr .78fr;
   align-items: end;
   gap: 4rem;
-  margin-bottom: clamp(3.5rem, 7vw, 7rem);
+  margin-bottom: clamp(3.5rem, 6vw, 6rem);
 }
 
 .topicsHeader h2 {
   max-width: 13ch;
   margin-bottom: 0;
   font-family: var(--serif);
-  font-size: clamp(3.2rem, 6vw, 6.4rem);
+  font-size: clamp(3rem, 5vw, 5.25rem);
   font-weight: 400;
   line-height: .98;
-  letter-spacing: -.045em;
+  letter-spacing: -.035em;
 }
 
 .topicsHeader > p {
@@ -153,28 +162,21 @@
   display: grid;
   grid-template-columns: .82fr 1.18fr;
   gap: clamp(2.5rem, 7vw, 8rem);
-  padding: clamp(3.5rem, 6vw, 6rem) 0;
+  padding: clamp(3.5rem, 5vw, 5rem) 0;
   border-bottom: 1px solid var(--line-light);
 }
 
-.topicNumber {
-  color: var(--peach);
-  font-size: .69rem;
-  font-weight: 700;
-  letter-spacing: .15em;
-}
-
 .topicHeading h3 {
-  margin: 1.2rem 0 .75rem;
+  margin: 0 0 .75rem;
   font-family: var(--serif);
-  font-size: clamp(2.35rem, 4.1vw, 4.15rem);
+  font-size: clamp(2.2rem, 3.7vw, 3.85rem);
   font-weight: 400;
   line-height: 1;
-  letter-spacing: -.035em;
+  letter-spacing: -.025em;
 }
 
 .topicSubtitle {
-  max-width: 27rem;
+  max-width: 29rem;
   margin-bottom: 0;
   color: var(--peach);
   font-size: .94rem;
@@ -182,26 +184,30 @@
 
 .topicBody {
   max-width: 47rem;
-  padding-top: 2.15rem;
+  padding-top: .25rem;
 }
 
 .topicBody > p {
+  max-width: 68ch;
   color: var(--muted-light);
 }
 
 .topicBody blockquote {
   margin: 1.7rem 0;
+  padding-top: 1.1rem;
+  border-top: 1px solid rgba(239, 154, 109, .55);
   font-family: var(--serif);
-  font-size: clamp(1.35rem, 2.3vw, 2rem);
-  line-height: 1.22;
+  font-size: clamp(1.35rem, 2.2vw, 1.95rem);
+  line-height: 1.24;
 }
 
 .topicBody .audiences {
   margin-bottom: 0;
   color: var(--peach);
   font-size: .65rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: .11em;
+  letter-spacing: .1em;
 }
 
 .invitation {
@@ -209,7 +215,7 @@
   grid-template-columns: 1fr .62fr;
   align-items: end;
   gap: 4rem;
-  padding: clamp(7rem, 10vw, 10rem) var(--pad);
+  padding: clamp(6rem, 9vw, 9rem) var(--pad);
   color: var(--ink);
   background: var(--paper);
 }
@@ -218,10 +224,10 @@
   max-width: 17ch;
   margin-bottom: 1.4rem;
   font-family: var(--serif);
-  font-size: clamp(3rem, 5.3vw, 5.6rem);
+  font-size: clamp(2.9rem, 4.6vw, 4.8rem);
   font-weight: 400;
   line-height: 1;
-  letter-spacing: -.045em;
+  letter-spacing: -.03em;
 }
 
 .invitation > div:first-child > p:last-child {
@@ -241,19 +247,19 @@
   display: grid;
   grid-template-columns: .92fr 1.08fr;
   gap: clamp(3rem, 9vw, 9rem);
-  padding: clamp(7rem, 10vw, 10rem) var(--pad);
+  padding: clamp(6rem, 9vw, 9rem) var(--pad);
   color: var(--ink);
   background: var(--paper-light);
 }
 
 .homePreview h2 {
-  max-width: 11ch;
+  max-width: 12ch;
   margin-bottom: 1.3rem;
   font-family: var(--serif);
-  font-size: clamp(3.7rem, 6.8vw, 7rem);
+  font-size: clamp(3.2rem, 5.2vw, 5.4rem);
   font-weight: 400;
-  line-height: .95;
-  letter-spacing: -.055em;
+  line-height: .97;
+  letter-spacing: -.035em;
 }
 
 .homePreview h2 em {
@@ -274,11 +280,11 @@
 
 .homePreviewBody blockquote {
   margin: 0 0 1.4rem;
-  padding-left: 1.4rem;
-  border-left: 2px solid var(--copper);
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--copper);
   font-family: var(--serif);
-  font-size: clamp(1.8rem, 3.2vw, 3rem);
-  line-height: 1.12;
+  font-size: clamp(1.8rem, 3vw, 2.85rem);
+  line-height: 1.14;
 }
 
 .homePreviewBody > p {
@@ -288,7 +294,7 @@
 .homePreviewBody .homePreviewFeatured {
   margin-top: 1.6rem;
   color: var(--ink);
-  font-weight: 600;
+  font-weight: 650;
 }
 
 .homePreviewBody > a {
@@ -314,20 +320,16 @@
   .topicsHeader > p {
     margin-left: 0;
   }
-
-  .topicBody {
-    padding-top: 0;
-  }
 }
 
 @media (max-width: 720px) {
   .hero {
     min-height: auto;
-    padding-top: 6rem;
+    padding-top: 5rem;
   }
 
   .hero h1 {
-    font-size: clamp(3.5rem, 14vw, 6rem);
+    font-size: clamp(3.1rem, 13vw, 4.8rem);
   }
 
   .heroActions {
@@ -336,17 +338,21 @@
   }
 
   .featuredIntro h2 {
-    font-size: clamp(4rem, 16vw, 7rem);
+    font-size: clamp(3.5rem, 15vw, 5.5rem);
   }
 
   .featured,
   .topics,
   .invitation,
   .homePreview {
-    padding-block: 5rem;
+    padding-block: 4.75rem;
   }
 
   .topicCard {
     padding-block: 3rem;
+  }
+
+  .topicHeading h3 {
+    font-size: clamp(2.1rem, 10vw, 3.3rem);
   }
 }
