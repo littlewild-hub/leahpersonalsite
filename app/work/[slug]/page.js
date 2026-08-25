@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { SiteFooter, SiteHeader } from '../../../components/SiteChrome';
+import { ArrowRightIcon, ArrowUpRightIcon } from '../../../components/Icons';
 import { getConstellation, getWork, works } from '../../../data/catalog-extended';
 import { socialImage, twitterImage } from '../../../lib/site-metadata';
 import styles from './work-detail.module.css';
 
-const siteUrl = 'https://leahbuzek.com';
+const siteUrl = 'https://www.leahbuzek.com';
 
 export function generateStaticParams() {
   return works.map((work) => ({ slug: work.slug }));
@@ -99,22 +100,22 @@ export default async function WorkPage({ params }) {
   return (
     <>
       <SiteHeader />
-      <main className="work-page">
+      <main className="work-page" id="main-content">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
         <section className="work-masthead">
-          <div className="work-masthead__breadcrumb">
+          <div className="work-masthead__breadcrumb" aria-label="Breadcrumb">
             <Link href="/work">Body of work</Link>
-            <span>→</span>
+            <span aria-hidden="true"><ArrowRightIcon /></span>
             <Link href={`/work#${constellation.id}`}>{constellation.name}</Link>
           </div>
           <div className="work-masthead__grid">
             <div>
-              <p className="eyebrow">{work.kind} · {work.year}</p>
               <h1>{work.title}</h1>
               <p className="work-subtitle">{work.subtitle}</p>
+              <p className="work-meta-line">{work.kind} · {work.year}</p>
             </div>
             <dl className="work-facts">
               <div><dt>Status</dt><dd>{work.status}</dd></div>
@@ -127,10 +128,12 @@ export default async function WorkPage({ params }) {
         <div className={styles.readingFlow}>
           <section className={styles.proposition}>
             <div className={styles.propositionInner}>
-              <p className="eyebrow eyebrow--dark">Central proposition</p>
+              <p className="section-label">Central proposition</p>
               <blockquote>{work.proposition}</blockquote>
               {work.externalUrl ? (
-                <a className="text-link text-link--dark" href={work.externalUrl} target="_blank" rel="noreferrer">Read on the original platform ↗</a>
+                <a className="text-link text-link--dark" href={work.externalUrl} target="_blank" rel="noreferrer">
+                  Read on the original platform <ArrowUpRightIcon />
+                </a>
               ) : null}
             </div>
           </section>
@@ -182,15 +185,15 @@ export default async function WorkPage({ params }) {
         </div>
 
         {related.length ? (
-          <section className="related-works">
-            <p className="eyebrow">Connected works</p>
+          <section className="related-works" aria-labelledby="related-works-heading">
+            <h2 className="related-heading" id="related-works-heading">Connected works</h2>
             <div className="related-grid">
               {related.map((item) => (
                 <Link href={`/work/${item.slug}`} key={item.slug}>
                   <span>{item.kind}</span>
-                  <h2>{item.title}</h2>
+                  <h3>{item.title}</h3>
                   <p>{item.subtitle}</p>
-                  <b aria-hidden="true">↗</b>
+                  <b aria-hidden="true"><ArrowUpRightIcon /></b>
                 </Link>
               ))}
             </div>
