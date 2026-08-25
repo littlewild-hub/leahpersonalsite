@@ -1,20 +1,8 @@
-import Link from 'next/link';
+import { ArrowUpRightIcon } from './Icons';
+import { SiteHeaderClient } from './SiteHeaderClient';
 
 export function SiteHeader({ tone = 'night' }) {
-  return (
-    <header className={`site-header site-header--${tone}`}>
-      <Link className="wordmark" href="/">
-        Leah Buzek
-      </Link>
-      <nav className="site-nav" aria-label="Primary navigation">
-        <Link href="/about">About</Link>
-        <Link href="/work">Body of work</Link>
-        <Link href="/speaking">Speaking</Link>
-        <Link href="/writing">Writing</Link>
-        <a href="mailto:LeahGBuzek@gmail.com">Contact</a>
-      </nav>
-    </header>
-  );
+  return <SiteHeaderClient tone={tone} />;
 }
 
 export function SiteFooter() {
@@ -25,10 +13,18 @@ export function SiteFooter() {
         <p>A living body of work in public systems, care, civic infrastructure, and relational ethics.</p>
       </div>
       <div className="footer-links">
-        <a href="https://medium.com/@progresswithpurpose" target="_blank" rel="noreferrer">Medium ↗</a>
-        <a href="https://substack.com/@coordinatesmayvary" target="_blank" rel="noreferrer">Substack ↗</a>
-        <a href="mailto:LeahGBuzek@gmail.com">Email ↗</a>
-        <a href="/llms.txt">LLMs.txt ↗</a>
+        <a href="https://medium.com/@progresswithpurpose" target="_blank" rel="noreferrer">
+          Medium <ArrowUpRightIcon />
+        </a>
+        <a href="https://substack.com/@coordinatesmayvary" target="_blank" rel="noreferrer">
+          Substack <ArrowUpRightIcon />
+        </a>
+        <a href="mailto:LeahGBuzek@gmail.com">
+          Email <ArrowUpRightIcon />
+        </a>
+        <a href="/llms.txt">
+          LLMs.txt <ArrowUpRightIcon />
+        </a>
       </div>
       <p className="footer-note">Full source manuscripts are retained privately. The public site presents authored synopses rather than downloadable files.</p>
     </footer>
