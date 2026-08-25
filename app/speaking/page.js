@@ -64,6 +64,15 @@ const topics = [
     question: 'What becomes possible when rural communities are approached as sources of knowledge and power?',
     audiences: 'Community organizers · rural-serving organizations · civic and political convenings',
   },
+  {
+    number: '07',
+    title: 'Two Things Can Be True',
+    subtitle: 'Nuance in a world that asks for precision',
+    description:
+      'We are routinely asked for a clear position, a single cause, or a definitive answer. But precision and simplicity are not the same. This talk explores how to hold competing truths, distinguish nuance from indecision, revise a judgment without treating revision as failure, and still act decisively when reality refuses clean categories.',
+    question: 'What if intellectual honesty requires us to say both—and precision requires us to explain how?',
+    audiences: 'Leaders · facilitators · public-service and advocacy audiences',
+  },
 ];
 
 export default function SpeakingPage() {
