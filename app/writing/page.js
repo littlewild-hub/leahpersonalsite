@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { SiteFooter, SiteHeader } from '../../components/SiteChrome';
+import { ArrowUpRightIcon } from '../../components/Icons';
 import { works } from '../../data/catalog';
 import { getExternalWriting, SOURCES } from '../../lib/external-writing';
 import { socialImage } from '../../lib/site-metadata';
@@ -31,20 +32,19 @@ export default async function WritingPage() {
   return (
     <>
       <SiteHeader />
-      <main>
+      <main id="main-content">
         <section className="writing-hero">
-          <p className="eyebrow">Essays & public writing</p>
           <h1>Ideas in public, <em>before and after</em> they become frameworks.</h1>
           <p>
             Medium and Substack hold the more immediate layer of the work: cultural analysis, public argument, field notes, and ideas still under pressure. This archive links outward while preserving their place in the larger body of work.
           </p>
         </section>
 
-        <section className="platform-strip">
+        <section className="platform-strip" aria-label="Publishing platforms">
           {SOURCES.map((source) => (
             <a href={source.profile} target="_blank" rel="noreferrer" key={source.platform}>
               <span>{source.platform}</span>
-              <b>Open profile ↗</b>
+              <b>Open profile <ArrowUpRightIcon /></b>
             </a>
           ))}
         </section>
@@ -53,7 +53,6 @@ export default async function WritingPage() {
           <section className="external-writing">
             <header className="section-title-row">
               <div>
-                <p className="eyebrow eyebrow--dark">Pulled from the source</p>
                 <h2>Recent publishing</h2>
               </div>
               <p>Feed content updates automatically. Full articles remain on Medium or Substack.</p>
@@ -64,7 +63,7 @@ export default async function WritingPage() {
                   <p className="external-meta">{post.platform}{post.date ? ` · ${formatDate(post.date)}` : ''}</p>
                   <h3>{post.title}</h3>
                   {post.excerpt ? <p>{post.excerpt}</p> : null}
-                  <span>Read on {post.platform} ↗</span>
+                  <span>Read on {post.platform} <ArrowUpRightIcon /></span>
                 </a>
               ))}
             </div>
@@ -78,7 +77,6 @@ export default async function WritingPage() {
         <section className="writing-in-corpus">
           <header className="section-title-row section-title-row--light">
             <div>
-              <p className="eyebrow">In the body of work</p>
               <h2>Essays with context.</h2>
             </div>
             <p>These pages explain the argument and connect each essay to the wider corpus.</p>
@@ -91,7 +89,7 @@ export default async function WritingPage() {
                   <h3>{work.title}</h3>
                   <span>{work.subtitle}</span>
                 </div>
-                <b aria-hidden="true">↗</b>
+                <b aria-hidden="true"><ArrowUpRightIcon /></b>
               </Link>
             ))}
           </div>
