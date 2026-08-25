@@ -22,7 +22,7 @@ export default function robots() {
         allow: '/',
       },
     ],
-    sitemap: 'https://leahbuzek.com/sitemap.xml',
-    host: 'https://leahbuzek.com',
+    sitemap: 'https://www.leahbuzek.com/sitemap.xml',
+    host: 'https://www.leahbuzek.com',
   };
 }
