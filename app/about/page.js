@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ConstellationGraphic, SiteFooter, SiteHeader } from '../../components/SiteChrome';
+import { ArrowRightIcon, ArrowUpRightIcon } from '../../components/Icons';
 import { socialImage } from '../../lib/site-metadata';
 
 export const metadata = {
@@ -68,10 +69,9 @@ export default function AboutPage() {
   return (
     <>
       <SiteHeader />
-      <main className="about-page">
+      <main className="about-page" id="main-content">
         <section className="about-hero">
           <div className="about-hero__copy">
-            <p className="eyebrow">About Leah Buzek</p>
             <h1>I build where <em>care</em> meets structure.</h1>
             <p className="about-hero__lede">
               I am a program strategist and systems designer working across public service,
@@ -80,8 +80,12 @@ export default function AboutPage() {
               people can actually implement.
             </p>
             <div className="about-hero__actions">
-              <Link className="button button--peach" href="/work">Explore the body of work →</Link>
-              <a className="text-link" href="mailto:LeahGBuzek@gmail.com">Contact me ↗</a>
+              <Link className="button button--peach" href="/work">
+                Explore the body of work <ArrowRightIcon />
+              </Link>
+              <a className="text-link" href="mailto:LeahGBuzek@gmail.com">
+                Contact me <ArrowUpRightIcon />
+              </a>
             </div>
           </div>
 
@@ -102,7 +106,6 @@ export default function AboutPage() {
 
         <section className="about-experience">
           <header className="about-section-heading about-section-heading--dark">
-            <p className="eyebrow eyebrow--dark">Work</p>
             <h2>Work built in the field.</h2>
             <p>Experience spanning direct family support, statewide program development, research, training, and operational design.</p>
           </header>
@@ -123,14 +126,13 @@ export default function AboutPage() {
 
         <section className="about-formation">
           <header className="about-formal-header">
-            <p className="eyebrow">Formal education</p>
             <h2>Structured learning.<br /><em>Applied immediately.</em></h2>
             <p>Degree study, leadership development, and formal practice credentials that support the work.</p>
           </header>
 
           <div className="about-formal-grid">
             <div className="about-formation__column">
-              <p className="eyebrow">Degrees</p>
+              <h3 className="about-column-title">Degrees</h3>
               <article>
                 <span>In progress</span>
                 <h3>Master of Public Service</h3>
@@ -144,23 +146,27 @@ export default function AboutPage() {
             </div>
 
             <div className="about-formation__column">
-              <p className="eyebrow">Leadership development</p>
+              <h3 className="about-column-title">Leadership development</h3>
               <article>
                 <span>May 2025</span>
                 <h3>NEW Leadership Ohio</h3>
                 <p>A residential public-leadership institute focused on women in politics, policymaking, skill-building, and leadership practice.</p>
-                <a href="https://wgss.osu.edu/newleadershipohio" target="_blank" rel="noreferrer">Program information ↗</a>
+                <a href="https://wgss.osu.edu/newleadershipohio" target="_blank" rel="noreferrer">
+                  Program information <ArrowUpRightIcon />
+                </a>
               </article>
               <article>
                 <span>Spring 2026</span>
                 <h3>Leadership Stark County Spotlight</h3>
                 <p>A community leadership program centered on personal strengths, local institutions, service, and meaningful civic connection.</p>
-                <a href="https://leadershipstarkcounty.org/course/spotlight/" target="_blank" rel="noreferrer">Program information ↗</a>
+                <a href="https://leadershipstarkcounty.org/course/spotlight/" target="_blank" rel="noreferrer">
+                  Program information <ArrowUpRightIcon />
+                </a>
               </article>
             </div>
 
             <div className="about-formation__column about-formation__column--credentials">
-              <p className="eyebrow">Credentials</p>
+              <h3 className="about-column-title">Credentials</h3>
               {credentials.map((credential) => (
                 <article key={credential.title}>
                   <span>Practice foundation</span>
@@ -175,7 +181,6 @@ export default function AboutPage() {
         <section className="about-learning">
           <header className="about-learning__intro">
             <div>
-              <p className="eyebrow eyebrow--dark">Independent study</p>
               <h2>The study underneath the work.</h2>
             </div>
             <div>
@@ -186,7 +191,7 @@ export default function AboutPage() {
 
           <div className="about-learning__intensives">
             <div className="about-topic-panel">
-              <p className="eyebrow eyebrow--dark">Training distribution</p>
+              <h3 className="about-subsection-title">Training distribution</h3>
               <p className="about-topic-note">
                 Share of the 150-record archive tagged within each domain. Trainings can span more
                 than one topic, so the percentages intentionally overlap.
@@ -208,7 +213,7 @@ export default function AboutPage() {
             </div>
 
             <div className="about-intensive-column">
-              <p className="eyebrow eyebrow--dark">Selected intensive learning</p>
+              <h3 className="about-subsection-title">Selected intensive learning</h3>
               <div className="about-intensive-list">
                 {intensiveLearning.map((item) => (
                   <article key={`${item.title}-${item.year}`}>
