@@ -9,7 +9,6 @@ import './hero-sizing.css';
 import './about.css';
 import './about-refinements.css';
 import './design-refresh.css';
-import './editorial-visuals.css';
 
 const displayFont = Cormorant_Garamond({
   subsets: ['latin'],

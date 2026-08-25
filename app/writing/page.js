@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { SiteFooter, SiteHeader } from '../../components/SiteChrome';
-import { EditorialPlate } from '../../components/EditorialVisuals';
 import { ArrowUpRightIcon } from '../../components/Icons';
 import { works } from '../../data/catalog';
 import { getExternalWriting, SOURCES } from '../../lib/external-writing';
@@ -74,10 +73,6 @@ export default async function WritingPage() {
             <p>The live feeds are temporarily unavailable, but both public archives remain linked above.</p>
           </section>
         )}
-
-        <section className="writing-visual-interlude" aria-label="Guiding principle">
-          <EditorialPlate variant="clarity" tone="linen" />
-        </section>
 
         <section className="writing-in-corpus">
           <header className="section-title-row section-title-row--light">

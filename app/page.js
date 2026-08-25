@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import { SiteFooter, SiteHeader } from '../components/SiteChrome';
-import { AtlasMapVisual, MidnightNetworkVisual, MoonPhaseBand } from '../components/EditorialVisuals';
+import { ConstellationGraphic, SiteFooter, SiteHeader } from '../components/SiteChrome';
 import { ArrowRightIcon, ArrowUpRightIcon } from '../components/Icons';
 import { constellations, getWorksByConstellation, works } from '../data/catalog-extended';
 import speakingStyles from './speaking/speaking.module.css';
@@ -104,7 +103,12 @@ export default function Home() {
           </div>
 
           <div className="hero__art hero__constellation-field" aria-hidden="true">
-            <MidnightNetworkVisual />
+            <div className="hero__star-cloud hero__star-cloud--one" />
+            <div className="hero__star-cloud hero__star-cloud--two" />
+            <ConstellationGraphic compact />
+            <span className="hero__bright-star hero__bright-star--one" />
+            <span className="hero__bright-star hero__bright-star--two" />
+            <span className="hero__bright-star hero__bright-star--three" />
           </div>
         </section>
 
@@ -131,8 +135,6 @@ export default function Home() {
           </article>
         </section>
 
-        <MoonPhaseBand />
-
         <section className="corpus-intro">
           <div>
             <h2>A body of work, <em>connected.</em></h2>
@@ -151,7 +153,7 @@ export default function Home() {
         </section>
 
         <section className="constellation-preview" aria-label="Explore the body of work by constellation">
-          <AtlasMapVisual theme="midnight" />
+          <ConstellationGraphic />
           <div className="constellation-labels">
             {constellations.map((item, index) => (
               <Link className={`constellation-label constellation-label--${index + 1}`} href={`/work#${item.id}`} key={item.id}>
