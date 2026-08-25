@@ -108,7 +108,7 @@ export default async function WorkPage({ params }) {
         <section className="work-masthead">
           <div className="work-masthead__breadcrumb" aria-label="Breadcrumb">
             <Link href="/work">Body of work</Link>
-            <span aria-hidden="true"><ArrowRightIcon /></span>
+            <span aria-hidden="true"><ArrowRightIcon className={styles.breadcrumbIcon} /></span>
             <Link href={`/work#${constellation.id}`}>{constellation.name}</Link>
           </div>
           <div className="work-masthead__grid">
@@ -191,9 +191,9 @@ export default async function WorkPage({ params }) {
               {related.map((item) => (
                 <Link href={`/work/${item.slug}`} key={item.slug}>
                   <span>{item.kind}</span>
-                  <h3>{item.title}</h3>
+                  <h3 className={styles.relatedTitle}>{item.title}</h3>
                   <p>{item.subtitle}</p>
-                  <b aria-hidden="true"><ArrowUpRightIcon /></b>
+                  <b className={styles.relatedArrow} aria-hidden="true"><ArrowUpRightIcon /></b>
                 </Link>
               ))}
             </div>
