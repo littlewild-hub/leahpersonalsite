@@ -1,129 +1,14 @@
-.hero__constellation-field {
+.hero::before {
+  background: var(--night) url("/images/home-hero-constellation.avif") center center / cover no-repeat;
+}
+
+.hero::after {
+  display: none;
+}
+
+.hero__copy {
   position: relative;
-  isolation: isolate;
-  display: grid;
-  place-items: center;
-  min-height: 43rem;
-  overflow: visible;
-}
-
-.hero__constellation-field::before {
-  content: "";
-  position: absolute;
-  inset: 5% -6% 2%;
-  z-index: -2;
-  background:
-    radial-gradient(ellipse at 58% 42%, rgba(239, 154, 109, 0.18), transparent 30%),
-    radial-gradient(ellipse at 42% 58%, rgba(74, 116, 158, 0.22), transparent 38%),
-    radial-gradient(circle at 50% 50%, rgba(247, 230, 211, 0.05), transparent 58%);
-  filter: blur(8px);
-}
-
-.hero__constellation-field::after {
-  content: "";
-  position: absolute;
-  inset: 8% 2% 5%;
-  z-index: -1;
-  opacity: 0.78;
-  background-image:
-    radial-gradient(circle at 8% 18%, rgba(247, 230, 211, 0.95) 0 1px, transparent 1.8px),
-    radial-gradient(circle at 20% 72%, rgba(239, 154, 109, 0.85) 0 1.2px, transparent 2px),
-    radial-gradient(circle at 34% 29%, rgba(247, 230, 211, 0.75) 0 1px, transparent 1.8px),
-    radial-gradient(circle at 47% 84%, rgba(247, 230, 211, 0.9) 0 1.3px, transparent 2.1px),
-    radial-gradient(circle at 61% 13%, rgba(239, 154, 109, 0.9) 0 1.2px, transparent 2px),
-    radial-gradient(circle at 75% 67%, rgba(247, 230, 211, 0.8) 0 1px, transparent 1.8px),
-    radial-gradient(circle at 91% 35%, rgba(239, 154, 109, 0.8) 0 1px, transparent 1.8px),
-    radial-gradient(circle at 86% 88%, rgba(247, 230, 211, 0.88) 0 1.2px, transparent 2px);
-}
-
-.hero__star-cloud {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  opacity: 0.58;
-  background-image:
-    radial-gradient(circle, rgba(247, 230, 211, 0.95) 0 1px, transparent 1.6px),
-    radial-gradient(circle, rgba(239, 154, 109, 0.8) 0 1px, transparent 1.7px);
-  background-size: 41px 41px, 67px 67px;
-  mask-image: radial-gradient(circle, black 0 42%, transparent 74%);
-}
-
-.hero__star-cloud--one {
-  width: 26rem;
-  height: 26rem;
-  top: 2%;
-  right: 0;
-  transform: rotate(13deg);
-}
-
-.hero__star-cloud--two {
-  width: 22rem;
-  height: 22rem;
-  left: 2%;
-  bottom: 0;
-  transform: rotate(-9deg);
-}
-
-.hero__constellation-field > .constellation {
-  position: relative;
-  inset: auto;
-  width: min(100%, 48rem);
-  max-height: none;
-  opacity: 0.96;
-  color: var(--peach);
-  transform: rotate(-4deg) scale(1.04);
-  filter:
-    drop-shadow(0 0 7px rgba(239, 154, 109, 0.78))
-    drop-shadow(0 0 24px rgba(239, 154, 109, 0.22));
-}
-
-.hero__bright-star {
-  position: absolute;
-  width: 0.55rem;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: var(--cream);
-  box-shadow:
-    0 0 0.65rem rgba(247, 230, 211, 0.95),
-    0 0 1.8rem rgba(239, 154, 109, 0.65);
-}
-
-.hero__bright-star::before,
-.hero__bright-star::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background: linear-gradient(90deg, transparent, rgba(247, 230, 211, 0.8), transparent);
-  transform: translate(-50%, -50%);
-}
-
-.hero__bright-star::before {
-  width: 2.7rem;
-  height: 1px;
-}
-
-.hero__bright-star::after {
-  width: 1px;
-  height: 2.7rem;
-  background: linear-gradient(180deg, transparent, rgba(247, 230, 211, 0.8), transparent);
-}
-
-.hero__bright-star--one {
-  top: 16%;
-  right: 18%;
-}
-
-.hero__bright-star--two {
-  top: 58%;
-  left: 8%;
-  transform: scale(0.72);
-}
-
-.hero__bright-star--three {
-  right: 9%;
-  bottom: 12%;
-  transform: scale(0.5);
+  z-index: 1;
 }
 
 .featured-work {
@@ -159,32 +44,13 @@
 }
 
 @media (max-width: 1000px) {
-  .hero__constellation-field {
-    min-height: 34rem;
-  }
-
-  .hero__constellation-field > .constellation {
-    width: min(88%, 42rem);
-    transform: rotate(-4deg);
+  .hero::before {
+    background-position: 60% center;
   }
 }
 
 @media (max-width: 720px) {
-  .hero__constellation-field {
-    min-height: 27rem;
-  }
-
-  .hero__constellation-field > .constellation {
-    width: 108%;
-  }
-
-  .hero__star-cloud--one {
-    width: 19rem;
-    height: 19rem;
-  }
-
-  .hero__star-cloud--two {
-    width: 16rem;
-    height: 16rem;
+  .hero::before {
+    background-position: 58% center;
   }
 }
