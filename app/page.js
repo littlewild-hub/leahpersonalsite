@@ -101,15 +101,6 @@ export default function Home() {
             </div>
             <p className="hero__domains">Public systems · relational ethics · civic infrastructure</p>
           </div>
-
-          <div className="hero__art hero__constellation-field" aria-hidden="true">
-            <div className="hero__star-cloud hero__star-cloud--one" />
-            <div className="hero__star-cloud hero__star-cloud--two" />
-            <ConstellationGraphic compact />
-            <span className="hero__bright-star hero__bright-star--one" />
-            <span className="hero__bright-star hero__bright-star--two" />
-            <span className="hero__bright-star hero__bright-star--three" />
-          </div>
         </section>
 
         <section className="practice-band" aria-label="How I work">
