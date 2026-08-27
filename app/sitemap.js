@@ -7,6 +7,7 @@ export default function sitemap() {
     { url: baseUrl, priority: 1, changeFrequency: 'weekly' },
     { url: `${baseUrl}/work`, priority: 0.9, changeFrequency: 'weekly' },
     { url: `${baseUrl}/speaking`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${baseUrl}/organizations`, priority: 0.8, changeFrequency: 'monthly' },
     { url: `${baseUrl}/writing`, priority: 0.8, changeFrequency: 'daily' },
     { url: `${baseUrl}/about`, priority: 0.7, changeFrequency: 'monthly' },
   ];

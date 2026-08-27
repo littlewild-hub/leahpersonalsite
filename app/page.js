@@ -95,6 +95,9 @@ export default function Home() {
               <Link className="button button--peach" href="/work">
                 Enter the body of work <ArrowRightIcon />
               </Link>
+              <Link className="button button--outline" href="/organizations">
+                Organizations I’ve worked with <ArrowRightIcon />
+              </Link>
               <Link className="text-link" href="/writing">
                 Read the public writing <ArrowUpRightIcon />
               </Link>
