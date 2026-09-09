@@ -5,198 +5,67 @@ import { constellations, getWorksByConstellation, works } from '../data/catalog-
 import speakingStyles from './speaking/speaking.module.css';
 
 function PracticeIcon({ type }) {
-  const commonProps = {
-    className: `practice-icon practice-icon--${type}`,
-    viewBox: '0 0 80 80',
-    'aria-hidden': true,
-    focusable: 'false',
-  };
-
-  if (type === 'systems') {
-    return (
-      <svg {...commonProps}>
-        <path className="practice-icon__line" d="M15 22 40 12 65 22 65 52 40 68 15 52Z" />
-        <path className="practice-icon__line" d="M15 22 40 40 65 22M15 52 40 40 65 52M40 12V68" />
-        <circle className="practice-icon__node" cx="15" cy="22" r="3.2" />
-        <circle className="practice-icon__node" cx="40" cy="12" r="3.2" />
-        <circle className="practice-icon__node" cx="65" cy="22" r="3.2" />
-        <circle className="practice-icon__node" cx="65" cy="52" r="3.2" />
-        <circle className="practice-icon__node" cx="40" cy="68" r="3.2" />
-        <circle className="practice-icon__node" cx="15" cy="52" r="3.2" />
-        <circle className="practice-icon__node practice-icon__node--core" cx="40" cy="40" r="4" />
-      </svg>
-    );
-  }
-
-  if (type === 'relational') {
-    return (
-      <svg {...commonProps}>
-        <ellipse className="practice-icon__line" cx="32" cy="40" rx="24" ry="14" transform="rotate(-28 32 40)" />
-        <ellipse className="practice-icon__line" cx="48" cy="40" rx="24" ry="14" transform="rotate(28 48 40)" />
-        <path className="practice-icon__line" d="M19 25 40 40 61 25M19 55 40 40 61 55" />
-        <circle className="practice-icon__node" cx="19" cy="25" r="3.2" />
-        <circle className="practice-icon__node" cx="61" cy="25" r="3.2" />
-        <circle className="practice-icon__node" cx="19" cy="55" r="3.2" />
-        <circle className="practice-icon__node" cx="61" cy="55" r="3.2" />
-        <circle className="practice-icon__node practice-icon__node--core" cx="40" cy="40" r="4" />
-      </svg>
-    );
-  }
-
-  if (type === 'synthesis') {
-    return (
-      <svg {...commonProps}>
-        <path className="practice-icon__line" d="M12 18 48 40M10 40H48M12 62 48 40M28 10 48 40M28 70 48 40M48 40H70" />
-        <circle className="practice-icon__node" cx="12" cy="18" r="3.2" />
-        <circle className="practice-icon__node" cx="10" cy="40" r="3.2" />
-        <circle className="practice-icon__node" cx="12" cy="62" r="3.2" />
-        <circle className="practice-icon__node" cx="28" cy="10" r="3.2" />
-        <circle className="practice-icon__node" cx="28" cy="70" r="3.2" />
-        <circle className="practice-icon__node practice-icon__node--core" cx="48" cy="40" r="4.5" />
-        <circle className="practice-icon__node" cx="70" cy="40" r="3.2" />
-      </svg>
-    );
-  }
-
-  return (
-    <svg {...commonProps}>
-      <path className="practice-icon__line" d="M40 68V48M40 48 24 34M40 48 56 34M24 34 15 18M24 34 31 16M56 34 49 16M56 34 65 18" />
-      <circle className="practice-icon__node" cx="40" cy="68" r="3.2" />
-      <circle className="practice-icon__node practice-icon__node--core" cx="40" cy="48" r="4.2" />
-      <circle className="practice-icon__node" cx="24" cy="34" r="3.2" />
-      <circle className="practice-icon__node" cx="56" cy="34" r="3.2" />
-      <circle className="practice-icon__node" cx="15" cy="18" r="3.2" />
-      <circle className="practice-icon__node" cx="31" cy="16" r="3.2" />
-      <circle className="practice-icon__node" cx="49" cy="16" r="3.2" />
-      <circle className="practice-icon__node" cx="65" cy="18" r="3.2" />
-    </svg>
-  );
+  const commonProps = { className: `practice-icon practice-icon--${type}`, viewBox: '0 0 80 80', 'aria-hidden': true, focusable: 'false' };
+  if (type === 'systems') return <svg {...commonProps}><path className="practice-icon__line" d="M15 22 40 12 65 22 65 52 40 68 15 52Z" /><path className="practice-icon__line" d="M15 22 40 40 65 22M15 52 40 40 65 52M40 12V68" /><circle className="practice-icon__node" cx="15" cy="22" r="3.2" /><circle className="practice-icon__node" cx="40" cy="12" r="3.2" /><circle className="practice-icon__node" cx="65" cy="22" r="3.2" /><circle className="practice-icon__node" cx="65" cy="52" r="3.2" /><circle className="practice-icon__node" cx="40" cy="68" r="3.2" /><circle className="practice-icon__node" cx="15" cy="52" r="3.2" /><circle className="practice-icon__node practice-icon__node--core" cx="40" cy="40" r="4" /></svg>;
+  if (type === 'relational') return <svg {...commonProps}><ellipse className="practice-icon__line" cx="32" cy="40" rx="24" ry="14" transform="rotate(-28 32 40)" /><ellipse className="practice-icon__line" cx="48" cy="40" rx="24" ry="14" transform="rotate(28 48 40)" /><path className="practice-icon__line" d="M19 25 40 40 61 25M19 55 40 40 61 55" /><circle className="practice-icon__node" cx="19" cy="25" r="3.2" /><circle className="practice-icon__node" cx="61" cy="25" r="3.2" /><circle className="practice-icon__node" cx="19" cy="55" r="3.2" /><circle className="practice-icon__node" cx="61" cy="55" r="3.2" /><circle className="practice-icon__node practice-icon__node--core" cx="40" cy="40" r="4" /></svg>;
+  if (type === 'synthesis') return <svg {...commonProps}><path className="practice-icon__line" d="M12 18 48 40M10 40H48M12 62 48 40M28 10 48 40M28 70 48 40M48 40H70" /><circle className="practice-icon__node" cx="12" cy="18" r="3.2" /><circle className="practice-icon__node" cx="10" cy="40" r="3.2" /><circle className="practice-icon__node" cx="12" cy="62" r="3.2" /><circle className="practice-icon__node" cx="28" cy="10" r="3.2" /><circle className="practice-icon__node" cx="28" cy="70" r="3.2" /><circle className="practice-icon__node practice-icon__node--core" cx="48" cy="40" r="4.5" /><circle className="practice-icon__node" cx="70" cy="40" r="3.2" /></svg>;
+  return <svg {...commonProps}><path className="practice-icon__line" d="M40 68V48M40 48 24 34M40 48 56 34M24 34 15 18M24 34 31 16M56 34 49 16M56 34 65 18" /><circle className="practice-icon__node" cx="40" cy="68" r="3.2" /><circle className="practice-icon__node practice-icon__node--core" cx="40" cy="48" r="4.2" /><circle className="practice-icon__node" cx="24" cy="34" r="3.2" /><circle className="practice-icon__node" cx="56" cy="34" r="3.2" /><circle className="practice-icon__node" cx="15" cy="18" r="3.2" /><circle className="practice-icon__node" cx="31" cy="16" r="3.2" /><circle className="practice-icon__node" cx="49" cy="16" r="3.2" /><circle className="practice-icon__node" cx="65" cy="18" r="3.2" /></svg>;
 }
 
 export default function Home() {
-  const featured = [
-    'continuity-ethics',
-    'traces',
-    'epic',
-    'raise-the-bar',
-    'statewide-needs-assessment',
-  ].map((slug) => works.find((work) => work.slug === slug)).filter(Boolean);
+  const featured = ['traces', 'raise-the-bar', 'continuity-ethics'].map((slug) => works.find((work) => work.slug === slug)).filter(Boolean);
 
-  return (
-    <>
-      <SiteHeader />
-      <main id="main-content">
-        <section className="hero" id="top">
-          <div className="hero__copy">
-            <h1>for the <em>love</em><br />of our <em>neighbors.</em></h1>
-            <div className="hero-rule" />
-            <p className="hero__lede">Building the language, programs, policy, and infrastructure required to make care operational.</p>
-            <div className="hero-actions">
-              <Link className="button button--peach" href="/work">
-                Enter the body of work <ArrowRightIcon />
-              </Link>
-              <Link className="button button--outline" href="/organizations">
-                Organizations I’ve worked with <ArrowRightIcon />
-              </Link>
-              <Link className="text-link" href="/writing">
-                Read the public writing <ArrowUpRightIcon />
-              </Link>
-            </div>
-            <p className="hero__domains">Public systems · relational ethics · civic infrastructure</p>
+  return <>
+    <SiteHeader />
+    <main id="main-content">
+      <section className="hero" id="top">
+        <div className="hero__copy">
+          <p className="hero__domains">Leah Buzek · public systems · applied research · institutional practice</p>
+          <h1>for the <em>love</em><br />of our <em>neighbors.</em></h1>
+          <div className="hero-rule" />
+          <p className="hero__lede">I study where public systems break down around real human lives—and build the frameworks, programs, measurement tools, and institutional infrastructure that can make them work differently.</p>
+          <div className="hero-actions">
+            <Link className="button button--peach" href="/work">See what I’ve built <ArrowRightIcon /></Link>
+            <Link className="button button--outline" href="/connect">Bring me into a problem <ArrowRightIcon /></Link>
+            <Link className="text-link" href="/writing">Read the public writing <ArrowUpRightIcon /></Link>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="practice-band" aria-label="How I work">
-          <article>
-            <PracticeIcon type="systems" />
-            <h2>Systems design</h2>
-            <p>Programs and operational infrastructure built around actual human conditions.</p>
-          </article>
-          <article>
-            <PracticeIcon type="relational" />
-            <h2>Relational analysis</h2>
-            <p>Tracing how power, perception, proximity, and care move through a system.</p>
-          </article>
-          <article>
-            <PracticeIcon type="synthesis" />
-            <h2>Public synthesis</h2>
-            <p>Turning research, lived experience, and complexity into usable direction.</p>
-          </article>
-          <article>
-            <PracticeIcon type="civic" />
-            <h2>Civic capacity</h2>
-            <p>Creating structures through which people can participate and exercise power.</p>
-          </article>
-        </section>
+      <section className="featured-work" aria-labelledby="recognition-heading">
+        <header className="section-title-row section-title-row--light">
+          <div><h2 id="recognition-heading">Problems I keep returning to.</h2></div>
+          <p>Different settings, same underlying question: what would it take for institutions to see people more clearly, measure what actually matters, and make care operational?</p>
+        </header>
+        <div className="featured-grid">
+          {featured.map((work) => <Link href={`/work/${work.slug}`} key={work.slug}>
+            <p>{work.kind} · {work.year}</p><h3>{work.title}</h3><span>{work.subtitle}</span><b aria-hidden="true"><ArrowUpRightIcon /></b>
+          </Link>)}
+        </div>
+      </section>
 
-        <section className="corpus-intro">
-          <div>
-            <h2>A body of work, <em>connected.</em></h2>
-          </div>
-          <div>
-            <p>
-              This site is the public edition of a growing body of work: theory that becomes a model, research that becomes a framework, a framework that becomes training, and public problems translated into programs or policy.
-            </p>
-            <p>
-              Visitors can read substantive synopses and follow the relationships between works.
-            </p>
-            <Link className="button button--night" href="/work">
-              Explore all {works.length} works <ArrowRightIcon />
-            </Link>
-          </div>
-        </section>
+      <section className="practice-band" aria-label="How I work">
+        <article><PracticeIcon type="systems" /><h2>Systems design</h2><p>Programs and operational infrastructure built around actual human conditions.</p></article>
+        <article><PracticeIcon type="relational" /><h2>Relational analysis</h2><p>Tracing how power, perception, proximity, and care move through a system.</p></article>
+        <article><PracticeIcon type="synthesis" /><h2>Public synthesis</h2><p>Turning research, lived experience, and complexity into usable direction.</p></article>
+        <article><PracticeIcon type="civic" /><h2>Civic capacity</h2><p>Creating structures through which people can participate and exercise power.</p></article>
+      </section>
 
-        <section className="constellation-preview" aria-label="Explore the body of work by constellation">
-          <ConstellationGraphic />
-          <div className="constellation-labels">
-            {constellations.map((item, index) => (
-              <Link className={`constellation-label constellation-label--${index + 1}`} href={`/work#${item.id}`} key={item.id}>
-                <strong>{item.name}</strong>
-                <small>{getWorksByConstellation(item.id).length} works</small>
-              </Link>
-            ))}
-          </div>
-        </section>
+      <section className="corpus-intro">
+        <div><h2>A body of work, <em>connected.</em></h2></div>
+        <div><p>This site is the public edition of a growing body of work: theory that becomes a model, research that becomes a framework, a framework that becomes training, and public problems translated into programs or policy.</p><p>Visitors can read substantive synopses and follow the relationships between works.</p><Link className="button button--night" href="/work">Explore all {works.length} works <ArrowRightIcon /></Link></div>
+      </section>
 
-        <section className="featured-work">
-          <header className="section-title-row section-title-row--light">
-            <div><h2>Five entry points.</h2></div>
-            <p>Theory, research, participatory design, campaign infrastructure, and applied statewide work—different expressions of the same concern with making care operational.</p>
-          </header>
-          <div className="featured-grid">
-            {featured.map((work) => (
-              <Link href={`/work/${work.slug}`} key={work.slug}>
-                <p>{work.kind} · {work.year}</p>
-                <h3>{work.title}</h3>
-                <span>{work.subtitle}</span>
-                <b aria-hidden="true"><ArrowUpRightIcon /></b>
-              </Link>
-            ))}
-          </div>
-        </section>
+      <section className="constellation-preview" aria-label="Explore the body of work by constellation">
+        <ConstellationGraphic />
+        <div className="constellation-labels">{constellations.map((item, index) => <Link className={`constellation-label constellation-label--${index + 1}`} href={`/work#${item.id}`} key={item.id}><strong>{item.name}</strong><small>{getWorksByConstellation(item.id).length} works</small></Link>)}</div>
+      </section>
 
-        <section className={speakingStyles.homePreview} aria-labelledby="home-speaking-heading">
-          <div>
-            <h2 id="home-speaking-heading">Some things deserve to be said <em>out loud.</em></h2>
-            <p className={speakingStyles.homePreviewLead}>
-              Talks about public service, advocacy, lived expertise, caregiver trauma, civic power, and the emotional realities we are too often asked to tidy up.
-            </p>
-          </div>
-          <div className={speakingStyles.homePreviewBody}>
-            <blockquote>
-              Hope should not be the price of admission to conversations about injustice.
-            </blockquote>
-            <p className={speakingStyles.homePreviewFeatured}>
-              Featured plenary: Sitting in the Ick
-            </p>
-            <p>Rage, Grief, and Heartache in Public Service and Advocacy</p>
-            <Link className="button button--night" href="/speaking">
-              Explore speaking topics <ArrowRightIcon />
-            </Link>
-          </div>
-        </section>
-      </main>
-      <SiteFooter />
-    </>
-  );
+      <section className={speakingStyles.homePreview} aria-labelledby="home-speaking-heading">
+        <div><h2 id="home-speaking-heading">Some things deserve to be said <em>out loud.</em></h2><p className={speakingStyles.homePreviewLead}>Talks about public service, advocacy, lived expertise, caregiver trauma, civic power, and the emotional realities we are too often asked to tidy up.</p></div>
+        <div className={speakingStyles.homePreviewBody}><blockquote>Hope should not be the price of admission to conversations about injustice.</blockquote><p className={speakingStyles.homePreviewFeatured}>Featured plenary: Sitting in the Ick</p><p>Rage, Grief, and Heartache in Public Service and Advocacy</p><Link className="button button--night" href="/speaking">Explore speaking topics <ArrowRightIcon /></Link></div>
+      </section>
+    </main>
+    <SiteFooter />
+  </>;
 }
