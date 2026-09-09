@@ -74,11 +74,28 @@ export default async function ConnectPage({ searchParams }) {
             backgroundRepeat: 'no-repeat',
           }}
         >
-          <div className={styles.heroInner}>
-            <div className={styles.heroCopy}>
+          <div
+            className={styles.heroInner}
+            style={{
+              gridTemplateColumns: '1fr',
+              gap: 0,
+              minHeight: 'auto',
+              paddingTop: 'clamp(3.5rem, 6vw, 5.5rem)',
+              paddingBottom: 'clamp(3rem, 5vw, 4.5rem)',
+            }}
+          >
+            <div className={styles.heroCopy} style={{ maxWidth: '58rem' }}>
               <p className={styles.kicker}>Connect</p>
-              <h1>If something here made you think, <em>“we are dealing with this too,”</em> that is enough of a reason to write.</h1>
-              <p className={styles.lede}>
+              <h1
+                style={{
+                  maxWidth: '15ch',
+                  fontSize: 'clamp(2.9rem, 4.7vw, 5.25rem)',
+                  lineHeight: '.96',
+                }}
+              >
+                If something here made you think, <em>“we are dealing with this too,”</em> that is enough of a reason to write.
+              </h1>
+              <p className={styles.lede} style={{ maxWidth: '42rem' }}>
                 I am interested in difficult public problems, especially the ones that sit between disciplines, institutions, and job descriptions. You do not need to arrive with a polished scope of work.
               </p>
               <div className={styles.heroActions}>
