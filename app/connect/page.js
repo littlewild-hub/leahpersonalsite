@@ -65,7 +65,15 @@ export default async function ConnectPage({ searchParams }) {
         <SiteHeader />
       </div>
       <main id="main-content" className={styles.page}>
-        <section className={styles.hero}>
+        <section
+          className={styles.hero}
+          style={{
+            backgroundImage: "linear-gradient(90deg, rgba(2,10,21,.97) 0%, rgba(2,10,21,.82) 42%, rgba(2,10,21,.28) 72%, rgba(2,10,21,.18) 100%), url('/images/connect-hero-night.jpg')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        >
           <div className={styles.heroInner}>
             <div className={styles.heroCopy}>
               <p className={styles.kicker}>Connect</p>
@@ -80,18 +88,6 @@ export default async function ConnectPage({ searchParams }) {
                 <Link className={styles.secondaryAction} href={inquiryHref('project', params)}>
                   Let&apos;s talk
                 </Link>
-              </div>
-            </div>
-
-            <div className={styles.heroVisual} aria-hidden="true">
-              <div className={styles.moon} />
-              <div className={styles.branch}>
-                <span className={`${styles.leaf} ${styles.leafOne}`} />
-                <span className={`${styles.leaf} ${styles.leafTwo}`} />
-                <span className={`${styles.leaf} ${styles.leafThree}`} />
-                <span className={`${styles.leaf} ${styles.leafFour}`} />
-                <span className={`${styles.leaf} ${styles.leafFive}`} />
-                <span className={`${styles.leaf} ${styles.leafSix}`} />
               </div>
             </div>
           </div>
