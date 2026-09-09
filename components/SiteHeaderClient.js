@@ -76,7 +76,13 @@ export function SiteHeaderClient({ tone = 'night' }) {
             {link.label}
           </Link>
         ))}
-        <a className="site-nav-contact" href="mailto:LeahGBuzek@gmail.com">Contact</a>
+        <Link
+          className="site-nav-contact"
+          href="/connect"
+          aria-current={isCurrent(pathname, '/connect') ? 'page' : undefined}
+        >
+          Connect
+        </Link>
       </nav>
     </header>
   );

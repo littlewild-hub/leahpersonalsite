@@ -1,0 +1,75 @@
+.cta {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(240px, .6fr);
+  gap: 3rem;
+  align-items: end;
+  padding: clamp(3rem, 6vw, 6rem);
+  background: var(--night);
+  color: var(--cream);
+  border-top: 1px solid color-mix(in srgb, var(--cream) 18%, transparent);
+}
+
+.copy {
+  max-width: 780px;
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  font-size: .78rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  opacity: .72;
+}
+
+.copy h2 {
+  margin: 0;
+  max-width: 18ch;
+  font-size: clamp(2rem, 4vw, 4.4rem);
+  line-height: .98;
+  font-weight: 500;
+}
+
+.copy > p:last-child {
+  max-width: 64ch;
+  margin: 1.5rem 0 0;
+  font-size: clamp(1rem, 1.25vw, 1.2rem);
+  line-height: 1.65;
+  opacity: .84;
+}
+
+.actions {
+  display: grid;
+  gap: 1rem;
+}
+
+.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem 1.1rem;
+  color: var(--night);
+  background: var(--peach);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.primary svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.actions p {
+  margin: 0;
+  font-size: .82rem;
+  line-height: 1.5;
+  opacity: .62;
+}
+
+@media (max-width: 820px) {
+  .cta {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

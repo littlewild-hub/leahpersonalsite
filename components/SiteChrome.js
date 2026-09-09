@@ -1,33 +1,37 @@
 import { ArrowUpRightIcon } from './Icons';
 import { SiteHeaderClient } from './SiteHeaderClient';
+import { ConnectionCTA } from './ConnectionCTA';
 
 export function SiteHeader({ tone = 'night' }) {
   return <SiteHeaderClient tone={tone} />;
 }
 
-export function SiteFooter() {
+export function SiteFooter({ showConnection = true }) {
   return (
-    <footer className="site-footer">
-      <div>
-        <p className="footer-tagline">for the love of our neighbors.</p>
-        <p>A living body of work in public systems, care, civic infrastructure, and relational ethics.</p>
-      </div>
-      <div className="footer-links">
-        <a href="https://medium.com/@progresswithpurpose" target="_blank" rel="noreferrer">
-          Medium <ArrowUpRightIcon />
-        </a>
-        <a href="https://substack.com/@coordinatesmayvary" target="_blank" rel="noreferrer">
-          Substack <ArrowUpRightIcon />
-        </a>
-        <a href="mailto:LeahGBuzek@gmail.com">
-          Email <ArrowUpRightIcon />
-        </a>
-        <a href="/llms.txt">
-          LLMs.txt <ArrowUpRightIcon />
-        </a>
-      </div>
-      <p className="footer-note">Full source manuscripts are retained privately. The public site presents authored synopses rather than downloadable files.</p>
-    </footer>
+    <>
+      {showConnection ? <ConnectionCTA /> : null}
+      <footer className="site-footer">
+        <div>
+          <p className="footer-tagline">for the love of our neighbors.</p>
+          <p>A living body of work in public systems, care, civic infrastructure, and relational ethics.</p>
+        </div>
+        <div className="footer-links">
+          <a href="https://medium.com/@progresswithpurpose" target="_blank" rel="noreferrer">
+            Medium <ArrowUpRightIcon />
+          </a>
+          <a href="https://substack.com/@coordinatesmayvary" target="_blank" rel="noreferrer">
+            Substack <ArrowUpRightIcon />
+          </a>
+          <a href="/connect">
+            Connect <ArrowUpRightIcon />
+          </a>
+          <a href="/llms.txt">
+            LLMs.txt <ArrowUpRightIcon />
+          </a>
+        </div>
+        <p className="footer-note">Full source manuscripts are retained privately. The public site presents authored synopses rather than downloadable files.</p>
+      </footer>
+    </>
   );
 }
 
