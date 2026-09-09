@@ -26,10 +26,11 @@ export default function InquiryForm() {
 
   async function handleSubmit(event) {
     event.preventDefault();
+    const formElement = event.currentTarget;
     setStatus('submitting');
     setError('');
 
-    const form = new FormData(event.currentTarget);
+    const form = new FormData(formElement);
     if (form.get('_honey')) {
       setStatus('success');
       return;
@@ -67,7 +68,7 @@ export default function InquiryForm() {
       }
 
       track('Inquiry Submitted', { type: String(form.get('inquiry_type')) });
-      event.currentTarget.reset();
+      formElement.reset();
       setStatus('success');
     } catch (submissionError) {
       setError(submissionError.message || 'Something went wrong while sending your note.');
