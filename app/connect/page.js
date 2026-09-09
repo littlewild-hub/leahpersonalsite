@@ -45,6 +45,8 @@ const paths = [
   },
 ];
 
+const keywords = ['Institutions', 'People', 'Systems', 'Trauma', 'Measurement', 'Possibility'];
+
 function inquiryHref(type, params = {}) {
   const query = new URLSearchParams();
   query.set('type', type);
@@ -59,17 +61,49 @@ export default async function ConnectPage({ searchParams }) {
 
   return (
     <>
-      <SiteHeader />
+      <div className={styles.headerShell}>
+        <SiteHeader />
+      </div>
       <main id="main-content" className={styles.page}>
         <section className={styles.hero}>
-          <p className={styles.kicker}>Connect</p>
-          <h1>If something here made you think, <em>“we are dealing with this too,”</em> that is enough of a reason to write.</h1>
-          <p className={styles.lede}>
-            I am interested in difficult public problems, especially the ones that sit between disciplines, institutions, and job descriptions. You do not need to arrive with a polished scope of work.
-          </p>
-          <Link className={styles.email} href={inquiryHref('project', params)}>
-            Start a conversation <ArrowRightIcon />
-          </Link>
+          <div className={styles.heroInner}>
+            <div className={styles.heroCopy}>
+              <p className={styles.kicker}>Connect</p>
+              <h1>If something here made you think, <em>“we are dealing with this too,”</em> that is enough of a reason to write.</h1>
+              <p className={styles.lede}>
+                I am interested in difficult public problems, especially the ones that sit between disciplines, institutions, and job descriptions. You do not need to arrive with a polished scope of work.
+              </p>
+              <div className={styles.heroActions}>
+                <Link className={styles.primaryAction} href="/work">
+                  Explore my work
+                </Link>
+                <Link className={styles.secondaryAction} href={inquiryHref('project', params)}>
+                  Let&apos;s talk
+                </Link>
+              </div>
+            </div>
+
+            <div className={styles.heroVisual} aria-hidden="true">
+              <div className={styles.moon} />
+              <div className={styles.branch}>
+                <span className={`${styles.leaf} ${styles.leafOne}`} />
+                <span className={`${styles.leaf} ${styles.leafTwo}`} />
+                <span className={`${styles.leaf} ${styles.leafThree}`} />
+                <span className={`${styles.leaf} ${styles.leafFour}`} />
+                <span className={`${styles.leaf} ${styles.leafFive}`} />
+                <span className={`${styles.leaf} ${styles.leafSix}`} />
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.keywordBand} aria-label="Areas of work">
+            {keywords.map((keyword, index) => (
+              <span key={keyword}>
+                {keyword}
+                {index < keywords.length - 1 ? <i aria-hidden="true">/</i> : null}
+              </span>
+            ))}
+          </div>
         </section>
 
         <section className={styles.paths} aria-label="Ways to work together">
