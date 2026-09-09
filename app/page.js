@@ -18,7 +18,7 @@ export default function Home() {
   return <>
     <SiteHeader />
     <main id="main-content">
-      <section className="hero" id="top">
+      <section className="hero" id="top" style={{ maxWidth: 'none', width: '100%', margin: 0 }}>
         <div className="hero__copy">
           <p className="hero__domains">Leah Buzek · public systems · applied research · institutional practice</p>
           <h1>for the <em>love</em><br />of our <em>neighbors.</em></h1>
