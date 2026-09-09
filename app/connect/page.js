@@ -27,24 +27,32 @@ const paths = [
   {
     title: 'Bring me into a problem',
     body: 'For institutions, coalitions, campaigns, and public-interest teams dealing with systems that are fragmented, difficult to measure, difficult to implement, or failing the people moving through them.',
-    href: 'mailto:LeahGBuzek@gmail.com?subject=Institutional%20or%20project%20inquiry',
+    subject: 'Institutional or project inquiry',
     label: 'Email about the problem',
   },
   {
     title: 'Collaborate on research or practice',
     body: 'For researchers, practitioners, funders, and public institutions interested in early-stage models, applied research, pilots, measurement, or cross-system work.',
-    href: 'mailto:LeahGBuzek@gmail.com?subject=Research%20or%20collaboration%20inquiry',
+    subject: 'Research or collaboration inquiry',
     label: 'Start a collaboration',
   },
   {
     title: 'Talk about a role or long-term engagement',
     body: 'For organizations looking for someone who can move between strategy, research, implementation, public systems, and the operational reality underneath the plan.',
-    href: 'mailto:LeahGBuzek@gmail.com?subject=Role%20or%20long-term%20engagement',
+    subject: 'Role or long-term engagement',
     label: 'Start the conversation',
   },
 ];
 
-export default function ConnectPage() {
+function mailto(subject, source = '') {
+  const body = source ? `I came to this page from: ${source}\n\n` : '';
+  return `mailto:LeahGBuzek@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+export default async function ConnectPage({ searchParams }) {
+  const params = await searchParams;
+  const source = typeof params?.from === 'string' ? params.from : '';
+
   return (
     <>
       <SiteHeader />
@@ -55,14 +63,15 @@ export default function ConnectPage() {
           <p className={styles.lede}>
             I am interested in difficult public problems, especially the ones that sit between disciplines, institutions, and job descriptions. You do not need to arrive with a polished scope of work.
           </p>
-          <a className={styles.email} href="mailto:LeahGBuzek@gmail.com?subject=Conversation%20from%20leahbuzek.com">
+          <a className={styles.email} href={mailto('Conversation from leahbuzek.com', source)}>
             Email Leah <ArrowUpRightIcon />
           </a>
         </section>
 
         <section className={styles.paths} aria-label="Ways to work together">
           {paths.map((path) => {
-            const external = path.href.startsWith('mailto:');
+            const href = path.href || mailto(path.subject, source);
+            const external = href.startsWith('mailto:');
             const content = (
               <>
                 <div>
@@ -74,9 +83,9 @@ export default function ConnectPage() {
             );
 
             return external ? (
-              <a href={path.href} key={path.title}>{content}</a>
+              <a href={href} key={path.title}>{content}</a>
             ) : (
-              <Link href={path.href} key={path.title}>{content}</Link>
+              <Link href={href} key={path.title}>{content}</Link>
             );
           })}
         </section>
@@ -92,7 +101,7 @@ export default function ConnectPage() {
           </div>
         </section>
       </main>
-      <SiteFooter />
+      <SiteFooter showConnection={false} />
     </>
   );
 }
