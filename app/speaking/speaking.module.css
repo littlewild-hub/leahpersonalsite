@@ -356,3 +356,84 @@
     font-size: clamp(2.1rem, 10vw, 3.3rem);
   }
 }
+
+/* Recorded speaking engagement */
+.recording {
+  padding: clamp(5rem, 8vw, 8rem) var(--pad);
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.recordingHeader {
+  display: grid;
+  grid-template-columns: 1fr .75fr;
+  gap: clamp(2rem, 7vw, 7rem);
+  align-items: end;
+  margin-bottom: 2.5rem;
+}
+
+.recordingEyebrow {
+  margin-bottom: 1rem;
+  color: var(--copper);
+  font-size: .68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+}
+
+.recordingHeader h2 {
+  margin: 0 0 1rem;
+  font-family: var(--serif);
+  font-size: clamp(3.3rem, 5.8vw, 5.8rem);
+  font-weight: 400;
+  line-height: .95;
+  letter-spacing: -.035em;
+}
+
+.recordingHeader h2 em {
+  color: var(--copper);
+  font-weight: 400;
+}
+
+.recordingEvent {
+  margin-bottom: 0;
+  font-weight: 650;
+}
+
+.recordingDescription {
+  max-width: 37rem;
+  margin: 0 0 .3rem;
+  color: var(--muted-dark);
+  font-size: 1.05rem;
+}
+
+.recordingPlayer {
+  overflow: hidden;
+  border: 1px solid rgba(12, 36, 56, .25);
+  background: #061629;
+}
+
+.recordingPlayer video {
+  display: block;
+  width: 100%;
+  max-height: 75vh;
+  aspect-ratio: 16 / 9;
+  background: #061629;
+  object-fit: contain;
+}
+
+.recordingCaption {
+  margin: 1rem 0 0;
+  color: var(--muted-dark);
+  font-size: .75rem;
+  letter-spacing: .035em;
+}
+
+@media (max-width: 1000px) {
+  .recordingHeader { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
+@media (max-width: 720px) {
+  .recording { padding-block: 4.75rem; }
+  .recordingPlayer video { max-height: none; }
+}
