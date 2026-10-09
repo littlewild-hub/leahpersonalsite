@@ -357,37 +357,42 @@
   }
 }
 
-/* Recorded speaking engagement */
+/* A full-width, editorial presentation of the recorded talk. */
 .recording {
-  padding: clamp(5rem, 8vw, 8rem) var(--pad);
+  scroll-margin-top: 5.5rem;
+  padding: clamp(5rem, 8vw, 8.5rem) var(--pad);
   color: var(--ink);
-  background: var(--paper);
+  background: var(--paper-light);
+}
+
+.recordingInner {
+  width: 100%;
+  max-width: 1080px;
+  margin-inline: auto;
 }
 
 .recordingHeader {
-  display: grid;
-  grid-template-columns: 1fr .75fr;
-  gap: clamp(2rem, 7vw, 7rem);
-  align-items: end;
-  margin-bottom: 2.5rem;
+  max-width: 760px;
+  margin: 0 auto clamp(2.5rem, 4vw, 4rem);
+  text-align: center;
 }
 
 .recordingEyebrow {
-  margin-bottom: 1rem;
+  margin: 0 0 1.25rem;
   color: var(--copper);
-  font-size: .68rem;
+  font-size: .72rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: .14em;
+  letter-spacing: .16em;
 }
 
 .recordingHeader h2 {
-  margin: 0 0 1rem;
+  margin: 0 0 1.1rem;
   font-family: var(--serif);
-  font-size: clamp(3.3rem, 5.8vw, 5.8rem);
+  font-size: clamp(3.8rem, 7.2vw, 6.8rem);
   font-weight: 400;
-  line-height: .95;
-  letter-spacing: -.035em;
+  line-height: .98;
+  letter-spacing: -.04em;
 }
 
 .recordingHeader h2 em {
@@ -396,44 +401,72 @@
 }
 
 .recordingEvent {
-  margin-bottom: 0;
-  font-weight: 650;
+  margin: 0 0 1.1rem;
+  font-size: .85rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: .11em;
+}
+
+.recordingEvent span {
+  display: inline-block;
+  margin-inline: .6em;
+  color: var(--copper);
 }
 
 .recordingDescription {
-  max-width: 37rem;
-  margin: 0 0 .3rem;
+  max-width: 36rem;
+  margin: 0 auto;
   color: var(--muted-dark);
-  font-size: 1.05rem;
+  font-size: clamp(1rem, 1.5vw, 1.14rem);
+  line-height: 1.7;
+}
+
+.recordingFigure {
+  margin: 0;
 }
 
 .recordingPlayer {
   overflow: hidden;
-  border: 1px solid rgba(12, 36, 56, .25);
-  background: #061629;
+  width: 100%;
+  border: 1px solid rgba(12, 36, 56, .16);
+  background: var(--night-deep);
+  box-shadow: 0 22px 55px rgba(6, 22, 41, .14);
 }
 
 .recordingPlayer video {
   display: block;
   width: 100%;
-  max-height: 75vh;
+  height: auto;
   aspect-ratio: 16 / 9;
-  background: #061629;
+  background: var(--night-deep);
   object-fit: contain;
 }
 
 .recordingCaption {
-  margin: 1rem 0 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .45rem 1.5rem;
+  padding-top: 1.3rem;
+  border-top: 1px solid rgba(12, 36, 56, .2);
+  margin-top: 1.5rem;
   color: var(--muted-dark);
   font-size: .75rem;
   letter-spacing: .035em;
 }
 
-@media (max-width: 1000px) {
-  .recordingHeader { grid-template-columns: 1fr; gap: 1.5rem; }
-}
-
 @media (max-width: 720px) {
-  .recording { padding-block: 4.75rem; }
-  .recordingPlayer video { max-height: none; }
+  .recording {
+    padding-block: 4.5rem;
+  }
+  .recordingHeader {
+    margin-bottom: 2rem;
+  }
+  .recordingHeader h2 {
+    font-size: clamp(3.2rem, 12vw, 5.2rem);
+  }
+  .recordingCaption {
+    flex-direction: column;
+  }
 }
