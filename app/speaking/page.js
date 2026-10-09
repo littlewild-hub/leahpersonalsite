@@ -125,6 +125,32 @@ export default function SpeakingPage() {
           </div>
         </section>
 
+        <section className={styles.recording} id="speaking-recording" aria-labelledby="speaking-recording-heading">
+          <div className={styles.recordingHeader}>
+            <div>
+              <p className={styles.recordingEyebrow}>On the record · 2024</p>
+              <h2 id="speaking-recording-heading">Resiliency <em>Ring.</em></h2>
+              <p className={styles.recordingEvent}>Ohio Youth MOVE · Speaking engagement</p>
+            </div>
+            <p className={styles.recordingDescription}>
+              A recording from my 2024 appearance at the Resiliency Ring with Ohio Youth MOVE.
+            </p>
+          </div>
+          <div className={styles.recordingPlayer}>
+            <video
+              controls
+              preload="metadata"
+              playsInline
+              aria-label="Leah Buzek speaking at the 2024 Resiliency Ring with Ohio Youth MOVE"
+            >
+              <source src="/videos/resiliency%20ring%20%20-%20Trim.mp4" type="video/mp4" />
+              Your browser does not support HTML5 video.
+              <a href="/videos/resiliency%20ring%20%20-%20Trim.mp4">Open the recording</a>.
+            </video>
+          </div>
+          <p className={styles.recordingCaption}>Resiliency Ring · Ohio Youth MOVE · 2024</p>
+        </section>
+
         <section className={styles.topics} aria-labelledby="speaking-topics-heading">
           <header className={styles.topicsHeader}>
             <div>
